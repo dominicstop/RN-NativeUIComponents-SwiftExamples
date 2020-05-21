@@ -1,0 +1,17 @@
+{
+  "name": "nativeUIModulesTest",
+  "displayName": "nativeUIModulesTest",
+  "expo": {
+    "name": "nativeUIModulesTest",
+    "slug": "nativeUIModulesTest",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
