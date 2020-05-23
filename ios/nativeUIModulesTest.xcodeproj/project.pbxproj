@@ -13,6 +13,20 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		3DE4DAD41476765101945408 /* libPods-nativeUIModulesTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D43FF9D506E70904424FA7E9 /* libPods-nativeUIModulesTest.a */; };
+		880EC304247666A400944AE6 /* RedBoxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC303247666A400944AE6 /* RedBoxTestView.swift */; };
+		880EC3062476684500944AE6 /* RedBoxTestViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3052476684500944AE6 /* RedBoxTestViewManager.swift */; };
+		880EC308247668F200944AE6 /* RedBoxTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC307247668F200944AE6 /* RedBoxTestView.m */; };
+		880EC30C247688DD00944AE6 /* ChildTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC30B247688DD00944AE6 /* ChildTestView.swift */; };
+		880EC30E2476895000944AE6 /* ChildTestViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC30D2476895000944AE6 /* ChildTestViewManager.swift */; };
+		880EC310247689B400944AE6 /* ChildTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC30F247689B400944AE6 /* ChildTestView.m */; };
+		880EC3132476E43800944AE6 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3122476E43800944AE6 /* UIPageViewController.swift */; };
+		880EC3152476E50100944AE6 /* UIPageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3142476E50100944AE6 /* UIPageViewManager.swift */; };
+		880EC3172476E54D00944AE6 /* UIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3162476E54D00944AE6 /* UIPageView.swift */; };
+		880EC31B2476E6E800944AE6 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC31A2476E6E800944AE6 /* UIView+Helpers.swift */; };
+		880EC31D2476E80800944AE6 /* UIPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC31C2476E80800944AE6 /* UIPageView.m */; };
+		880EC3222479124300944AE6 /* RCTUIButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3212479124300944AE6 /* RCTUIButtonManager.swift */; };
+		880EC32724796D1800944AE6 /* RCTUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC32624796D1800944AE6 /* RCTUIButton.swift */; };
+		880EC32A24796E1E00944AE6 /* RCTUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC32924796E1E00944AE6 /* RCTUIButton.m */; };
 		99EC63CFB4B549BBAF093D10 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -28,11 +42,26 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = nativeUIModulesTest/main.m; sourceTree = "<group>"; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B47C5AFCB8BDE514B7D1AC6 /* Pods-nativeUIModulesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.debug.xcconfig"; sourceTree = "<group>"; };
+		880EC2FF2476662700944AE6 /* nativeUIModulesTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nativeUIModulesTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		880EC303247666A400944AE6 /* RedBoxTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBoxTestView.swift; sourceTree = "<group>"; };
+		880EC3052476684500944AE6 /* RedBoxTestViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBoxTestViewManager.swift; sourceTree = "<group>"; };
+		880EC307247668F200944AE6 /* RedBoxTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedBoxTestView.m; sourceTree = "<group>"; };
+		880EC30B247688DD00944AE6 /* ChildTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTestView.swift; sourceTree = "<group>"; };
+		880EC30D2476895000944AE6 /* ChildTestViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTestViewManager.swift; sourceTree = "<group>"; };
+		880EC30F247689B400944AE6 /* ChildTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildTestView.m; sourceTree = "<group>"; };
+		880EC3122476E43800944AE6 /* UIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewController.swift; sourceTree = "<group>"; };
+		880EC3142476E50100944AE6 /* UIPageViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewManager.swift; sourceTree = "<group>"; };
+		880EC3162476E54D00944AE6 /* UIPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageView.swift; sourceTree = "<group>"; };
+		880EC31A2476E6E800944AE6 /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
+		880EC31C2476E80800944AE6 /* UIPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIPageView.m; sourceTree = "<group>"; };
+		880EC3212479124300944AE6 /* RCTUIButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTUIButtonManager.swift; sourceTree = "<group>"; };
+		880EC32624796D1800944AE6 /* RCTUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTUIButton.swift; sourceTree = "<group>"; };
+		880EC32924796E1E00944AE6 /* RCTUIButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTUIButton.m; sourceTree = "<group>"; };
 		8AC623DBF3A3E2CB072F81F2 /* Pods-nativeUIModulesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.release.xcconfig"; sourceTree = "<group>"; };
 		D43FF9D506E70904424FA7E9 /* libPods-nativeUIModulesTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = nativeUIModulesTest/SplashScreen.storyboard; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */ = {isa = PBXFileReference; name = "SplashScreen.storyboard"; path = "nativeUIModulesTest/SplashScreen.storyboard"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = file.storyboard; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +79,8 @@
 		13B07FAE1A68108700A75B9A /* nativeUIModulesTest */ = {
 			isa = PBXGroup;
 			children = (
+				880EC3192476E6C500944AE6 /* Extensions */,
+				880EC2FA2476658F00944AE6 /* React Native */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -59,6 +90,7 @@
 				13B07FB71A68108700A75B9A /* main.m */,
 				0731D3B524204D62009CAE85 /* Expo.plist */,
 				E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */,
+				880EC2FF2476662700944AE6 /* nativeUIModulesTest-Bridging-Header.h */,
 			);
 			name = nativeUIModulesTest;
 			sourceTree = "<group>";
@@ -80,7 +112,6 @@
 				3B47C5AFCB8BDE514B7D1AC6 /* Pods-nativeUIModulesTest.debug.xcconfig */,
 				8AC623DBF3A3E2CB072F81F2 /* Pods-nativeUIModulesTest.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -111,6 +142,74 @@
 				13B07F961A680F5B00A75B9A /* nativeUIModulesTest.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		880EC2FA2476658F00944AE6 /* React Native */ = {
+			isa = PBXGroup;
+			children = (
+				880EC2FB247665A500944AE6 /* Components */,
+			);
+			path = "React Native";
+			sourceTree = "<group>";
+		};
+		880EC2FB247665A500944AE6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				880EC31E247911F600944AE6 /* RCTUIButton */,
+				880EC3112476E3F700944AE6 /* UIPageView */,
+				880EC30A2476889100944AE6 /* ChildTestView */,
+				880EC3022476667C00944AE6 /* RedBoxTestView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		880EC3022476667C00944AE6 /* RedBoxTestView */ = {
+			isa = PBXGroup;
+			children = (
+				880EC303247666A400944AE6 /* RedBoxTestView.swift */,
+				880EC3052476684500944AE6 /* RedBoxTestViewManager.swift */,
+				880EC307247668F200944AE6 /* RedBoxTestView.m */,
+			);
+			path = RedBoxTestView;
+			sourceTree = "<group>";
+		};
+		880EC30A2476889100944AE6 /* ChildTestView */ = {
+			isa = PBXGroup;
+			children = (
+				880EC30B247688DD00944AE6 /* ChildTestView.swift */,
+				880EC30D2476895000944AE6 /* ChildTestViewManager.swift */,
+				880EC30F247689B400944AE6 /* ChildTestView.m */,
+			);
+			path = ChildTestView;
+			sourceTree = "<group>";
+		};
+		880EC3112476E3F700944AE6 /* UIPageView */ = {
+			isa = PBXGroup;
+			children = (
+				880EC3122476E43800944AE6 /* UIPageViewController.swift */,
+				880EC3142476E50100944AE6 /* UIPageViewManager.swift */,
+				880EC3162476E54D00944AE6 /* UIPageView.swift */,
+				880EC31C2476E80800944AE6 /* UIPageView.m */,
+			);
+			path = UIPageView;
+			sourceTree = "<group>";
+		};
+		880EC3192476E6C500944AE6 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				880EC31A2476E6E800944AE6 /* UIView+Helpers.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		880EC31E247911F600944AE6 /* RCTUIButton */ = {
+			isa = PBXGroup;
+			children = (
+				880EC3212479124300944AE6 /* RCTUIButtonManager.swift */,
+				880EC32624796D1800944AE6 /* RCTUIButton.swift */,
+				880EC32924796E1E00944AE6 /* RCTUIButton.m */,
+			);
+			path = RCTUIButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,9 +244,8 @@
 				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
-					00E356ED1AD99517003FC87E = {
-						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 13B07F861A680F5B00A75B9A;
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -156,6 +254,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -246,8 +345,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				880EC308247668F200944AE6 /* RedBoxTestView.m in Sources */,
+				880EC3152476E50100944AE6 /* UIPageViewManager.swift in Sources */,
+				880EC310247689B400944AE6 /* ChildTestView.m in Sources */,
+				880EC30C247688DD00944AE6 /* ChildTestView.swift in Sources */,
+				880EC3062476684500944AE6 /* RedBoxTestViewManager.swift in Sources */,
+				880EC3132476E43800944AE6 /* UIPageViewController.swift in Sources */,
+				880EC304247666A400944AE6 /* RedBoxTestView.swift in Sources */,
+				880EC31D2476E80800944AE6 /* UIPageView.m in Sources */,
+				880EC3172476E54D00944AE6 /* UIPageView.swift in Sources */,
+				880EC30E2476895000944AE6 /* ChildTestViewManager.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				880EC32A24796E1E00944AE6 /* RCTUIButton.m in Sources */,
+				880EC31B2476E6E800944AE6 /* UIView+Helpers.swift in Sources */,
+				880EC3222479124300944AE6 /* RCTUIButtonManager.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				880EC32724796D1800944AE6 /* RCTUIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +384,7 @@
 			baseConfigurationReference = 3B47C5AFCB8BDE514B7D1AC6 /* Pods-nativeUIModulesTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				INFOPLIST_FILE = nativeUIModulesTest/Info.plist;
@@ -282,6 +396,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nativeUIModulesTest;
+				SWIFT_OBJC_BRIDGING_HEADER = "nativeUIModulesTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -291,6 +408,7 @@
 			baseConfigurationReference = 8AC623DBF3A3E2CB072F81F2 /* Pods-nativeUIModulesTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = nativeUIModulesTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -301,6 +419,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = nativeUIModulesTest;
+				SWIFT_OBJC_BRIDGING_HEADER = "nativeUIModulesTest-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

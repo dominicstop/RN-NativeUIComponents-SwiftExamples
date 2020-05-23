@@ -1,19 +1,54 @@
 import * as React from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
 
-const instructions = Platform.select({
-  ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
-  android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`,
-});
+import { UIButton       } from 'app/src/components_native/UIButton';
+import { UIPageView     } from 'app/src/components_native/UIPageView';
+import { RedBoxTestView } from 'app/src/components_native/RedBoxTestView';
+import { ChildTestView  } from 'app/src/components_native/ChildTestView';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.welcome}>Welcome to React Native!</Text>
-      <Text style={styles.instructions}>To get started, edit App.js</Text>
-      <Text style={styles.instructions}>{instructions}</Text>
-    </View>
-  );
+export default class App extends React.Component {
+  _render(){
+    return(
+      <View style={{flex: 1, backgroundColor: 'white'}}>
+        <UIPageView style={{flex: 1}}>
+          <View style={[styles.page, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'red'}]}>
+            <Text>Page 1</Text>
+          </View>
+          <View style={[styles.page, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue'}]}>
+            <Text>Page 2</Text>
+          </View>
+          <View style={[styles.page, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green'}]}>
+            <Text>Page 3</Text>
+          </View>
+          <View style={[styles.page, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'yellow'}]}>
+            <Text>Page 4</Text>
+          </View>
+        </UIPageView>
+      </View>
+    );
+  };
+
+  render(){
+    return (
+      <View style={styles.container}>
+        <RedBoxTestView
+          style={{ width: 100, aspectRatio: 1 }}
+          onClick={(params) => {
+            console.log(params);
+          }}
+        />
+        <ChildTestView
+          style={{width: 100, height: 100, backgroundColor: 'grey'}}
+        >
+          <Text>Hello</Text>
+        </ChildTestView>
+        <UIButton
+          style={{width: 100, height: 100, backgroundColor: 'orange'}}
+          label2={'Test2'}
+        />
+      </View>
+    );
+  };
 }
 
 const styles = StyleSheet.create({
@@ -23,14 +58,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+  page: {
+    ...StyleSheet.absoluteFillObject,
   },
 });
