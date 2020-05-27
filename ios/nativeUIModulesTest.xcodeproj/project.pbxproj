@@ -27,6 +27,10 @@
 		880EC3222479124300944AE6 /* RCTUIButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3212479124300944AE6 /* RCTUIButtonManager.swift */; };
 		880EC32724796D1800944AE6 /* RCTUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC32624796D1800944AE6 /* RCTUIButton.swift */; };
 		880EC32A24796E1E00944AE6 /* RCTUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC32924796E1E00944AE6 /* RCTUIButton.m */; };
+		88532BE3247EF1F000FD6817 /* ExampleUIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE2247EF1F000FD6817 /* ExampleUIPageView.swift */; };
+		88532BE5247EF69A00FD6817 /* ExampleUIPageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */; };
+		88532BE7247EF72100FD6817 /* ExampleUIPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE6247EF72100FD6817 /* ExampleUIPageView.m */; };
+		88C10348247EA77D0063B7EF /* ExampleUIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C10347247EA77D0063B7EF /* ExampleUIPageViewController.swift */; };
 		99EC63CFB4B549BBAF093D10 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +61,10 @@
 		880EC3212479124300944AE6 /* RCTUIButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTUIButtonManager.swift; sourceTree = "<group>"; };
 		880EC32624796D1800944AE6 /* RCTUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTUIButton.swift; sourceTree = "<group>"; };
 		880EC32924796E1E00944AE6 /* RCTUIButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTUIButton.m; sourceTree = "<group>"; };
+		88532BE2247EF1F000FD6817 /* ExampleUIPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageView.swift; sourceTree = "<group>"; };
+		88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageViewManager.swift; sourceTree = "<group>"; };
+		88532BE6247EF72100FD6817 /* ExampleUIPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUIPageView.m; sourceTree = "<group>"; };
+		88C10347247EA77D0063B7EF /* ExampleUIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageViewController.swift; sourceTree = "<group>"; };
 		8AC623DBF3A3E2CB072F81F2 /* Pods-nativeUIModulesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.release.xcconfig"; sourceTree = "<group>"; };
 		D43FF9D506E70904424FA7E9 /* libPods-nativeUIModulesTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = nativeUIModulesTest/SplashScreen.storyboard; sourceTree = "<group>"; };
@@ -155,6 +163,8 @@
 		880EC2FB247665A500944AE6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				88C10346247EA65C0063B7EF /* ExampleUIPageView */,
+				88C10345247EA6400063B7EF /* New Group */,
 				880EC31E247911F600944AE6 /* RCTUIButton */,
 				880EC3112476E3F700944AE6 /* UIPageView */,
 				880EC30A2476889100944AE6 /* ChildTestView */,
@@ -210,6 +220,24 @@
 				880EC32924796E1E00944AE6 /* RCTUIButton.m */,
 			);
 			path = RCTUIButton;
+			sourceTree = "<group>";
+		};
+		88C10345247EA6400063B7EF /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		88C10346247EA65C0063B7EF /* ExampleUIPageView */ = {
+			isa = PBXGroup;
+			children = (
+				88C10347247EA77D0063B7EF /* ExampleUIPageViewController.swift */,
+				88532BE2247EF1F000FD6817 /* ExampleUIPageView.swift */,
+				88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */,
+				88532BE6247EF72100FD6817 /* ExampleUIPageView.m */,
+			);
+			path = ExampleUIPageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,14 +374,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				880EC308247668F200944AE6 /* RedBoxTestView.m in Sources */,
+				88532BE5247EF69A00FD6817 /* ExampleUIPageViewManager.swift in Sources */,
 				880EC3152476E50100944AE6 /* UIPageViewManager.swift in Sources */,
+				88532BE3247EF1F000FD6817 /* ExampleUIPageView.swift in Sources */,
 				880EC310247689B400944AE6 /* ChildTestView.m in Sources */,
 				880EC30C247688DD00944AE6 /* ChildTestView.swift in Sources */,
 				880EC3062476684500944AE6 /* RedBoxTestViewManager.swift in Sources */,
 				880EC3132476E43800944AE6 /* UIPageViewController.swift in Sources */,
 				880EC304247666A400944AE6 /* RedBoxTestView.swift in Sources */,
 				880EC31D2476E80800944AE6 /* UIPageView.m in Sources */,
+				88C10348247EA77D0063B7EF /* ExampleUIPageViewController.swift in Sources */,
 				880EC3172476E54D00944AE6 /* UIPageView.swift in Sources */,
+				88532BE7247EF72100FD6817 /* ExampleUIPageView.m in Sources */,
 				880EC30E2476895000944AE6 /* ChildTestViewManager.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				880EC32A24796E1E00944AE6 /* RCTUIButton.m in Sources */,

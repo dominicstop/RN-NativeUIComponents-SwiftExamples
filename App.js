@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-import { UIButton       } from 'app/src/components_native/UIButton';
-import { UIPageView     } from 'app/src/components_native/UIPageView';
-import { RedBoxTestView } from 'app/src/components_native/RedBoxTestView';
-import { ChildTestView  } from 'app/src/components_native/ChildTestView';
+import { UIButton          } from 'app/src/components_native/UIButton';
+import { UIPageView        } from 'app/src/components_native/UIPageView';
+import { RedBoxTestView    } from 'app/src/components_native/RedBoxTestView';
+import { ChildTestView     } from 'app/src/components_native/ChildTestView';
+import { ExampleUIPageView } from 'app/src/components_native/ExampleUIPageView';
 
 export default class App extends React.Component {
-  _render(){
+  __render(){
     return(
       <View style={{flex: 1, backgroundColor: 'white'}}>
         <UIPageView style={{flex: 1}}>
@@ -29,6 +30,14 @@ export default class App extends React.Component {
   };
 
   render(){
+    return(
+      <View style={{flex: 1, backgroundColor: 'white'}}>
+        <ExampleUIPageView style={{flex: 1}}/>
+      </View>
+    );
+  };
+
+  _render(){
     return (
       <View style={styles.container}>
         <RedBoxTestView

@@ -62,7 +62,8 @@ class RCTUIButton: UIButton {
   };
   
   // another workaround is to create an explicit setter function that's called from objc.
-  // objc will call -[RCTUIButton setLabelValue2:] from the manager export macro
+  // objc will call -[RCTUIButton setLabelValue2:] from the manager export macro.
+  // tbh, this is my preffered way of doing it.
   @objc func setLabelValue2(_ labelValue2: NSString) {
     print("labelValue2 prop set: \(labelValue2)");
     self.setTitle(labelValue2 as String, for: .normal);

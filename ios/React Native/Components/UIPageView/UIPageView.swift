@@ -24,6 +24,7 @@ class UIPageView: UIView {
     
     if self.uiPageViewController == nil {
       embed();
+      
     } else {
       self.uiPageViewController?.view.frame = bounds;
     };
