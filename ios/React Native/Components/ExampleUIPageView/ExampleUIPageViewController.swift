@@ -67,8 +67,8 @@ class ExampleUIPageViewController: UIPageViewController {
 
     self.pageControl.translatesAutoresizingMaskIntoConstraints = false;
     NSLayoutConstraint.activate([
-      self.pageControl.bottomAnchor .constraint(equalTo: self.view.bottomAnchor, constant: -5),
-      self.pageControl.widthAnchor  .constraint(equalTo: self.view.widthAnchor, constant: -20),
+      self.pageControl.bottomAnchor .constraint(equalTo: self.view.bottomAnchor),
+      self.pageControl.widthAnchor  .constraint(equalTo: self.view.widthAnchor),
       self.pageControl.heightAnchor .constraint(equalToConstant: 20),
       self.pageControl.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
     ]);

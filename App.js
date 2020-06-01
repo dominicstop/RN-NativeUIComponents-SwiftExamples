@@ -6,30 +6,18 @@ import { UIPageView        } from 'app/src/components_native/UIPageView';
 import { RedBoxTestView    } from 'app/src/components_native/RedBoxTestView';
 import { ChildTestView     } from 'app/src/components_native/ChildTestView';
 import { ExampleUIPageView } from 'app/src/components_native/ExampleUIPageView';
+import { UIPageViewTest1   } from 'app/src/components/UIPageViewTest1';
 
 export default class App extends React.Component {
-  __render(){
+  render(){
     return(
       <View style={{flex: 1, backgroundColor: 'white'}}>
-        <UIPageView style={{flex: 1}}>
-          <View style={[styles.page, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'red'}]}>
-            <Text>Page 1</Text>
-          </View>
-          <View style={[styles.page, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'blue'}]}>
-            <Text>Page 2</Text>
-          </View>
-          <View style={[styles.page, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'green'}]}>
-            <Text>Page 3</Text>
-          </View>
-          <View style={[styles.page, {alignItems: 'center', justifyContent: 'center', backgroundColor: 'yellow'}]}>
-            <Text>Page 4</Text>
-          </View>
-        </UIPageView>
+        <UIPageViewTest1/>
       </View>
     );
   };
 
-  render(){
+  ___render(){
     return(
       <View style={{flex: 1, backgroundColor: 'white'}}>
         <ExampleUIPageView style={{flex: 1}}/>
@@ -37,7 +25,7 @@ export default class App extends React.Component {
     );
   };
 
-  _render(){
+  _mrender(){
     return (
       <View style={styles.container}>
         <RedBoxTestView
