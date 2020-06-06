@@ -123,30 +123,58 @@ class BlueBoxTestView: UIView {
       // request the style change first).
       // 1.3) I want to "reset" the subview, i.e remove any layout data calculated from yoga and use
       // autolayout. But when I try to add constraints, the subview just disapears (ps: i'm a abs noob
-      // w/ autolayout). 
-  
+      // w/ autolayout).
+      // 2) How do i know which subview is which? i.e how do i know which subview i want to manipulate?
+      // 2.1) In this case, it's just the first subview (i.e the first child of this component in RN/js).
+      // so just using index is sufficient. So in js/RN side, i should have some logic there in place
+      // that guarantees that view I want to manipulate is at index 0 (by having a permanent view
+      // "container/placeholder" as it's first child in the comp.), otherwise, other unrelated subviews
+      // might get changed/mutated by accident.
+      // 2.2) Another way is to use 'reactTag' property. Ask from js side what's the reactTag of the
+      // view we want to manipulate, js then adds a `position: absolute` to "remove" it (so that it
+      // no longer affects the layout of it's sibling views), and sends back the reactTag. We then use
+      // the reactTag to identify the subview we want to manipulate.
+      // 2.3) Similar to 2.2, another way is to use 'nativeID' property so we can just ask the bridge
+      // to fetch that view. As a bonus, that view doesn't need to be a direct subview from this comp.,
+      // i.e it can exist somewhere in the view hiearchy. Tho, this sounds like such a hassle... 
+      
       if(index == 0){
         let parentView = self.testView!;
         self.reactSubview = subview;
         
-        // replace frame computed from yoga w/ custom frame
+        // i want to remove all layout info calc. by RN/yoga. in other words, i want to "reset" it.
+        // But i'm not sure how to properly do it, so i'm just trying some stuff.
+        // but the layout is still being computed by RN/Yoga, so when it's orig parent view has some
+        // layout chnage, the subview will still follow it. sigh. But since this particular subview
+        // has `position: 'absolute'` style, it doesn't matter.
+        subview.removeFromSuperview();
         subview.removeAllConstraints();
+        subview.sizeToFit();
+        
+        // the only way  to "reset" is to explicitly set a new cgrect for the subview. But how do i
+        // know what size and width it should be? How do i recompute it's original cgrect? For ex. somw
+        // uilabel w/ some text/font style, what should it's frame be? When i created it, it was automatically
+        // computed. So how do i recalculate the frame? idk. so for now, we'll just reset the origin,
+        // and use the original size and width provided. again, since this subview is
+        // `postion: 'absolute'` style in RN, it doesn't matter in this case.
         subview.frame = CGRect(
           origin: CGPoint(x: 0, y: 0),
-          size  : CGSize (width: 50, height: 50)
+          size  : subview.frame.size
         );
         
+        // just setting this doesn't cause the subiew to dissapear
         //subview.translatesAutoresizingMaskIntoConstraints = false;
+        
         parentView.addSubview(subview);
         
+        // but when i try to activate a constraint, it dissapears lmao (evem when constraints are
+        // just constants, it still dissapears. idk why haha). I think i'm missing something...
         //NSLayoutConstraint.activate([
+        //  subview.widthAnchor.constraint(equalToConstant: 100),
         //  subview.bottomAnchor  .constraint(equalTo: parentView.bottomAnchor  ),
         //  subview.leadingAnchor .constraint(equalTo: parentView.leadingAnchor ),
         //  subview.trailingAnchor.constraint(equalTo: parentView.trailingAnchor),
         //]);
-        
-        
-        subview.setNeedsLayout();
         
       };
     };

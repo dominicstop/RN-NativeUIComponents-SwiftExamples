@@ -34,14 +34,14 @@ export class BlueBoxTestView extends React.PureComponent {
         nativeID={'uniqueID'}
         {...this.props}
       >
+        <Text style={{position: 'absolute'}}>
+          {counter + ' absolute'}
+        </Text>
         {(counter % 2 == 0) && (
           <Text>
             {counter}
           </Text>
-        )}
-        <Text style={{position: 'absolute'}}>
-          {counter}
-        </Text>
+        )} 
         <View>
           <Text>Test</Text>
           <Text>Test</Text>
