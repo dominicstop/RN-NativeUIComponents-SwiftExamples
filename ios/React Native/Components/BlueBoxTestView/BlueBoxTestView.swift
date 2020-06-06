@@ -103,27 +103,28 @@ class BlueBoxTestView: UIView {
         print("label text: \(text)");
       };
       
-      // what happens when you move a react subview to another subview?
-      // 1) Does it still update via setState etc.? Yes, it still updates, but since the layout is
-      // was already computed via yoga before it was moved, even when you move it, the other react
-      // children will act like it's still there (in other words, there's a gap where the view should
-      // have appeared originally).
-      // 1.1) One soluton i tried was doing removeReactSubview after adding it to my own subview but
+      //
+      // 1) what happens when you move a react subview to another subview? Does it still update via
+      // setState etc.?
+      // 1.1) Yes, it still updates, but since the layout is was already computed via yoga before it
+      // was moved, even when you move it, the other react children will act like it's still there
+      // (in other words, there's a gap where the view should have appeared originally).
+      // 1.2) One soluton i tried was doing removeReactSubview after adding it to my own subview but
       // it didn't work bc the view might have been disposed automatically whenever removeReactSubview
       // is called. I also tried not calling super.insertReactSubview and and add it to my custom subview
       // but that didn't work (Even if intercept the child view from insertReactSubview, again, the
       // is already precomputed. Thus, not adding it will not change anything).
-      // 1.2) the easiest solution is just apply "position: absolute" style from RN. Though, if were
+      // 1.3) the easiest solution is just apply "position: absolute" style from RN. Though, if were
       // trying to do everything from native side.
-      // 1.2.1) i do not know how to programmatically apply a position
+      // 1.3.1) i do not know how to programmatically apply a position
       // absolute style via native code, and computing the layout manually isn't really a good idea
       // (i have to research a way to communicate with RN layout system i.e yoga).
-      // 1.2.2) Tho, the simplest solution is still applying "position: absoulte" in RN when we know
+      // 1.3.2) Tho, the simplest solution is still applying "position: absoulte" in RN when we know
       // it's going to be "moved", in other words, manage it in JS (coordinate, i.e before "moving",
       // request the style change first).
       // 1.3) I want to "reset" the subview, i.e remove any layout data calculated from yoga and use
       // autolayout. But when I try to add constraints, the subview just disapears (ps: i'm a abs noob
-      // w/ autolayout).
+      // w/ autolayout, so i'm propbably doing something wrong).
       // 2) How do i know which subview is which? i.e how do i know which subview i want to manipulate?
       // 2.1) In this case, it's just the first subview (i.e the first child of this component in RN/js).
       // so just using index is sufficient. So in js/RN side, i should have some logic there in place
@@ -136,7 +137,7 @@ class BlueBoxTestView: UIView {
       // the reactTag to identify the subview we want to manipulate.
       // 2.3) Similar to 2.2, another way is to use 'nativeID' property so we can just ask the bridge
       // to fetch that view. As a bonus, that view doesn't need to be a direct subview from this comp.,
-      // i.e it can exist somewhere in the view hiearchy. Tho, this sounds like such a hassle... 
+      // i.e it can exist somewhere in the view hiearchy. Tho, this sounds like such a hassle...
       
       if(index == 0){
         let parentView = self.testView!;
