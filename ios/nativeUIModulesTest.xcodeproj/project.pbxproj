@@ -31,6 +31,9 @@
 		88532BE5247EF69A00FD6817 /* ExampleUIPageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */; };
 		88532BE7247EF72100FD6817 /* ExampleUIPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE6247EF72100FD6817 /* ExampleUIPageView.m */; };
 		88C10348247EA77D0063B7EF /* ExampleUIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C10347247EA77D0063B7EF /* ExampleUIPageViewController.swift */; };
+		88E13768248A66FC007C69D5 /* BlueBoxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E13767248A66FC007C69D5 /* BlueBoxTestView.swift */; };
+		88E1376A248A67D9007C69D5 /* BlueBoxTestiewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E13769248A67D9007C69D5 /* BlueBoxTestiewManager.swift */; };
+		88E1376C248A683E007C69D5 /* BlueBoxTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E1376B248A683E007C69D5 /* BlueBoxTestView.m */; };
 		99EC63CFB4B549BBAF093D10 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +68,9 @@
 		88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageViewManager.swift; sourceTree = "<group>"; };
 		88532BE6247EF72100FD6817 /* ExampleUIPageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUIPageView.m; sourceTree = "<group>"; };
 		88C10347247EA77D0063B7EF /* ExampleUIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageViewController.swift; sourceTree = "<group>"; };
+		88E13767248A66FC007C69D5 /* BlueBoxTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueBoxTestView.swift; sourceTree = "<group>"; };
+		88E13769248A67D9007C69D5 /* BlueBoxTestiewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueBoxTestiewManager.swift; sourceTree = "<group>"; };
+		88E1376B248A683E007C69D5 /* BlueBoxTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueBoxTestView.m; sourceTree = "<group>"; };
 		8AC623DBF3A3E2CB072F81F2 /* Pods-nativeUIModulesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.release.xcconfig"; sourceTree = "<group>"; };
 		D43FF9D506E70904424FA7E9 /* libPods-nativeUIModulesTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = nativeUIModulesTest/SplashScreen.storyboard; sourceTree = "<group>"; };
@@ -163,8 +169,8 @@
 		880EC2FB247665A500944AE6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				88E13766248A6628007C69D5 /* BlueBoxTestView */,
 				88C10346247EA65C0063B7EF /* ExampleUIPageView */,
-				88C10345247EA6400063B7EF /* New Group */,
 				880EC31E247911F600944AE6 /* RCTUIButton */,
 				880EC3112476E3F700944AE6 /* UIPageView */,
 				880EC30A2476889100944AE6 /* ChildTestView */,
@@ -222,13 +228,6 @@
 			path = RCTUIButton;
 			sourceTree = "<group>";
 		};
-		88C10345247EA6400063B7EF /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		88C10346247EA65C0063B7EF /* ExampleUIPageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -238,6 +237,16 @@
 				88532BE6247EF72100FD6817 /* ExampleUIPageView.m */,
 			);
 			path = ExampleUIPageView;
+			sourceTree = "<group>";
+		};
+		88E13766248A6628007C69D5 /* BlueBoxTestView */ = {
+			isa = PBXGroup;
+			children = (
+				88E13767248A66FC007C69D5 /* BlueBoxTestView.swift */,
+				88E13769248A67D9007C69D5 /* BlueBoxTestiewManager.swift */,
+				88E1376B248A683E007C69D5 /* BlueBoxTestView.m */,
+			);
+			path = BlueBoxTestView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,8 +399,11 @@
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				880EC32A24796E1E00944AE6 /* RCTUIButton.m in Sources */,
 				880EC31B2476E6E800944AE6 /* UIView+Helpers.swift in Sources */,
+				88E1376A248A67D9007C69D5 /* BlueBoxTestiewManager.swift in Sources */,
 				880EC3222479124300944AE6 /* RCTUIButtonManager.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				88E1376C248A683E007C69D5 /* BlueBoxTestView.m in Sources */,
+				88E13768248A66FC007C69D5 /* BlueBoxTestView.swift in Sources */,
 				880EC32724796D1800944AE6 /* RCTUIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

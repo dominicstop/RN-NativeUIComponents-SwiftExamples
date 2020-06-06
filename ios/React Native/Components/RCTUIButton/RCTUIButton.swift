@@ -34,8 +34,13 @@ class RCTUIButton: UIButton {
   // this is a bug: https://github.com/facebook/react-native/issues/4829
   @objc var labelValue: NSString = "default value" {
     didSet(value){
-      print("labelValue prop set: \(String(describing: value))");
-      self.setTitle(String(describing: value), for: .normal);
+      print("labelValue prop set: \(value)");
+      
+      // BUT!! if you access the property via self, it seems to
+      // be initialized just fine. Tho the first call is nil sometimes
+      // so make sure to check
+      print("labelValue prop set: \(labelValue)");
+      self.setTitle(String(describing: labelValue), for: .normal);
     }
   };
   

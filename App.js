@@ -7,20 +7,25 @@ import { RedBoxTestView    } from 'app/src/components_native/RedBoxTestView';
 import { ChildTestView     } from 'app/src/components_native/ChildTestView';
 import { ExampleUIPageView } from 'app/src/components_native/ExampleUIPageView';
 import { UIPageViewTest1   } from 'app/src/components/UIPageViewTest1';
+import { BlueBoxTestView } from 'app/src/components/ChildReRenderTest';
 
 export default class App extends React.Component {
   render(){
+    
     return(
-      <View style={{flex: 1, backgroundColor: 'white'}}>
-        <UIPageViewTest1/>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <BlueBoxTestView
+        />
       </View>
     );
-  };
-
-  ___render(){
     return(
       <View style={{flex: 1, backgroundColor: 'white'}}>
         <ExampleUIPageView style={{flex: 1}}/>
+      </View>
+    );
+    return(
+      <View style={{flex: 1, backgroundColor: 'white'}}>
+        <UIPageViewTest1/>
       </View>
     );
   };
