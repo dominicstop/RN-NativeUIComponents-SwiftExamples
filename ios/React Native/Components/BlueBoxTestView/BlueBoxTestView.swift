@@ -164,7 +164,7 @@ class BlueBoxTestView: UIView {
       // I can't seem to find much docs. on RCTShadowView.
       // 1.3.2) Tho, the simplest solution is still just applying `position: "absolute"` in RN when we know
       // it's going to be "moved", in other words, manage it in JS (coordinate, i.e before "moving",
-      // apply the absolute style first).
+      // apply the absolute style first). But this requires communicating betw. RN and native code.
       // 1.3) I want to "reset" the subview, i.e remove any layout data calculated from yoga and use
       // autolayout. But when I try to add constraints, the subview just disapears (ps: i'm a abs. noob
       // w/ autolayout, so i'm propbably doing something wrong).
