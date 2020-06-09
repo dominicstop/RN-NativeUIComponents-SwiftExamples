@@ -24,8 +24,9 @@ class BlueBoxTestView: UIView {
   
   var testView: UIView!;
   var myButton: UIButton!;
+  var reactModalContent: UIView?;
   
-  var reactSubview: UIView?;
+  var isPresented = false;
   
   // we're going to use this VC to hold the view that we want to show inside of a modal.
   fileprivate var modalVC: ContainerViewController!;
@@ -107,7 +108,12 @@ class BlueBoxTestView: UIView {
     }();
     
     // setup modalVC
-    self.modalVC = ContainerViewController();
+    self.modalVC = {
+      let vc = ContainerViewController();
+      vc.boundsDidChangeBlock = self.notifyForBoundsChange;
+      return vc;
+    }();
+    
     
     self.addSubview(self.testView);
     self.addSubview(self.myButton);
@@ -168,6 +174,7 @@ class BlueBoxTestView: UIView {
       // 1.3) I want to "reset" the subview, i.e remove any layout data calculated from yoga and use
       // autolayout. But when I try to add constraints, the subview just disapears (ps: i'm a abs. noob
       // w/ autolayout, so i'm propbably doing something wrong).
+      // 1.4) UPDATE: You can use bridge.uiManager to manipulate a react subview
       //
       // 2) How do i know which subview is which? i.e how do i know which subview is the one i'm
       // intrested in? (i.e the one that i want to manipulate?)
@@ -189,7 +196,6 @@ class BlueBoxTestView: UIView {
       
       if (index == 0){
         let parentView = self.testView!;
-        self.reactSubview = subview;
         
         // 1) i want to remove all layout info calc. by RN/yoga. in other words, i want to "reset" it.
         // But i'm not sure how to properly do it, so i'm just trying some stuff.
@@ -240,6 +246,7 @@ class BlueBoxTestView: UIView {
         // but i'm not sure that this is the correct way to do it...
         subview.removeFromSuperview();
         self.modalVC.reactView = subview;
+        self.reactModalContent = subview;
       };
     };
   };
@@ -402,7 +409,20 @@ class BlueBoxTestView: UIView {
     };
     
     rootVC.present(self.modalVC, animated: true, completion: {});
+    self.isPresented = true;
+  };
+  
+  func notifyForBoundsChange(newBounds: CGRect){
+    guard (self.isPresented),
+      let bridge       = self.bridge,
+      let reactSubview = self.reactModalContent
+    else {
+      print("BlueBoxTestView, notifyForBoundsChange: guard check failed");
+      return;
+    };
     
+    bridge.uiManager.setSize(newBounds.size, for: reactSubview);
+    //self notifyForOrientationChange
   };
 };
 
@@ -410,11 +430,25 @@ class BlueBoxTestView: UIView {
 // hold a RN view as it's subview
 fileprivate class ContainerViewController: UIViewController {
   
+  var lastViewFrame: CGRect?;
+  var boundsDidChangeBlock: ((CGRect) -> Void)?;
+  
   private var _reactView: UIView?;
   var reactView: UIView? {
     set {
       guard let nextView = newValue else { return };
       //let prevView = self._reactView;
+      
+      // 1) How do we make the reactView fill the available space?
+      // 1.1) I want the react subview to fill the entire modal's width and height, we can do that by updating
+      // the frame, but it's children will not be aware of the size change and will still follow the values
+      // given by RN/yoga.
+      // 1.2) the ff did not work:
+      // nextView.frame = self.view.frame;
+      // nextView.setNeedsLayout();
+      // nextView.layoutIfNeeded();
+      // nextView.layoutSubviews();
+      // 1.3) Apparaently, you can use brideg.uiManager to manipulate a react subview!
       
       self.view.insertSubview(nextView, at: 0);
       self._reactView = nextView;
@@ -438,5 +472,28 @@ fileprivate class ContainerViewController: UIViewController {
       
       return view;
     }();
+    
+    if let boundsDidChangeBlock = self.boundsDidChangeBlock {
+      boundsDidChangeBlock(self.view.bounds);
+    };
+  };
+  
+  override func viewDidLayoutSubviews(){
+    super.viewDidLayoutSubviews();
+    
+    guard let boundsDidChangeBlock = self.boundsDidChangeBlock else {
+      print("ContainerViewController, viewDidLayoutSubviews: guard check failed");
+      return;
+    };
+    
+    let didChangeViewFrame: Bool = !(
+      lastViewFrame?.equalTo(self.view.frame) ?? false
+    );
+    
+    if didChangeViewFrame {
+      print("ContainerViewController, viewDidLayoutSubviews: updating bounds: \(self.view.bounds)");
+      boundsDidChangeBlock(self.view.bounds);
+      self.lastViewFrame = self.view.frame;
+    };
   };
 };

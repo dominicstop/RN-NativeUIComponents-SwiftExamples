@@ -6,6 +6,7 @@
 //#import <React/RCTBridgeModule.h>
 #import <React/RCTViewManager.h>
 #import <React/RCTBridgeModule.h>
+#import <React/RCTUIManager.h>
 //#import <React/RCTDevLoadingView.h>
 #import <React/UIView+React.h>
 #import <React/RCTTextView.h>

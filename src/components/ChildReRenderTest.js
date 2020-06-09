@@ -41,12 +41,17 @@ export class BlueBoxTestView extends React.PureComponent {
           {`child #1 - ${counter}`}
         </Text>
         <View style={{position: 'absolute'}}>
-          <Text>
-            {`Child #2 - 1: ${counter}`}
-          </Text>
-          <Text> Child #2 - 2 - this view is styled to </Text>
-          <Text> Child #2 - 3 - be "postion: absolute" </Text>
-          <Text> Child #2 - 4 - appears inside a modal </Text>
+          <View style={{ flex: 1, left: 0, top: 0 }}>
+            <Text>
+              {`Child #2 - 1: ${counter}`}
+            </Text>
+            <Text> Child #2 - 2 - this view is styled to </Text>
+            <Text> Child #2 - 3 - be "postion: absolute" </Text>
+            <Text> Child #2 - 4 - appears inside a modal </Text>
+            <Text style={{flex: 1, backgroundColor: 'pink'}}>
+              {'This will fill the screen'}
+            </Text>
+          </View>
         </View>
         
       </NativeBlueBoxTestView>
