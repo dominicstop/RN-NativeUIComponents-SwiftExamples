@@ -3,15 +3,67 @@ import { StyleSheet, View, Text } from 'react-native';
 
 import { UIButton          } from 'app/src/components_native/UIButton';
 import { UIPageView        } from 'app/src/components_native/UIPageView';
-import { RedBoxTestView    } from 'app/src/components_native/RedBoxTestView';
 import { ChildTestView     } from 'app/src/components_native/ChildTestView';
+import { RedBoxTestView    } from 'app/src/components_native/RedBoxTestView';
+import { BlueBoxTestView   } from 'app/src/components_native/BlueBoxTestView';
 import { ExampleUIPageView } from 'app/src/components_native/ExampleUIPageView';
-import { UIPageViewTest1   } from 'app/src/components/UIPageViewTest1';
-import { BlueBoxTestView } from 'app/src/components/ChildReRenderTest';
+import { ModalView } from 'app/src/components_native/ModalView';
+
+import { UIPageViewTest1 } from 'app/src/components/UIPageViewTest1';
 
 export default class App extends React.Component {
+
+  componentDidMount(){
+    setTimeout(() => {
+      this.modal1.setVisibilty(true);
+    }, 2000);
+
+    setTimeout(() => {
+      this.modal2.setVisibilty(true);
+    }, 4000);
+
+    setTimeout(() => {
+      this.modal2.setVisibilty(false);
+    }, 6000);
+
+    setTimeout(() => {
+      this.modal2.setVisibilty(false);
+    }, 8000);
+
+    setTimeout(() => {
+      this.modal1.setVisibilty(false);
+    }, 10000);
+
+
+    setTimeout(() => {
+      this.modal1.setVisibilty(true);
+    }, 12000);
+
+    setTimeout(() => {
+      this.modal2.setVisibilty(true);
+    }, 14000);
+
+    setTimeout(() => {
+      this.modal2.setVisibilty(false);
+    }, 16000);
+
+    setTimeout(() => {
+      this.modal1.setVisibilty(false);
+    }, 18000);
+  };
+
   render(){
     
+    return(
+      <View>
+        <ModalView ref={r => this.modal1 = r}>
+          <Text>Hello 1</Text>
+          <ModalView ref={r => this.modal2 = r}>
+            <Text>Hello 2</Text>
+          </ModalView>
+        </ModalView>
+      </View>
+    );
     return(
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <BlueBoxTestView
@@ -28,9 +80,6 @@ export default class App extends React.Component {
         <UIPageViewTest1/>
       </View>
     );
-  };
-
-  _mrender(){
     return (
       <View style={styles.container}>
         <RedBoxTestView
@@ -51,7 +100,7 @@ export default class App extends React.Component {
       </View>
     );
   };
-}
+};
 
 const styles = StyleSheet.create({
   container: {

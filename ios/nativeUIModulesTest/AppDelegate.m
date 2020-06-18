@@ -49,10 +49,13 @@
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge moduleName:@"main" initialProperties:nil];
   rootView.backgroundColor = [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1];
 
-  UIViewController *rootViewController = [UINavigationController new];
-  rootViewController.view = rootView;
+  UIViewController *reactVC = [UIViewController new];
+  reactVC.view = rootView;
   
-  self.window.rootViewController = rootViewController;
+  UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController: reactVC];
+  [rootNavigationController setNavigationBarHidden:YES animated:NO];
+  
+  self.window.rootViewController = rootNavigationController;
   [self.window makeKeyAndVisible];
 
   return bridge;

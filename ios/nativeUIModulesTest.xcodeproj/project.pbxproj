@@ -27,6 +27,11 @@
 		880EC3222479124300944AE6 /* RCTUIButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3212479124300944AE6 /* RCTUIButtonManager.swift */; };
 		880EC32724796D1800944AE6 /* RCTUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC32624796D1800944AE6 /* RCTUIButton.swift */; };
 		880EC32A24796E1E00944AE6 /* RCTUIButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC32924796E1E00944AE6 /* RCTUIButtonManager.m */; };
+		8810BEC3248F557C001477AE /* RCTModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810BEC2248F557C001477AE /* RCTModalView.swift */; };
+		8810BEC5248F559E001477AE /* RCTModalViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810BEC4248F559E001477AE /* RCTModalViewManager.swift */; };
+		8810BEC7248F55BA001477AE /* RCTModalViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8810BEC6248F55BA001477AE /* RCTModalViewManager.m */; };
+		8810BEC9248F55E0001477AE /* RCTModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810BEC8248F55E0001477AE /* RCTModalViewController.swift */; };
+		881CB91D24997F0000F7E881 /* RCTModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881CB91C24997F0000F7E881 /* RCTModalViewDelegate.swift */; };
 		88532BE3247EF1F000FD6817 /* ExampleUIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE2247EF1F000FD6817 /* ExampleUIPageView.swift */; };
 		88532BE5247EF69A00FD6817 /* ExampleUIPageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */; };
 		88532BE7247EF72100FD6817 /* ExampleUIPageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE6247EF72100FD6817 /* ExampleUIPageViewManager.m */; };
@@ -64,6 +69,11 @@
 		880EC3212479124300944AE6 /* RCTUIButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTUIButtonManager.swift; sourceTree = "<group>"; };
 		880EC32624796D1800944AE6 /* RCTUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTUIButton.swift; sourceTree = "<group>"; };
 		880EC32924796E1E00944AE6 /* RCTUIButtonManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTUIButtonManager.m; sourceTree = "<group>"; };
+		8810BEC2248F557C001477AE /* RCTModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalView.swift; sourceTree = "<group>"; };
+		8810BEC4248F559E001477AE /* RCTModalViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalViewManager.swift; sourceTree = "<group>"; };
+		8810BEC6248F55BA001477AE /* RCTModalViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTModalViewManager.m; sourceTree = "<group>"; };
+		8810BEC8248F55E0001477AE /* RCTModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalViewController.swift; sourceTree = "<group>"; };
+		881CB91C24997F0000F7E881 /* RCTModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalViewDelegate.swift; sourceTree = "<group>"; };
 		88532BE2247EF1F000FD6817 /* ExampleUIPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageView.swift; sourceTree = "<group>"; };
 		88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageViewManager.swift; sourceTree = "<group>"; };
 		88532BE6247EF72100FD6817 /* ExampleUIPageViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUIPageViewManager.m; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 		880EC2FB247665A500944AE6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8810BEC1248F5527001477AE /* RCTModalView */,
 				88E13766248A6628007C69D5 /* BlueBoxTestView */,
 				88C10346247EA65C0063B7EF /* ExampleUIPageView */,
 				880EC31E247911F600944AE6 /* RCTUIButton */,
@@ -226,6 +237,18 @@
 				880EC32924796E1E00944AE6 /* RCTUIButtonManager.m */,
 			);
 			path = RCTUIButton;
+			sourceTree = "<group>";
+		};
+		8810BEC1248F5527001477AE /* RCTModalView */ = {
+			isa = PBXGroup;
+			children = (
+				8810BEC2248F557C001477AE /* RCTModalView.swift */,
+				8810BEC4248F559E001477AE /* RCTModalViewManager.swift */,
+				8810BEC6248F55BA001477AE /* RCTModalViewManager.m */,
+				8810BEC8248F55E0001477AE /* RCTModalViewController.swift */,
+				881CB91C24997F0000F7E881 /* RCTModalViewDelegate.swift */,
+			);
+			path = RCTModalView;
 			sourceTree = "<group>";
 		};
 		88C10346247EA65C0063B7EF /* ExampleUIPageView */ = {
@@ -386,13 +409,16 @@
 				88532BE5247EF69A00FD6817 /* ExampleUIPageViewManager.swift in Sources */,
 				880EC3152476E50100944AE6 /* UIPageViewManager.swift in Sources */,
 				88532BE3247EF1F000FD6817 /* ExampleUIPageView.swift in Sources */,
+				8810BEC7248F55BA001477AE /* RCTModalViewManager.m in Sources */,
 				880EC310247689B400944AE6 /* ChildTestViewManager.m in Sources */,
 				880EC30C247688DD00944AE6 /* ChildTestView.swift in Sources */,
+				8810BEC5248F559E001477AE /* RCTModalViewManager.swift in Sources */,
 				880EC3062476684500944AE6 /* RedBoxTestViewManager.swift in Sources */,
 				880EC3132476E43800944AE6 /* UIPageViewController.swift in Sources */,
 				880EC304247666A400944AE6 /* RedBoxTestView.swift in Sources */,
 				880EC31D2476E80800944AE6 /* UIPageViewManager.m in Sources */,
 				88C10348247EA77D0063B7EF /* ExampleUIPageViewController.swift in Sources */,
+				881CB91D24997F0000F7E881 /* RCTModalViewDelegate.swift in Sources */,
 				880EC3172476E54D00944AE6 /* UIPageView.swift in Sources */,
 				88532BE7247EF72100FD6817 /* ExampleUIPageViewManager.m in Sources */,
 				880EC30E2476895000944AE6 /* ChildTestViewManager.swift in Sources */,
@@ -403,7 +429,9 @@
 				880EC3222479124300944AE6 /* RCTUIButtonManager.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				88E1376C248A683E007C69D5 /* BlueBoxTestiewManager.m in Sources */,
+				8810BEC9248F55E0001477AE /* RCTModalViewController.swift in Sources */,
 				88E13768248A66FC007C69D5 /* BlueBoxTestView.swift in Sources */,
+				8810BEC3248F557C001477AE /* RCTModalView.swift in Sources */,
 				880EC32724796D1800944AE6 /* RCTUIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
