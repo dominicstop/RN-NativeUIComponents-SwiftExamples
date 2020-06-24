@@ -24,7 +24,10 @@ class RCTModalViewController: UIViewController {
   var reactView: UIView? {
     didSet {
       guard let nextView = reactView else { return };
-      self.view.insertSubview(nextView, at: 0);
+      
+      if oldValue?.reactTag != nextView.reactTag {
+        self.view.insertSubview(nextView, at: 0);
+      };
     }
   };
   
@@ -49,6 +52,7 @@ class RCTModalViewController: UIViewController {
   
   override func viewDidLayoutSubviews(){
     super.viewDidLayoutSubviews();
+    print("ContainerViewController, viewDidLayoutSubviews");
     
     guard let boundsDidChangeBlock = self.boundsDidChangeBlock else {
       print("ContainerViewController, viewDidLayoutSubviews: guard check failed");

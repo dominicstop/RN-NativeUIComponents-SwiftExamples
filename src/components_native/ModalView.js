@@ -21,6 +21,7 @@ const COMMAND_KEYS = {
   requestModalPresentation: 'requestModalPresentation'
 };
 
+
 export class ModalView extends React.PureComponent {
   static proptypes = {
     onModalShow          : Proptypes.func,
@@ -69,9 +70,6 @@ export class ModalView extends React.PureComponent {
         [requestID, visible]
       );
 
-      console.log(`New RequestID: ${requestID}` );
-
-
       const success = await new Promise((resolve, reject) => {
         this.requestMap[requestID] = { resolve, reject };
       });
@@ -111,12 +109,6 @@ export class ModalView extends React.PureComponent {
 
     const promise = this.requestMap[requestID];
     if(!promise) return;
-
-    
-    console.log("_handleOnRequestResult");
-    console.log(`requestID: ${requestID}`);
-    console.log(`success: ${success}`);
-    console.log(nativeEvent);
 
     try {
       (success? promise.resolve : promise.reject)(success);

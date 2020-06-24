@@ -104,7 +104,9 @@ class RCTModalView: UIView {
     super.insertReactSubview(subview, at: atIndex);
     print("RCTModalView, insertReactSubview");
     
-    guard self.reactSubview == nil else {
+    guard (self.reactSubview == nil),
+      let bridge = self.bridge
+    else {
       print("RCTModalView, insertReactSubview: Modal view can only have one subview");
       return;
     };
@@ -115,6 +117,9 @@ class RCTModalView: UIView {
       size  : subview.frame.size
     );
     
+    let newBounds = modalVC.view.bounds;
+    bridge.uiManager.setSize(newBounds.size, for: subview);
+    
     self.reactSubview = subview;
     self.touchHandler.attach(to: subview);
   };
@@ -123,14 +128,14 @@ class RCTModalView: UIView {
     super.removeReactSubview(subview);
     print("RCTModalView, removeReactSubview");
     
-    guard self.reactSubview != subview else {
+    guard self.reactSubview == subview else {
       print("RCTModalView, removeReactSubview: Cannot remove view other than modal view");
       return;
     };
     
     self.reactSubview = nil;
+    self.modalVC.reactView = nil;
     self.touchHandler.detach(from: subview);
-    
   };
   
   // --------------------------------------
@@ -194,16 +199,12 @@ class RCTModalView: UIView {
     
     self.isPresented = true;
     
-    //let presentedViewController =
-    //  rootVC.presentedViewController ?? rootVC;
-    
     var topmostVC = rootVC;
     while topmostVC.presentedViewController != nil {
       if let parent = topmostVC.presentedViewController {
         topmostVC = parent;
       };
     };
-    
     
     topmostVC.present(self.modalVC, animated: true) {
       self.onModalShow?([:]);
@@ -224,6 +225,10 @@ class RCTModalView: UIView {
     self.modalVC.dismiss(animated: true){
       self.onModalDismiss?([:]);
       completion?(true);
+      
+      if let reactSubview = self.modalVC.reactView {
+        self.removeReactSubview(reactSubview);
+      };
     };
   };
 };
