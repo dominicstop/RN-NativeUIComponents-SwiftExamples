@@ -52,10 +52,10 @@
   UIViewController *reactVC = [UIViewController new];
   reactVC.view = rootView;
   
-  UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController: reactVC];
-  [rootNavigationController setNavigationBarHidden:YES animated:NO];
+  //UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController: reactVC];
+  //[rootNavigationController setNavigationBarHidden:YES animated:NO];
   
-  self.window.rootViewController = rootNavigationController;
+  self.window.rootViewController = reactVC;
   [self.window makeKeyAndVisible];
 
   return bridge;

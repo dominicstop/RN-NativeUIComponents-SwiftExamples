@@ -8,7 +8,13 @@
 
 import Foundation
 
+typealias completionResult = ((Bool) -> ())?;
+
 class RCTModalView: UIView {
+  
+  // ----------------
+  // MARK: Properties
+  // ----------------
   
   weak var bridge  : RCTBridge?;
   weak var delegate: RCTModalViewDelegate?;
@@ -19,8 +25,18 @@ class RCTModalView: UIView {
   private var touchHandler: RCTTouchHandler!;
   private var reactSubview: UIView?;
   
-  @objc var onModalShow   : RCTDirectEventBlock?;
-  @objc var onModalDismiss: RCTDirectEventBlock?;
+  // -----------------------------
+  // MARK: Properties: React Props
+  // -----------------------------
+  
+  @objc var onModalShow    : RCTDirectEventBlock?;
+  @objc var onModalDismiss : RCTDirectEventBlock?;
+  @objc var onRequestResult: RCTDirectEventBlock?;
+  
+  // control modal present/dismiss by mounting/unmounting the react subview
+  // * true : the modal is presented/dismissed when the view is mounted/unmounted
+  // * false: the modal is presented/dismissed by calling the functions from js
+  @objc var presentViaMount: Bool = false;
   
   @objc var isModalInPresentation: Bool = false {
     willSet {
@@ -30,11 +46,10 @@ class RCTModalView: UIView {
       };
     }
   };
-
-  required init?(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder);
-    fatalError("Not implemented");
-  };
+  
+  // -------------------------------
+  // MARK: Swift/UIKit Related Logic
+  // -------------------------------
   
   init(bridge: RCTBridge) {
     super.init(frame: CGRect());
@@ -52,107 +67,107 @@ class RCTModalView: UIView {
     }();
   };
   
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder);
+    fatalError("Not implemented");
+  };
+  
   override func layoutSubviews() {
-    let reactSubviews = self.reactSubviews() as [UIView];
-    for (index, subview) in reactSubviews.enumerated() {
-      if index == 0 {
-        
-        subview.removeFromSuperview();
-        subview.frame = CGRect(
-          origin: CGPoint(x: 0, y: 0),
-          size  : subview.frame.size
-        );
-        
-        self.touchHandler.attach(to: subview);
-        
-        self.reactSubview      = subview;
-        self.modalVC.reactView = subview;
-      };
+    super.layoutSubviews();
+    print("RCTModalView, layoutSubviews");
+    guard let reactSubview = self.reactSubview else { return };
+    
+    if !reactSubview.isDescendant(of: self.modalVC.view) {
+      self.modalVC.reactView = reactSubview;
     };
   };
   
+  override func didMoveToWindow() {
+    super.didMoveToWindow();
+    if self.presentViaMount {
+      self.dismissModal();
+    };
+  };
+  
+  override func didMoveToSuperview() {
+    super.didMoveToSuperview();
+    if self.presentViaMount {
+      self.presentModal();
+    };
+  };
+  
+  // ----------------------
+  // MARK: RN Related Logic
+  // ----------------------
+  
   override func insertReactSubview(_ subview: UIView!, at atIndex: Int) {
     super.insertReactSubview(subview, at: atIndex);
+    print("RCTModalView, insertReactSubview");
     
     guard self.reactSubview == nil else {
       print("RCTModalView, insertReactSubview: Modal view can only have one subview");
       return;
     };
     
+    subview.removeFromSuperview();
+    subview.frame = CGRect(
+      origin: CGPoint(x: 0, y: 0),
+      size  : subview.frame.size
+    );
     
     self.reactSubview = subview;
+    self.touchHandler.attach(to: subview);
   };
   
   override func removeReactSubview(_ subview: UIView!) {
     super.removeReactSubview(subview);
     print("RCTModalView, removeReactSubview");
     
-    guard self.reactSubview == subview else {
+    guard self.reactSubview != subview else {
       print("RCTModalView, removeReactSubview: Cannot remove view other than modal view");
       return;
     };
     
-    guard (self.isPresented && self.superview != nil),
-      let _ = UIApplication.shared.keyWindow?.rootViewController
-    else { return };
-    
+    self.reactSubview = nil;
+    self.touchHandler.detach(from: subview);
     
   };
   
-  override func didMoveToWindow() {
-    super.didMoveToWindow();
+  // --------------------------------------
+  // MARK: Public Functions for ViewManager
+  // --------------------------------------
+  
+  public func requestModalPresentation(
+    _ requestID : NSNumber,
+    _ visibility: Bool    ,
+      completion: completionResult = nil
+  ){
+    var params: Dictionary<String, Any> = [
+      "requestID" : requestID ,
+      "visibility": visibility,
+    ];
     
-    #if DEBUG
-    print("\n\nRCTModalView, didMoveToWindow, isPresented: \(self.isPresented)");
-    print("RCTModalView, didMoveToWindow, window: \(self.window != nil)");
-    #endif
-    
-    guard self.delegate != nil else {
-      print("RCTModalView, didMoveToWindow: guard check failed");
-      return;
-    };
-    
-    let hasWindow: Bool = (self.window != nil);
-    if !hasWindow && self.isPresented {
-      print("RCTModalView, didMoveToWindow: dismiss modal");
-      self.modalVC.dismiss(animated: true){
+    if visibility {
+      self.presentModal(){ success in
+        params["success"] = success;
+        completion?(success);
         
+        self.onRequestResult?(params);
       };
-    };
-  };
-  
-  override func didMoveToSuperview() {
-    super.didMoveToSuperview();
-    
-    #if DEBUG
-    print("\n\nRCTModalView, didMoveToSuperview, isPresented: \(self.isPresented)");
-    print("RCTModalView, didMoveToSuperview, window: \(self.window != nil)");
-    #endif
-    
-    guard
-      let rootVC        = UIApplication.shared.keyWindow?.rootViewController,
-      let navController = rootVC as? UINavigationController,
-      let _      = self.delegate
-    else {
-      print("RCTModalView, didMoveToSuperview: guard check failed");
-      return;
-    };
-    
-    let hasWindow: Bool = (self.window != nil);
-    if hasWindow && !self.isPresented {
-      self.isPresented = true;
-      navController.modalPresentationStyle = .pageSheet;
       
-      if let presentedVC = navController.presentedViewController  {
-        presentedVC.present(self.modalVC, animated: true);
+    } else {
+      self.dismissModal(){ success in
+        params["success"] = success;
+        completion?(success);
         
-      } else {
-        navController.present(self.modalVC, animated: true);
+        self.onRequestResult?(params);
       };
     };
   };
   
-  // MARK: Privste Functions
+  // -----------------------
+  // MARK: Private Functions
+  // -----------------------
   
   private func notifyForBoundsChange(_ newBounds: CGRect){
     guard (self.isPresented),
@@ -166,9 +181,49 @@ class RCTModalView: UIView {
     bridge.uiManager.setSize(newBounds.size, for: reactSubview);
   };
   
-  private func dismissModalViewController(){
-    guard !self.isPresented else { return };
+  private func presentModal(completion: completionResult = nil) {
+    let hasWindow: Bool = (self.window != nil);
     
-    //self.delegate?.dismissModalView(modalView: self, viewController: self.modalVC);
+    guard (hasWindow && !self.isPresented),
+      let rootVC = UIApplication.shared.keyWindow?.rootViewController
+    else {
+      print("RCTModalView, presentModal: guard check failed");
+      completion?(false);
+      return;
+    };
+    
+    self.isPresented = true;
+    
+    //let presentedViewController =
+    //  rootVC.presentedViewController ?? rootVC;
+    
+    var topmostVC = rootVC;
+    while topmostVC.presentedViewController != nil {
+      if let parent = topmostVC.presentedViewController {
+        topmostVC = parent;
+      };
+    };
+    
+    
+    topmostVC.present(self.modalVC, animated: true) {
+      self.onModalShow?([:]);
+      completion?(true);
+    };
+  };
+  
+  private func dismissModal(completion: completionResult = nil) {
+    let hasWindow: Bool = (self.window != nil);
+    
+    guard hasWindow && self.isPresented else {
+      print("RCTModalView, dismissModal failed: hasWindow: \(hasWindow) - isPresented \(self.isPresented)");
+      completion?(false);
+      return;
+    };
+    
+    self.isPresented = false;
+    self.modalVC.dismiss(animated: true){
+      self.onModalDismiss?([:]);
+      completion?(true);
+    };
   };
 };

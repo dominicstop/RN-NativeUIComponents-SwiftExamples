@@ -21,8 +21,24 @@ class RCTModalViewManager: RCTViewManager {
     
     return view;
   };
+  
+  @objc func requestModalPresentation(_ node: NSNumber, requestID: NSNumber, visibility: Bool){
+    DispatchQueue.main.async {
+      guard
+        let component = self.bridge.uiManager.view(forReactTag: node),
+        let modalView = component as? RCTModalView
+      else {
+        print("RCTModalViewManager, requestModalOpen failed");
+        return;
+      };
+      
+      modalView.requestModalPresentation(requestID, visibility);
+    };
+  };
 };
 
+
+// WIP: not finished yet
 extension RCTModalViewManager: RCTModalViewDelegate {
   func presentModalView(modalView: RCTModalView, viewController: RCTModalViewController) {
     

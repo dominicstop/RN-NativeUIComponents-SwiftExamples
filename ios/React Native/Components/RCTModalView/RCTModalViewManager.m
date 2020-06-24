@@ -3,8 +3,26 @@
  
 @interface RCT_EXTERN_MODULE(RCTModalViewManager, RCTViewManager)
 
-RCT_EXPORT_VIEW_PROPERTY(onModalShow   , RCTDirectEventBlock);
-RCT_EXPORT_VIEW_PROPERTY(onModalDismiss, RCTDirectEventBlock);
+// ------------------------------
+// MARK: Properties - React Props
+// ------------------------------
+                         
+RCT_EXPORT_VIEW_PROPERTY(onModalShow    , RCTDirectEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onModalDismiss , RCTDirectEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onRequestResult, RCTDirectEventBlock);
+
+RCT_EXPORT_VIEW_PROPERTY(presentViaMount      , BOOL);
+RCT_EXPORT_VIEW_PROPERTY(isModalInPresentation, BOOL);
+
+// --------------------------
+// MARK:
+// --------------------------
+
+RCT_EXTERN_METHOD(requestModalPresentation
+            : (nonnull NSNumber *)node
+  requestID : (nonnull NSNumber *)requestID
+  visibility: (nonnull BOOL     *)visibility
+);
 
 @end
 
