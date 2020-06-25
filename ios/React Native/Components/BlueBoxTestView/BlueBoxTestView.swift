@@ -403,7 +403,7 @@ class BlueBoxTestView: UIView {
   @objc func myButtonClicked(){
     print("BlueBoxTestView: myButtonClicked ");
     
-    guard let rootVC = UIApplication.shared.keyWindow?.rootViewController else {
+    guard let rootVC = UIWindow.key?.rootViewController else {
       print("BlueBoxTestView - myButtonClicked: can't find rootViewController");
       return;
     };

@@ -198,7 +198,7 @@ class RCTModalView: UIView {
     let hasWindow: Bool = (self.window != nil);
     
     guard (hasWindow && !self.isPresented),
-      let rootVC = UIApplication.shared.keyWindow?.rootViewController
+      let rootVC = UIWindow.key?.rootViewController
     else {
       print("RCTModalView, presentModal: guard check failed");
       completion?(false);
