@@ -4,6 +4,9 @@ import { requireNativeComponent, View, Text } from 'react-native';
 const NativeBlueBoxTestView = requireNativeComponent('BlueBoxTestView');
 
 export class BlueBoxTestView extends React.PureComponent {
+  static proptypes = {
+  };
+
   constructor(props){
     super(props);
 

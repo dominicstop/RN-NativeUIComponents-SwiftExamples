@@ -102,7 +102,6 @@ class RCTModalView: UIView {
   
   override func insertReactSubview(_ subview: UIView!, at atIndex: Int) {
     super.insertReactSubview(subview, at: atIndex);
-    print("RCTModalView, insertReactSubview");
     
     guard (self.reactSubview == nil),
       let bridge = self.bridge
@@ -110,6 +109,8 @@ class RCTModalView: UIView {
       print("RCTModalView, insertReactSubview: Modal view can only have one subview");
       return;
     };
+    
+    print("RCTModalView, insertReactSubview");
     
     subview.removeFromSuperview();
     subview.frame = CGRect(
@@ -126,12 +127,18 @@ class RCTModalView: UIView {
   
   override func removeReactSubview(_ subview: UIView!) {
     super.removeReactSubview(subview);
-    print("RCTModalView, removeReactSubview");
     
     guard self.reactSubview == subview else {
       print("RCTModalView, removeReactSubview: Cannot remove view other than modal view");
       return;
     };
+    
+    guard !self.isPresented else {
+      print("RCTModalView, removeReactSubview: Cannot remove view while it's being presented");
+      return;
+    };
+    
+    print("RCTModalView, removeReactSubview");
     
     self.reactSubview = nil;
     self.modalVC.reactView = nil;
@@ -183,6 +190,7 @@ class RCTModalView: UIView {
       return;
     };
     
+    print("RCTModalView, notifyForBoundsChange");
     bridge.uiManager.setSize(newBounds.size, for: reactSubview);
   };
   
@@ -198,6 +206,7 @@ class RCTModalView: UIView {
     };
     
     self.isPresented = true;
+    print("RCTModalView, presentModal: Start");
     
     var topmostVC = rootVC;
     while topmostVC.presentedViewController != nil {
@@ -209,6 +218,8 @@ class RCTModalView: UIView {
     topmostVC.present(self.modalVC, animated: true) {
       self.onModalShow?([:]);
       completion?(true);
+      
+      print("RCTModalView, presentModal: Finished");
     };
   };
   
@@ -222,11 +233,16 @@ class RCTModalView: UIView {
     };
     
     self.isPresented = false;
+    print("RCTModalView, dismissModal: Start");
+    
     self.modalVC.dismiss(animated: true){
       self.onModalDismiss?([:]);
       completion?(true);
       
+      print("RCTModalView, dismissModal: Finished");
+      
       if let reactSubview = self.modalVC.reactView {
+        print("RCTModalView, dismissModal: Removing React Subview");
         self.removeReactSubview(reactSubview);
       };
     };

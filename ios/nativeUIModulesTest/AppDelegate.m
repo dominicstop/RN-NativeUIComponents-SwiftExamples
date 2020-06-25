@@ -52,10 +52,13 @@
   UIViewController *reactVC = [UIViewController new];
   reactVC.view = rootView;
   
-  //UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController: reactVC];
-  //[rootNavigationController setNavigationBarHidden:YES animated:NO];
+  //[reactVC setModalPresentationStyle: UIModalPresentationOverCurrentCoxntext];
+  //[reactVC setModalTransitionStyle  : UIModalTransitionStyleCoverVertical  ];
   
-  self.window.rootViewController = reactVC;
+  UINavigationController *rootNavigationController = [[UINavigationController alloc] initWithRootViewController: reactVC];
+  [rootNavigationController setNavigationBarHidden:YES animated:NO];
+  
+  self.window.rootViewController = rootNavigationController;
   [self.window makeKeyAndVisible];
 
   return bridge;
