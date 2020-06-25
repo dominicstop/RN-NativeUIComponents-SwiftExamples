@@ -7,44 +7,69 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0731D3B824204D62009CAE85 /* Expo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0731D3B524204D62009CAE85 /* Expo.plist */; };
+		00E356F31AD99517003FC87E /* nativeUIModulesTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* nativeUIModulesTestTests.m */; };
+		1191E8EDDBCF7B15DF5ED79A /* libPods-nativeUIModulesTest-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39D5B01BF4B1C7193B0B49BB /* libPods-nativeUIModulesTest-tvOSTests.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		3DE4DAD41476765101945408 /* libPods-nativeUIModulesTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D43FF9D506E70904424FA7E9 /* libPods-nativeUIModulesTest.a */; };
-		880EC304247666A400944AE6 /* RedBoxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC303247666A400944AE6 /* RedBoxTestView.swift */; };
-		880EC3062476684500944AE6 /* RedBoxTestViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3052476684500944AE6 /* RedBoxTestViewManager.swift */; };
-		880EC308247668F200944AE6 /* RedBoxTestViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC307247668F200944AE6 /* RedBoxTestViewManager.m */; };
-		880EC30C247688DD00944AE6 /* ChildTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC30B247688DD00944AE6 /* ChildTestView.swift */; };
-		880EC30E2476895000944AE6 /* ChildTestViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC30D2476895000944AE6 /* ChildTestViewManager.swift */; };
-		880EC310247689B400944AE6 /* ChildTestViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC30F247689B400944AE6 /* ChildTestViewManager.m */; };
-		880EC3132476E43800944AE6 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3122476E43800944AE6 /* UIPageViewController.swift */; };
-		880EC3152476E50100944AE6 /* UIPageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3142476E50100944AE6 /* UIPageViewManager.swift */; };
-		880EC3172476E54D00944AE6 /* UIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3162476E54D00944AE6 /* UIPageView.swift */; };
-		880EC31B2476E6E800944AE6 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC31A2476E6E800944AE6 /* UIView+Helpers.swift */; };
-		880EC31D2476E80800944AE6 /* UIPageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC31C2476E80800944AE6 /* UIPageViewManager.m */; };
-		880EC3222479124300944AE6 /* RCTUIButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC3212479124300944AE6 /* RCTUIButtonManager.swift */; };
-		880EC32724796D1800944AE6 /* RCTUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880EC32624796D1800944AE6 /* RCTUIButton.swift */; };
-		880EC32A24796E1E00944AE6 /* RCTUIButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 880EC32924796E1E00944AE6 /* RCTUIButtonManager.m */; };
-		8810BEC3248F557C001477AE /* RCTModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810BEC2248F557C001477AE /* RCTModalView.swift */; };
-		8810BEC5248F559E001477AE /* RCTModalViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810BEC4248F559E001477AE /* RCTModalViewManager.swift */; };
-		8810BEC7248F55BA001477AE /* RCTModalViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8810BEC6248F55BA001477AE /* RCTModalViewManager.m */; };
-		8810BEC9248F55E0001477AE /* RCTModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8810BEC8248F55E0001477AE /* RCTModalViewController.swift */; };
-		881CB91D24997F0000F7E881 /* RCTModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881CB91C24997F0000F7E881 /* RCTModalViewDelegate.swift */; };
-		88532BE3247EF1F000FD6817 /* ExampleUIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE2247EF1F000FD6817 /* ExampleUIPageView.swift */; };
-		88532BE5247EF69A00FD6817 /* ExampleUIPageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */; };
-		88532BE7247EF72100FD6817 /* ExampleUIPageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88532BE6247EF72100FD6817 /* ExampleUIPageViewManager.m */; };
-		88C10348247EA77D0063B7EF /* ExampleUIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C10347247EA77D0063B7EF /* ExampleUIPageViewController.swift */; };
-		88E13768248A66FC007C69D5 /* BlueBoxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E13767248A66FC007C69D5 /* BlueBoxTestView.swift */; };
-		88E1376A248A67D9007C69D5 /* BlueBoxTestiewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E13769248A67D9007C69D5 /* BlueBoxTestiewManager.swift */; };
-		88E1376C248A683E007C69D5 /* BlueBoxTestiewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88E1376B248A683E007C69D5 /* BlueBoxTestiewManager.m */; };
-		99EC63CFB4B549BBAF093D10 /* SplashScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */; };
+		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2DCD954D1E0B4F2C00145EB5 /* nativeUIModulesTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* nativeUIModulesTestTests.m */; };
+		2FD753ED1CE13D8F61B4A7DA /* libPods-nativeUIModulesTest-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BB6F442D38AE6FD175E8853 /* libPods-nativeUIModulesTest-tvOS.a */; };
+		88C5427D24A5065F00DCDF15 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5427C24A5065F00DCDF15 /* UIView+Helpers.swift */; };
+		88C542AF24A507B100DCDF15 /* RCTUIButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429024A507B000DCDF15 /* RCTUIButtonManager.m */; };
+		88C542B024A507B100DCDF15 /* RCTUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429124A507B000DCDF15 /* RCTUIButton.swift */; };
+		88C542B124A507B100DCDF15 /* RCTUIButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429224A507B000DCDF15 /* RCTUIButtonManager.swift */; };
+		88C542B224A507B100DCDF15 /* RCTModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429424A507B000DCDF15 /* RCTModalView.swift */; };
+		88C542B324A507B100DCDF15 /* RCTModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429524A507B000DCDF15 /* RCTModalViewDelegate.swift */; };
+		88C542B424A507B100DCDF15 /* RCTModalViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429624A507B000DCDF15 /* RCTModalViewManager.swift */; };
+		88C542B524A507B100DCDF15 /* RCTModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429724A507B000DCDF15 /* RCTModalViewController.swift */; };
+		88C542B624A507B100DCDF15 /* RCTModalViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429824A507B000DCDF15 /* RCTModalViewManager.m */; };
+		88C542B724A507B100DCDF15 /* UIPageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429A24A507B000DCDF15 /* UIPageViewManager.m */; };
+		88C542B824A507B100DCDF15 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429B24A507B000DCDF15 /* UIPageViewController.swift */; };
+		88C542B924A507B100DCDF15 /* UIPageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429C24A507B000DCDF15 /* UIPageViewManager.swift */; };
+		88C542BA24A507B100DCDF15 /* UIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429D24A507B000DCDF15 /* UIPageView.swift */; };
+		88C542BB24A507B100DCDF15 /* RedBoxTestViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429F24A507B000DCDF15 /* RedBoxTestViewManager.m */; };
+		88C542BC24A507B100DCDF15 /* RedBoxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542A024A507B000DCDF15 /* RedBoxTestView.swift */; };
+		88C542BD24A507B100DCDF15 /* RedBoxTestViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542A124A507B000DCDF15 /* RedBoxTestViewManager.swift */; };
+		88C542BE24A507B100DCDF15 /* BlueBoxTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542A324A507B000DCDF15 /* BlueBoxTestView.swift */; };
+		88C542BF24A507B100DCDF15 /* BlueBoxTestiewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C542A424A507B000DCDF15 /* BlueBoxTestiewManager.m */; };
+		88C542C024A507B100DCDF15 /* BlueBoxTestiewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542A524A507B000DCDF15 /* BlueBoxTestiewManager.swift */; };
+		88C542C124A507B100DCDF15 /* ChildTestViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C542A724A507B100DCDF15 /* ChildTestViewManager.m */; };
+		88C542C224A507B100DCDF15 /* ChildTestViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542A824A507B100DCDF15 /* ChildTestViewManager.swift */; };
+		88C542C324A507B100DCDF15 /* ChildTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542A924A507B100DCDF15 /* ChildTestView.swift */; };
+		88C542C424A507B100DCDF15 /* ExampleUIPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542AB24A507B100DCDF15 /* ExampleUIPageView.swift */; };
+		88C542C524A507B100DCDF15 /* ExampleUIPageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542AC24A507B100DCDF15 /* ExampleUIPageViewManager.swift */; };
+		88C542C624A507B100DCDF15 /* ExampleUIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542AD24A507B100DCDF15 /* ExampleUIPageViewController.swift */; };
+		88C542C724A507B100DCDF15 /* ExampleUIPageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C542AE24A507B100DCDF15 /* ExampleUIPageViewManager.m */; };
+		95684F864F829B019DD99FC1 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2817C5DD7A577FAF7CA100F8 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */; };
+		EA553CC30EED0FE433FAF482 /* libPods-nativeUIModulesTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1634D85055DA79113034010 /* libPods-nativeUIModulesTest.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = nativeUIModulesTest;
+		};
+		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2D02E47A1E0B4A5D006451C7;
+			remoteInfo = "nativeUIModulesTest-tvOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
-		0731D3B524204D62009CAE85 /* Expo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Expo.plist; path = nativeUIModulesTest/Supporting/Expo.plist; sourceTree = "<group>"; };
+		00E356EE1AD99517003FC87E /* nativeUIModulesTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nativeUIModulesTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* nativeUIModulesTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nativeUIModulesTestTests.m; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* nativeUIModulesTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nativeUIModulesTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = nativeUIModulesTest/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = nativeUIModulesTest/AppDelegate.m; sourceTree = "<group>"; };
@@ -52,59 +77,109 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = nativeUIModulesTest/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = nativeUIModulesTest/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = nativeUIModulesTest/main.m; sourceTree = "<group>"; };
-		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B47C5AFCB8BDE514B7D1AC6 /* Pods-nativeUIModulesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.debug.xcconfig"; sourceTree = "<group>"; };
-		880EC2FF2476662700944AE6 /* nativeUIModulesTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "nativeUIModulesTest-Bridging-Header.h"; sourceTree = "<group>"; };
-		880EC303247666A400944AE6 /* RedBoxTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBoxTestView.swift; sourceTree = "<group>"; };
-		880EC3052476684500944AE6 /* RedBoxTestViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedBoxTestViewManager.swift; sourceTree = "<group>"; };
-		880EC307247668F200944AE6 /* RedBoxTestViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RedBoxTestViewManager.m; sourceTree = "<group>"; };
-		880EC30B247688DD00944AE6 /* ChildTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTestView.swift; sourceTree = "<group>"; };
-		880EC30D2476895000944AE6 /* ChildTestViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTestViewManager.swift; sourceTree = "<group>"; };
-		880EC30F247689B400944AE6 /* ChildTestViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildTestViewManager.m; sourceTree = "<group>"; };
-		880EC3122476E43800944AE6 /* UIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewController.swift; sourceTree = "<group>"; };
-		880EC3142476E50100944AE6 /* UIPageViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageViewManager.swift; sourceTree = "<group>"; };
-		880EC3162476E54D00944AE6 /* UIPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageView.swift; sourceTree = "<group>"; };
-		880EC31A2476E6E800944AE6 /* UIView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
-		880EC31C2476E80800944AE6 /* UIPageViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UIPageViewManager.m; sourceTree = "<group>"; };
-		880EC3212479124300944AE6 /* RCTUIButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTUIButtonManager.swift; sourceTree = "<group>"; };
-		880EC32624796D1800944AE6 /* RCTUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTUIButton.swift; sourceTree = "<group>"; };
-		880EC32924796E1E00944AE6 /* RCTUIButtonManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTUIButtonManager.m; sourceTree = "<group>"; };
-		8810BEC2248F557C001477AE /* RCTModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalView.swift; sourceTree = "<group>"; };
-		8810BEC4248F559E001477AE /* RCTModalViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalViewManager.swift; sourceTree = "<group>"; };
-		8810BEC6248F55BA001477AE /* RCTModalViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTModalViewManager.m; sourceTree = "<group>"; };
-		8810BEC8248F55E0001477AE /* RCTModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalViewController.swift; sourceTree = "<group>"; };
-		881CB91C24997F0000F7E881 /* RCTModalViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalViewDelegate.swift; sourceTree = "<group>"; };
-		88532BE2247EF1F000FD6817 /* ExampleUIPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageView.swift; sourceTree = "<group>"; };
-		88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageViewManager.swift; sourceTree = "<group>"; };
-		88532BE6247EF72100FD6817 /* ExampleUIPageViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExampleUIPageViewManager.m; sourceTree = "<group>"; };
-		88C10347247EA77D0063B7EF /* ExampleUIPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleUIPageViewController.swift; sourceTree = "<group>"; };
-		88E13767248A66FC007C69D5 /* BlueBoxTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueBoxTestView.swift; sourceTree = "<group>"; };
-		88E13769248A67D9007C69D5 /* BlueBoxTestiewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueBoxTestiewManager.swift; sourceTree = "<group>"; };
-		88E1376B248A683E007C69D5 /* BlueBoxTestiewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BlueBoxTestiewManager.m; sourceTree = "<group>"; };
-		8AC623DBF3A3E2CB072F81F2 /* Pods-nativeUIModulesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.release.xcconfig"; sourceTree = "<group>"; };
-		D43FF9D506E70904424FA7E9 /* libPods-nativeUIModulesTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SplashScreen.storyboard; path = nativeUIModulesTest/SplashScreen.storyboard; sourceTree = "<group>"; };
+		2817C5DD7A577FAF7CA100F8 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest-nativeUIModulesTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E47B1E0B4A5D006451C7 /* nativeUIModulesTest-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nativeUIModulesTest-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D02E4901E0B4A5D006451C7 /* nativeUIModulesTest-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nativeUIModulesTest-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		39D5B01BF4B1C7193B0B49BB /* libPods-nativeUIModulesTest-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		49E34FE62AEABC6914905F3D /* Pods-nativeUIModulesTest-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOSTests/Pods-nativeUIModulesTest-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E6C7F65B321A58C1874943E /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-nativeUIModulesTestTests/Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig"; sourceTree = "<group>"; };
+		84A21C8E9A61187B98EDBF98 /* Pods-nativeUIModulesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.debug.xcconfig"; sourceTree = "<group>"; };
+		88C5427C24A5065F00DCDF15 /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
+		88C5427E24A506A800DCDF15 /* nativeUIModulesTest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nativeUIModulesTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		88C5429024A507B000DCDF15 /* RCTUIButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTUIButtonManager.m; sourceTree = "<group>"; };
+		88C5429124A507B000DCDF15 /* RCTUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTUIButton.swift; sourceTree = "<group>"; };
+		88C5429224A507B000DCDF15 /* RCTUIButtonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTUIButtonManager.swift; sourceTree = "<group>"; };
+		88C5429424A507B000DCDF15 /* RCTModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalView.swift; sourceTree = "<group>"; };
+		88C5429524A507B000DCDF15 /* RCTModalViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewDelegate.swift; sourceTree = "<group>"; };
+		88C5429624A507B000DCDF15 /* RCTModalViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewManager.swift; sourceTree = "<group>"; };
+		88C5429724A507B000DCDF15 /* RCTModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewController.swift; sourceTree = "<group>"; };
+		88C5429824A507B000DCDF15 /* RCTModalViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTModalViewManager.m; sourceTree = "<group>"; };
+		88C5429A24A507B000DCDF15 /* UIPageViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPageViewManager.m; sourceTree = "<group>"; };
+		88C5429B24A507B000DCDF15 /* UIPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewController.swift; sourceTree = "<group>"; };
+		88C5429C24A507B000DCDF15 /* UIPageViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewManager.swift; sourceTree = "<group>"; };
+		88C5429D24A507B000DCDF15 /* UIPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageView.swift; sourceTree = "<group>"; };
+		88C5429F24A507B000DCDF15 /* RedBoxTestViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedBoxTestViewManager.m; sourceTree = "<group>"; };
+		88C542A024A507B000DCDF15 /* RedBoxTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedBoxTestView.swift; sourceTree = "<group>"; };
+		88C542A124A507B000DCDF15 /* RedBoxTestViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedBoxTestViewManager.swift; sourceTree = "<group>"; };
+		88C542A324A507B000DCDF15 /* BlueBoxTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueBoxTestView.swift; sourceTree = "<group>"; };
+		88C542A424A507B000DCDF15 /* BlueBoxTestiewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlueBoxTestiewManager.m; sourceTree = "<group>"; };
+		88C542A524A507B000DCDF15 /* BlueBoxTestiewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueBoxTestiewManager.swift; sourceTree = "<group>"; };
+		88C542A724A507B100DCDF15 /* ChildTestViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildTestViewManager.m; sourceTree = "<group>"; };
+		88C542A824A507B100DCDF15 /* ChildTestViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTestViewManager.swift; sourceTree = "<group>"; };
+		88C542A924A507B100DCDF15 /* ChildTestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChildTestView.swift; sourceTree = "<group>"; };
+		88C542AB24A507B100DCDF15 /* ExampleUIPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleUIPageView.swift; sourceTree = "<group>"; };
+		88C542AC24A507B100DCDF15 /* ExampleUIPageViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleUIPageViewManager.swift; sourceTree = "<group>"; };
+		88C542AD24A507B100DCDF15 /* ExampleUIPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleUIPageViewController.swift; sourceTree = "<group>"; };
+		88C542AE24A507B100DCDF15 /* ExampleUIPageViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleUIPageViewManager.m; sourceTree = "<group>"; };
+		8BB6F442D38AE6FD175E8853 /* libPods-nativeUIModulesTest-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		92C9CB678791A0E9F5041211 /* Pods-nativeUIModulesTest-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOS.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOS/Pods-nativeUIModulesTest-tvOS.release.xcconfig"; sourceTree = "<group>"; };
+		970DECD47A603573F0C1E226 /* Pods-nativeUIModulesTest-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOS/Pods-nativeUIModulesTest-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		A3A1DED573427AC39BE9F2B3 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-nativeUIModulesTestTests/Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC8C20785CAA33494EAC0206 /* Pods-nativeUIModulesTest-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOSTests/Pods-nativeUIModulesTest-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		D1634D85055DA79113034010 /* libPods-nativeUIModulesTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		FB8883C7C2695FAC52F4652C /* Pods-nativeUIModulesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95684F864F829B019DD99FC1 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DE4DAD41476765101945408 /* libPods-nativeUIModulesTest.a in Frameworks */,
+				EA553CC30EED0FE433FAF482 /* libPods-nativeUIModulesTest.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4781E0B4A5D006451C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FD753ED1CE13D8F61B4A7DA /* libPods-nativeUIModulesTest-tvOS.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48D1E0B4A5D006451C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1191E8EDDBCF7B15DF5ED79A /* libPods-nativeUIModulesTest-tvOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* nativeUIModulesTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* nativeUIModulesTestTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = nativeUIModulesTestTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		13B07FAE1A68108700A75B9A /* nativeUIModulesTest */ = {
 			isa = PBXGroup;
 			children = (
-				880EC3192476E6C500944AE6 /* Extensions */,
-				880EC2FA2476658F00944AE6 /* React Native */,
+				88C5427F24A5071000DCDF15 /* React Native */,
+				88C5427A24A5063300DCDF15 /* Extensions */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -112,9 +187,7 @@
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
-				0731D3B524204D62009CAE85 /* Expo.plist */,
-				E3ABB89D1E68496EB7D95742 /* SplashScreen.storyboard */,
-				880EC2FF2476662700944AE6 /* nativeUIModulesTest-Bridging-Header.h */,
+				88C5427E24A506A800DCDF15 /* nativeUIModulesTest-Bridging-Header.h */,
 			);
 			name = nativeUIModulesTest;
 			sourceTree = "<group>";
@@ -124,17 +197,25 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				2D16E6891FA4F8E400B85C8A /* libReact.a */,
-				D43FF9D506E70904424FA7E9 /* libPods-nativeUIModulesTest.a */,
+				D1634D85055DA79113034010 /* libPods-nativeUIModulesTest.a */,
+				2817C5DD7A577FAF7CA100F8 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */,
+				8BB6F442D38AE6FD175E8853 /* libPods-nativeUIModulesTest-tvOS.a */,
+				39D5B01BF4B1C7193B0B49BB /* libPods-nativeUIModulesTest-tvOSTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		72E5486571395D51695C2A02 /* Pods */ = {
+		60787D77CEEDA143FC31CEC1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B47C5AFCB8BDE514B7D1AC6 /* Pods-nativeUIModulesTest.debug.xcconfig */,
-				8AC623DBF3A3E2CB072F81F2 /* Pods-nativeUIModulesTest.release.xcconfig */,
+				84A21C8E9A61187B98EDBF98 /* Pods-nativeUIModulesTest.debug.xcconfig */,
+				FB8883C7C2695FAC52F4652C /* Pods-nativeUIModulesTest.release.xcconfig */,
+				A3A1DED573427AC39BE9F2B3 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig */,
+				5E6C7F65B321A58C1874943E /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig */,
+				970DECD47A603573F0C1E226 /* Pods-nativeUIModulesTest-tvOS.debug.xcconfig */,
+				92C9CB678791A0E9F5041211 /* Pods-nativeUIModulesTest-tvOS.release.xcconfig */,
+				49E34FE62AEABC6914905F3D /* Pods-nativeUIModulesTest-tvOSTests.debug.xcconfig */,
+				AC8C20785CAA33494EAC0206 /* Pods-nativeUIModulesTest-tvOSTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -151,9 +232,10 @@
 			children = (
 				13B07FAE1A68108700A75B9A /* nativeUIModulesTest */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* nativeUIModulesTestTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				72E5486571395D51695C2A02 /* Pods */,
+				60787D77CEEDA143FC31CEC1 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -164,123 +246,145 @@
 			isa = PBXGroup;
 			children = (
 				13B07F961A680F5B00A75B9A /* nativeUIModulesTest.app */,
+				00E356EE1AD99517003FC87E /* nativeUIModulesTestTests.xctest */,
+				2D02E47B1E0B4A5D006451C7 /* nativeUIModulesTest-tvOS.app */,
+				2D02E4901E0B4A5D006451C7 /* nativeUIModulesTest-tvOSTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		880EC2FA2476658F00944AE6 /* React Native */ = {
+		88C5427A24A5063300DCDF15 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				880EC2FB247665A500944AE6 /* Components */,
-			);
-			path = "React Native";
-			sourceTree = "<group>";
-		};
-		880EC2FB247665A500944AE6 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				8810BEC1248F5527001477AE /* RCTModalView */,
-				88E13766248A6628007C69D5 /* BlueBoxTestView */,
-				88C10346247EA65C0063B7EF /* ExampleUIPageView */,
-				880EC31E247911F600944AE6 /* RCTUIButton */,
-				880EC3112476E3F700944AE6 /* UIPageView */,
-				880EC30A2476889100944AE6 /* ChildTestView */,
-				880EC3022476667C00944AE6 /* RedBoxTestView */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		880EC3022476667C00944AE6 /* RedBoxTestView */ = {
-			isa = PBXGroup;
-			children = (
-				880EC303247666A400944AE6 /* RedBoxTestView.swift */,
-				880EC3052476684500944AE6 /* RedBoxTestViewManager.swift */,
-				880EC307247668F200944AE6 /* RedBoxTestViewManager.m */,
-			);
-			path = RedBoxTestView;
-			sourceTree = "<group>";
-		};
-		880EC30A2476889100944AE6 /* ChildTestView */ = {
-			isa = PBXGroup;
-			children = (
-				880EC30B247688DD00944AE6 /* ChildTestView.swift */,
-				880EC30D2476895000944AE6 /* ChildTestViewManager.swift */,
-				880EC30F247689B400944AE6 /* ChildTestViewManager.m */,
-			);
-			path = ChildTestView;
-			sourceTree = "<group>";
-		};
-		880EC3112476E3F700944AE6 /* UIPageView */ = {
-			isa = PBXGroup;
-			children = (
-				880EC3122476E43800944AE6 /* UIPageViewController.swift */,
-				880EC3142476E50100944AE6 /* UIPageViewManager.swift */,
-				880EC3162476E54D00944AE6 /* UIPageView.swift */,
-				880EC31C2476E80800944AE6 /* UIPageViewManager.m */,
-			);
-			path = UIPageView;
-			sourceTree = "<group>";
-		};
-		880EC3192476E6C500944AE6 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				880EC31A2476E6E800944AE6 /* UIView+Helpers.swift */,
+				88C5427C24A5065F00DCDF15 /* UIView+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		880EC31E247911F600944AE6 /* RCTUIButton */ = {
+		88C5427F24A5071000DCDF15 /* React Native */ = {
 			isa = PBXGroup;
 			children = (
-				880EC3212479124300944AE6 /* RCTUIButtonManager.swift */,
-				880EC32624796D1800944AE6 /* RCTUIButton.swift */,
-				880EC32924796E1E00944AE6 /* RCTUIButtonManager.m */,
+				88C5428024A5072400DCDF15 /* Components */,
+			);
+			path = "React Native";
+			sourceTree = "<group>";
+		};
+		88C5428024A5072400DCDF15 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				88C542A224A507B000DCDF15 /* BlueBoxTestView */,
+				88C542A624A507B100DCDF15 /* ChildTestView */,
+				88C542AA24A507B100DCDF15 /* ExampleUIPageView */,
+				88C5429324A507B000DCDF15 /* RCTModalView */,
+				88C5428F24A507B000DCDF15 /* RCTUIButton */,
+				88C5429E24A507B000DCDF15 /* RedBoxTestView */,
+				88C5429924A507B000DCDF15 /* UIPageView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		88C5428F24A507B000DCDF15 /* RCTUIButton */ = {
+			isa = PBXGroup;
+			children = (
+				88C5429024A507B000DCDF15 /* RCTUIButtonManager.m */,
+				88C5429124A507B000DCDF15 /* RCTUIButton.swift */,
+				88C5429224A507B000DCDF15 /* RCTUIButtonManager.swift */,
 			);
 			path = RCTUIButton;
 			sourceTree = "<group>";
 		};
-		8810BEC1248F5527001477AE /* RCTModalView */ = {
+		88C5429324A507B000DCDF15 /* RCTModalView */ = {
 			isa = PBXGroup;
 			children = (
-				8810BEC2248F557C001477AE /* RCTModalView.swift */,
-				8810BEC4248F559E001477AE /* RCTModalViewManager.swift */,
-				8810BEC6248F55BA001477AE /* RCTModalViewManager.m */,
-				8810BEC8248F55E0001477AE /* RCTModalViewController.swift */,
-				881CB91C24997F0000F7E881 /* RCTModalViewDelegate.swift */,
+				88C5429424A507B000DCDF15 /* RCTModalView.swift */,
+				88C5429524A507B000DCDF15 /* RCTModalViewDelegate.swift */,
+				88C5429624A507B000DCDF15 /* RCTModalViewManager.swift */,
+				88C5429724A507B000DCDF15 /* RCTModalViewController.swift */,
+				88C5429824A507B000DCDF15 /* RCTModalViewManager.m */,
 			);
 			path = RCTModalView;
 			sourceTree = "<group>";
 		};
-		88C10346247EA65C0063B7EF /* ExampleUIPageView */ = {
+		88C5429924A507B000DCDF15 /* UIPageView */ = {
 			isa = PBXGroup;
 			children = (
-				88C10347247EA77D0063B7EF /* ExampleUIPageViewController.swift */,
-				88532BE2247EF1F000FD6817 /* ExampleUIPageView.swift */,
-				88532BE4247EF69A00FD6817 /* ExampleUIPageViewManager.swift */,
-				88532BE6247EF72100FD6817 /* ExampleUIPageViewManager.m */,
+				88C5429A24A507B000DCDF15 /* UIPageViewManager.m */,
+				88C5429B24A507B000DCDF15 /* UIPageViewController.swift */,
+				88C5429C24A507B000DCDF15 /* UIPageViewManager.swift */,
+				88C5429D24A507B000DCDF15 /* UIPageView.swift */,
 			);
-			path = ExampleUIPageView;
+			path = UIPageView;
 			sourceTree = "<group>";
 		};
-		88E13766248A6628007C69D5 /* BlueBoxTestView */ = {
+		88C5429E24A507B000DCDF15 /* RedBoxTestView */ = {
 			isa = PBXGroup;
 			children = (
-				88E13767248A66FC007C69D5 /* BlueBoxTestView.swift */,
-				88E13769248A67D9007C69D5 /* BlueBoxTestiewManager.swift */,
-				88E1376B248A683E007C69D5 /* BlueBoxTestiewManager.m */,
+				88C5429F24A507B000DCDF15 /* RedBoxTestViewManager.m */,
+				88C542A024A507B000DCDF15 /* RedBoxTestView.swift */,
+				88C542A124A507B000DCDF15 /* RedBoxTestViewManager.swift */,
+			);
+			path = RedBoxTestView;
+			sourceTree = "<group>";
+		};
+		88C542A224A507B000DCDF15 /* BlueBoxTestView */ = {
+			isa = PBXGroup;
+			children = (
+				88C542A324A507B000DCDF15 /* BlueBoxTestView.swift */,
+				88C542A424A507B000DCDF15 /* BlueBoxTestiewManager.m */,
+				88C542A524A507B000DCDF15 /* BlueBoxTestiewManager.swift */,
 			);
 			path = BlueBoxTestView;
+			sourceTree = "<group>";
+		};
+		88C542A624A507B100DCDF15 /* ChildTestView */ = {
+			isa = PBXGroup;
+			children = (
+				88C542A724A507B100DCDF15 /* ChildTestViewManager.m */,
+				88C542A824A507B100DCDF15 /* ChildTestViewManager.swift */,
+				88C542A924A507B100DCDF15 /* ChildTestView.swift */,
+			);
+			path = ChildTestView;
+			sourceTree = "<group>";
+		};
+		88C542AA24A507B100DCDF15 /* ExampleUIPageView */ = {
+			isa = PBXGroup;
+			children = (
+				88C542AB24A507B100DCDF15 /* ExampleUIPageView.swift */,
+				88C542AC24A507B100DCDF15 /* ExampleUIPageViewManager.swift */,
+				88C542AD24A507B100DCDF15 /* ExampleUIPageViewController.swift */,
+				88C542AE24A507B100DCDF15 /* ExampleUIPageViewManager.m */,
+			);
+			path = ExampleUIPageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* nativeUIModulesTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "nativeUIModulesTestTests" */;
+			buildPhases = (
+				BDD16A200E3ECADABBFF060E /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = nativeUIModulesTestTests;
+			productName = nativeUIModulesTestTests;
+			productReference = 00E356EE1AD99517003FC87E /* nativeUIModulesTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		13B07F861A680F5B00A75B9A /* nativeUIModulesTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "nativeUIModulesTest" */;
 			buildPhases = (
-				F8BC737F2AD7A05944D9E2A1 /* [CP] Check Pods Manifest.lock */,
-				FD4C38642228810C00325AF5 /* Start Packager */,
+				B57DD7E0C8E614CB92510063 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
@@ -291,9 +395,48 @@
 			dependencies = (
 			);
 			name = nativeUIModulesTest;
-			productName = "Hello World";
+			productName = nativeUIModulesTest;
 			productReference = 13B07F961A680F5B00A75B9A /* nativeUIModulesTest.app */;
 			productType = "com.apple.product-type.application";
+		};
+		2D02E47A1E0B4A5D006451C7 /* nativeUIModulesTest-tvOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "nativeUIModulesTest-tvOS" */;
+			buildPhases = (
+				0FBD37CC68451A95C1D8A938 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F122414F3F0027D42C /* Start Packager */,
+				2D02E4771E0B4A5D006451C7 /* Sources */,
+				2D02E4781E0B4A5D006451C7 /* Frameworks */,
+				2D02E4791E0B4A5D006451C7 /* Resources */,
+				2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "nativeUIModulesTest-tvOS";
+			productName = "nativeUIModulesTest-tvOS";
+			productReference = 2D02E47B1E0B4A5D006451C7 /* nativeUIModulesTest-tvOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2D02E48F1E0B4A5D006451C7 /* nativeUIModulesTest-tvOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "nativeUIModulesTest-tvOSTests" */;
+			buildPhases = (
+				DEC36814F56BC383B9F4A0F1 /* [CP] Check Pods Manifest.lock */,
+				2D02E48C1E0B4A5D006451C7 /* Sources */,
+				2D02E48D1E0B4A5D006451C7 /* Frameworks */,
+				2D02E48E1E0B4A5D006451C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */,
+			);
+			name = "nativeUIModulesTest-tvOSTests";
+			productName = "nativeUIModulesTest-tvOSTests";
+			productReference = 2D02E4901E0B4A5D006451C7 /* nativeUIModulesTest-tvOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -301,21 +444,32 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 940;
-				ORGANIZATIONNAME = Facebook;
+				LastUpgradeCheck = 1130;
 				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
 					13B07F861A680F5B00A75B9A = {
 						DevelopmentTeam = ZC7A6XV8GR;
-						LastSwiftMigration = 1130;
+						LastSwiftMigration = 1150;
+					};
+					2D02E47A1E0B4A5D006451C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+					2D02E48F1E0B4A5D006451C7 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 2D02E47A1E0B4A5D006451C7;
 					};
 				};
 			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "nativeUIModulesTest" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
@@ -325,19 +479,42 @@
 			projectRoot = "";
 			targets = (
 				13B07F861A680F5B00A75B9A /* nativeUIModulesTest */,
+				00E356ED1AD99517003FC87E /* nativeUIModulesTestTests */,
+				2D02E47A1E0B4A5D006451C7 /* nativeUIModulesTest-tvOS */,
+				2D02E48F1E0B4A5D006451C7 /* nativeUIModulesTest-tvOSTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13B07F8E1A680F5B00A75B9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0731D3B824204D62009CAE85 /* Expo.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				99EC63CFB4B549BBAF093D10 /* SplashScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4791E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48E1E0B4A5D006451C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +533,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n../node_modules/expo-updates/scripts/create-manifest-ios.sh";
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		F8BC737F2AD7A05944D9E2A1 /* [CP] Check Pods Manifest.lock */ = {
+		0FBD37CC68451A95C1D8A938 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nativeUIModulesTest-tvOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2D02E4CB1E0B4B27006451C7 /* Bundle React Native Code And Images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native Code And Images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
+		};
+		B57DD7E0C8E614CB92510063 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -380,7 +593,70 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD4C38642228810C00325AF5 /* Start Packager */ = {
+		BDD16A200E3ECADABBFF060E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nativeUIModulesTest-nativeUIModulesTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DEC36814F56BC383B9F4A0F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nativeUIModulesTest-tvOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F122414F3F0027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -402,42 +678,80 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* nativeUIModulesTestTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		13B07F871A680F5B00A75B9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				880EC308247668F200944AE6 /* RedBoxTestViewManager.m in Sources */,
-				88532BE5247EF69A00FD6817 /* ExampleUIPageViewManager.swift in Sources */,
-				880EC3152476E50100944AE6 /* UIPageViewManager.swift in Sources */,
-				88532BE3247EF1F000FD6817 /* ExampleUIPageView.swift in Sources */,
-				8810BEC7248F55BA001477AE /* RCTModalViewManager.m in Sources */,
-				880EC310247689B400944AE6 /* ChildTestViewManager.m in Sources */,
-				880EC30C247688DD00944AE6 /* ChildTestView.swift in Sources */,
-				8810BEC5248F559E001477AE /* RCTModalViewManager.swift in Sources */,
-				880EC3062476684500944AE6 /* RedBoxTestViewManager.swift in Sources */,
-				880EC3132476E43800944AE6 /* UIPageViewController.swift in Sources */,
-				880EC304247666A400944AE6 /* RedBoxTestView.swift in Sources */,
-				880EC31D2476E80800944AE6 /* UIPageViewManager.m in Sources */,
-				88C10348247EA77D0063B7EF /* ExampleUIPageViewController.swift in Sources */,
-				881CB91D24997F0000F7E881 /* RCTModalViewDelegate.swift in Sources */,
-				880EC3172476E54D00944AE6 /* UIPageView.swift in Sources */,
-				88532BE7247EF72100FD6817 /* ExampleUIPageViewManager.m in Sources */,
-				880EC30E2476895000944AE6 /* ChildTestViewManager.swift in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
-				880EC32A24796E1E00944AE6 /* RCTUIButtonManager.m in Sources */,
-				880EC31B2476E6E800944AE6 /* UIView+Helpers.swift in Sources */,
-				88E1376A248A67D9007C69D5 /* BlueBoxTestiewManager.swift in Sources */,
-				880EC3222479124300944AE6 /* RCTUIButtonManager.swift in Sources */,
+				88C542B324A507B100DCDF15 /* RCTModalViewDelegate.swift in Sources */,
+				88C542C724A507B100DCDF15 /* ExampleUIPageViewManager.m in Sources */,
+				88C542C524A507B100DCDF15 /* ExampleUIPageViewManager.swift in Sources */,
+				88C542B824A507B100DCDF15 /* UIPageViewController.swift in Sources */,
+				88C542B624A507B100DCDF15 /* RCTModalViewManager.m in Sources */,
+				88C542BA24A507B100DCDF15 /* UIPageView.swift in Sources */,
+				88C542B424A507B100DCDF15 /* RCTModalViewManager.swift in Sources */,
+				88C542BE24A507B100DCDF15 /* BlueBoxTestView.swift in Sources */,
+				88C542B124A507B100DCDF15 /* RCTUIButtonManager.swift in Sources */,
+				88C542B024A507B100DCDF15 /* RCTUIButton.swift in Sources */,
+				88C542C424A507B100DCDF15 /* ExampleUIPageView.swift in Sources */,
+				88C542C124A507B100DCDF15 /* ChildTestViewManager.m in Sources */,
+				88C542BD24A507B100DCDF15 /* RedBoxTestViewManager.swift in Sources */,
+				88C542C224A507B100DCDF15 /* ChildTestViewManager.swift in Sources */,
+				88C542C624A507B100DCDF15 /* ExampleUIPageViewController.swift in Sources */,
+				88C542AF24A507B100DCDF15 /* RCTUIButtonManager.m in Sources */,
+				88C542C324A507B100DCDF15 /* ChildTestView.swift in Sources */,
+				88C542B724A507B100DCDF15 /* UIPageViewManager.m in Sources */,
+				88C5427D24A5065F00DCDF15 /* UIView+Helpers.swift in Sources */,
+				88C542B224A507B100DCDF15 /* RCTModalView.swift in Sources */,
+				88C542BB24A507B100DCDF15 /* RedBoxTestViewManager.m in Sources */,
+				88C542BF24A507B100DCDF15 /* BlueBoxTestiewManager.m in Sources */,
+				88C542B924A507B100DCDF15 /* UIPageViewManager.swift in Sources */,
+				88C542BC24A507B100DCDF15 /* RedBoxTestView.swift in Sources */,
+				88C542B524A507B100DCDF15 /* RCTModalViewController.swift in Sources */,
+				88C542C024A507B100DCDF15 /* BlueBoxTestiewManager.swift in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
-				88E1376C248A683E007C69D5 /* BlueBoxTestiewManager.m in Sources */,
-				8810BEC9248F55E0001477AE /* RCTModalViewController.swift in Sources */,
-				88E13768248A66FC007C69D5 /* BlueBoxTestView.swift in Sources */,
-				8810BEC3248F557C001477AE /* RCTModalView.swift in Sources */,
-				880EC32724796D1800944AE6 /* RCTUIButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E4771E0B4A5D006451C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */,
+				2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2D02E48C1E0B4A5D006451C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DCD954D1E0B4F2C00145EB5 /* nativeUIModulesTestTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* nativeUIModulesTest */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+		2D02E4921E0B4A5D006451C7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2D02E47A1E0B4A5D006451C7 /* nativeUIModulesTest-tvOS */;
+			targetProxy = 2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		13B07FB11A68108700A75B9A /* LaunchScreen.xib */ = {
@@ -452,16 +766,66 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A3A1DED573427AC39BE9F2B3 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = nativeUIModulesTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nativeUIModulesTest.app/nativeUIModulesTest";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E6C7F65B321A58C1874943E /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = nativeUIModulesTestTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nativeUIModulesTest.app/nativeUIModulesTest";
+			};
+			name = Release;
+		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B47C5AFCB8BDE514B7D1AC6 /* Pods-nativeUIModulesTest.debug.xcconfig */;
+			baseConfigurationReference = 84A21C8E9A61187B98EDBF98 /* Pods-nativeUIModulesTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEAD_CODE_STRIPPING = NO;
 				DEVELOPMENT_TEAM = ZC7A6XV8GR;
+				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"FB_SONARKIT_ENABLED=1",
+				);
 				INFOPLIST_FILE = nativeUIModulesTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -479,13 +843,14 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8AC623DBF3A3E2CB072F81F2 /* Pods-nativeUIModulesTest.release.xcconfig */;
+			baseConfigurationReference = FB8883C7C2695FAC52F4652C /* Pods-nativeUIModulesTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = ZC7A6XV8GR;
 				INFOPLIST_FILE = nativeUIModulesTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -500,10 +865,121 @@
 			};
 			name = Release;
 		};
+		2D02E4971E0B4A5E006451C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 970DECD47A603573F0C1E226 /* Pods-nativeUIModulesTest-tvOS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "nativeUIModulesTest-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.nativeUIModulesTest-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Debug;
+		};
+		2D02E4981E0B4A5E006451C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92C9CB678791A0E9F5041211 /* Pods-nativeUIModulesTest-tvOS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "App Icon & Top Shelf Image";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "nativeUIModulesTest-tvOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.nativeUIModulesTest-tvOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.2;
+			};
+			name = Release;
+		};
+		2D02E4991E0B4A5E006451C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49E34FE62AEABC6914905F3D /* Pods-nativeUIModulesTest-tvOSTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "nativeUIModulesTest-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.nativeUIModulesTest-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nativeUIModulesTest-tvOS.app/nativeUIModulesTest-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Debug;
+		};
+		2D02E49A1E0B4A5E006451C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC8C20785CAA33494EAC0206 /* Pods-nativeUIModulesTest-tvOSTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "nativeUIModulesTest-tvOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.nativeUIModulesTest-tvOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = appletvos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/nativeUIModulesTest-tvOS.app/nativeUIModulesTest-tvOS";
+				TVOS_DEPLOYMENT_TARGET = 10.1;
+			};
+			name = Release;
+		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -547,6 +1023,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -557,6 +1039,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -593,6 +1076,12 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -602,11 +1091,38 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "nativeUIModulesTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "nativeUIModulesTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D02E4BA1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "nativeUIModulesTest-tvOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D02E4971E0B4A5E006451C7 /* Debug */,
+				2D02E4981E0B4A5E006451C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D02E4BB1E0B4A5E006451C7 /* Build configuration list for PBXNativeTarget "nativeUIModulesTest-tvOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2D02E4991E0B4A5E006451C7 /* Debug */,
+				2D02E49A1E0B4A5E006451C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
