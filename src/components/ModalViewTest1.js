@@ -9,6 +9,8 @@ export class ModalViewTest1 extends React.PureComponent {
     await Helpers.timeout(1000);
 
     await this.modal1.setVisibilty(true);
+    return;
+
     await this.modal2.setVisibilty(true);
     await this.modal3.setVisibilty(true);
     await this.modal4.setVisibilty(true);
@@ -37,6 +39,11 @@ export class ModalViewTest1 extends React.PureComponent {
         <ModalView 
           ref={r => this.modal1 = r} 
           containerStyle={styles.modalContainer}
+          onModalShow          ={() => { console.log("Modal1: onModalShow"          ); }}
+          onModalDismiss       ={() => { console.log("Modal1: onModalDismiss"       ); }}
+          onModalDidDismiss    ={() => { console.log("Modal1: onModalDidDismiss"    ); }}
+          onModalWillDismiss   ={() => { console.log("Modal1: onModalWillDismiss"   ); }}
+          onModalAttemptDismiss={() => { console.log("Modal1: onModalAttemptDismiss"); }}
         >
           <Text style={styles.textEmoji}>
             {'😊'}

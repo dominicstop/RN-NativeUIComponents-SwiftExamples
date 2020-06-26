@@ -29,9 +29,22 @@ class RCTModalView: UIView {
   // MARK: Properties: React Props
   // -----------------------------
   
+  // RN event callback for when a RCTModalViewManager "command"
+  // has been completed via dispatchViewManagerCommand from js.
+  // Used in js/rn-side for wrapping UIManager commands inside
+  // promises so they can be resolved/rejected.
+  @objc var onRequestResult: RCTDirectEventBlock?;
+  
+  // RN event callbacks for whenever a modal is presented/dismissed
+  // via functions or from swipe to dismiss gestures
   @objc var onModalShow    : RCTDirectEventBlock?;
   @objc var onModalDismiss : RCTDirectEventBlock?;
-  @objc var onRequestResult: RCTDirectEventBlock?;
+  
+  // RN event callbacks for: UIAdaptivePresentationControllerDelegate
+  // Note: that these are only invoked in response to dismiss gestures
+  @objc var onModalDidDismiss    : RCTDirectEventBlock?;
+  @objc var onModalWillDismiss   : RCTDirectEventBlock?;
+  @objc var onModalAttemptDismiss: RCTDirectEventBlock?;
   
   // control modal present/dismiss by mounting/unmounting the react subview
   // * true : the modal is presented/dismissed when the view is mounted/unmounted
@@ -59,6 +72,7 @@ class RCTModalView: UIView {
     
     self.modalVC = {
       let vc = RCTModalViewController();
+      vc.presentationController?.delegate = self;
       vc.boundsDidChangeBlock = { [weak self] (newBounds: CGRect) in
         self?.notifyForBoundsChange(newBounds);
       };
@@ -268,5 +282,46 @@ class RCTModalView: UIView {
         self.removeReactSubview(reactSubview);
       };
     };
+  };
+};
+
+// ---------------------------------------------------------
+// MARK: Extension: UIAdaptivePresentationControllerDelegate
+// ---------------------------------------------------------
+
+extension RCTModalView: UIAdaptivePresentationControllerDelegate {
+    
+  func presentationControllerWillDismiss(_ presentationController: UIPresentationController) {
+    self.onModalWillDismiss?([:]);
+    
+    #if DEBUG
+    print(
+        "RCTModalView, presentationControllerWillDismiss"
+      + " - for reactTag: \(self.reactTag ?? -1)"
+    );
+    #endif
+  };
+  
+  func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+    self.onModalDismiss?([:]);
+    self.onModalDidDismiss?([:]);
+    
+    #if DEBUG
+    print(
+        "RCTModalView, presentationControllerDidDismiss"
+      + " - for reactTag: \(self.reactTag ?? -1)"
+    );
+    #endif
+  };
+  
+  func presentationControllerDidAttemptToDismiss(_ presentationController: UIPresentationController) {
+    self.onModalAttemptDismiss?([:]);
+    
+    #if DEBUG
+    print(
+        "RCTModalView, presentationControllerDidAttemptToDismiss"
+      + " - for reactTag: \(self.reactTag ?? -1)"
+    );
+    #endif
   };
 };

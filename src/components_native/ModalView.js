@@ -9,10 +9,17 @@ const componentName   = "RCTModalView";
 const NativeCommands  = UIManager[componentName]?.Commands;
 const NativeModalView = requireNativeComponent(componentName);
 
+
 const PROP_KEYS = {
+  // Modal Native Props: Event Callbacks
+  onRequestResult      : 'onRequestResult'      ,
   onModalShow          : 'onModalShow'          ,
   onModalDismiss       : 'onModalDismiss'       ,
-  onRequestResult      : 'onRequestResult'      ,
+  onModalDidDismiss    : 'onModalDidDismiss'    ,
+  onModalWillDismiss   : 'onModalWillDismiss'   ,
+  onModalAttemptDismiss: 'onModalAttemptDismiss',
+
+  // Modal Native Props: Flags/Booleans
   presentViaMount      : 'presentViaMount'      ,
   isModalInPresentation: 'isModalInPresentation',
 };
@@ -119,6 +126,21 @@ export class ModalView extends React.PureComponent {
     };
   };
 
+  _handleOnModalDidDismiss = () => {
+    const { onModalDidDismiss } = this.props;
+    onModalDidDismiss && onModalDidDismiss();
+  };
+
+  _handleOnModalWillDismiss = () => {
+    const { onModalWillDismiss } = this.props;
+    onModalWillDismiss && onModalWillDismiss();
+  };
+
+  _handleOnModalAttemptDismiss = () => {
+    const { onModalAttemptDismiss } = this.props;
+    onModalAttemptDismiss && onModalAttemptDismiss();
+  };
+
   //#endregion
 
   render(){
@@ -126,9 +148,12 @@ export class ModalView extends React.PureComponent {
     const { visible } = this.state;
 
     const nativeProps = {
-      [PROP_KEYS.onModalShow    ]: this._handleOnModalShow    ,
-      [PROP_KEYS.onModalDismiss ]: this._handleOnModalDismiss ,
-      [PROP_KEYS.onRequestResult]: this._handleOnRequestResult,
+      [PROP_KEYS.onModalShow          ]: this._handleOnModalShow          ,
+      [PROP_KEYS.onModalDismiss       ]: this._handleOnModalDismiss       ,
+      [PROP_KEYS.onRequestResult      ]: this._handleOnRequestResult      ,
+      [PROP_KEYS.onModalDidDismiss    ]: this._handleOnModalDidDismiss    ,
+      [PROP_KEYS.onModalWillDismiss   ]: this._handleOnModalWillDismiss   ,
+      [PROP_KEYS.onModalAttemptDismiss]: this._handleOnModalAttemptDismiss,
     };
 
     return(
