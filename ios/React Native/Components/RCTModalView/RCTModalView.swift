@@ -74,8 +74,11 @@ class RCTModalView: UIView {
   
   override func layoutSubviews() {
     super.layoutSubviews();
-    print("RCTModalView, layoutSubviews");
     guard let reactSubview = self.reactSubview else { return };
+    
+    #if DEBUG
+    print("RCTModalView, layoutSubviews - for reactTag: \(self.reactTag ?? -1)");
+    #endif
     
     if !reactSubview.isDescendant(of: self.modalVC.view) {
       self.modalVC.reactView = reactSubview;
@@ -110,7 +113,9 @@ class RCTModalView: UIView {
       return;
     };
     
-    print("RCTModalView, insertReactSubview");
+    #if DEBUG
+    print("RCTModalView, insertReactSubview - for reactTag: \(self.reactTag ?? -1)");
+    #endif
     
     subview.removeFromSuperview();
     subview.frame = CGRect(
@@ -138,7 +143,9 @@ class RCTModalView: UIView {
       return;
     };
     
-    print("RCTModalView, removeReactSubview");
+    #if DEBUG
+    print("RCTModalView, removeReactSubview - for reactTag: \(self.reactTag ?? -1)");
+    #endif
     
     self.reactSubview = nil;
     self.modalVC.reactView = nil;
@@ -190,7 +197,10 @@ class RCTModalView: UIView {
       return;
     };
     
-    print("RCTModalView, notifyForBoundsChange");
+    #if DEBUG
+    print("RCTModalView, notifyForBoundsChange - for reactTag: \(self.reactTag ?? -1)");
+    #endif
+    
     bridge.uiManager.setSize(newBounds.size, for: reactSubview);
   };
   
@@ -205,9 +215,11 @@ class RCTModalView: UIView {
       return;
     };
     
-    self.isPresented = true;
-    print("RCTModalView, presentModal: Start");
+    #if DEBUG
+    print("RCTModalView, presentModal: Start - for reactTag: \(self.reactTag ?? -1)");
+    #endif
     
+    // climb the vc hierarchy to find the topmost presented vc
     var topmostVC = rootVC;
     while topmostVC.presentedViewController != nil {
       if let parent = topmostVC.presentedViewController {
@@ -215,11 +227,14 @@ class RCTModalView: UIView {
       };
     };
     
+    self.isPresented = true;
     topmostVC.present(self.modalVC, animated: true) {
       self.onModalShow?([:]);
       completion?(true);
       
+      #if DEBUG
       print("RCTModalView, presentModal: Finished");
+      #endif
     };
   };
   
@@ -232,17 +247,24 @@ class RCTModalView: UIView {
       return;
     };
     
-    self.isPresented = false;
-    print("RCTModalView, dismissModal: Start");
+    #if DEBUG
+    print("RCTModalView, dismissModal: Start - for reactTag: \(self.reactTag ?? -1)");
+    #endif
     
+    self.isPresented = false;
     self.modalVC.dismiss(animated: true){
       self.onModalDismiss?([:]);
       completion?(true);
       
+      #if DEBUG
       print("RCTModalView, dismissModal: Finished");
+      #endif
       
       if let reactSubview = self.modalVC.reactView {
+        #if DEBUG
         print("RCTModalView, dismissModal: Removing React Subview");
+        #endif
+        
         self.removeReactSubview(reactSubview);
       };
     };

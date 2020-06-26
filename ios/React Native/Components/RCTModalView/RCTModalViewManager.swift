@@ -32,6 +32,14 @@ class RCTModalViewManager: RCTViewManager {
         return;
       };
       
+      #if DEBUG
+      print(
+          "RCTModalViewManager, requestModalOpen Received - "
+        + "prevVisibility: \(modalView.isPresented) and nextVisibility: \(visibility) - "
+        + "For node: \(node) and requestID: \(requestID)"
+      );
+      #endif
+      
       modalView.requestModalPresentation(requestID, visibility);
     };
   };

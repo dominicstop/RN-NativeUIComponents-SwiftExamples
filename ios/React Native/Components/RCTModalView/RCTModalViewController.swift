@@ -34,6 +34,10 @@ class RCTModalViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad();
     
+    #if DEBUG
+    print("RCTModalViewController, viewDidLoad");
+    #endif
+    
     // setup vc's view
     self.view = {
       let view = UIView();
@@ -52,12 +56,15 @@ class RCTModalViewController: UIViewController {
   
   override func viewDidLayoutSubviews(){
     super.viewDidLayoutSubviews();
-    print("ContainerViewController, viewDidLayoutSubviews");
     
     guard let boundsDidChangeBlock = self.boundsDidChangeBlock else {
-      print("ContainerViewController, viewDidLayoutSubviews: guard check failed");
+      print("RCTModalViewController, viewDidLayoutSubviews: guard check failed");
       return;
     };
+    
+    #if DEBUG
+    print("RCTModalViewController, viewDidLayoutSubviews");
+    #endif
     
     let didChangeViewFrame: Bool = !(
       lastViewFrame?.equalTo(self.view.frame) ?? false
