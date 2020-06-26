@@ -15,8 +15,9 @@ RCT_EXPORT_VIEW_PROPERTY(onModalDidDismiss    , RCTDirectEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onModalWillDismiss   , RCTDirectEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onModalAttemptDismiss, RCTDirectEventBlock);
 
-RCT_EXPORT_VIEW_PROPERTY(presentViaMount      , BOOL);
-RCT_EXPORT_VIEW_PROPERTY(isModalInPresentation, BOOL);
+RCT_EXPORT_VIEW_PROPERTY(presentViaMount       , BOOL);
+RCT_EXPORT_VIEW_PROPERTY(isModalInPresentation , BOOL);
+RCT_EXPORT_VIEW_PROPERTY(allowModalForceDismiss, BOOL);
 
 // --------------------------
 // MARK:

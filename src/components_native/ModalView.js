@@ -77,17 +77,20 @@ export class ModalView extends React.PureComponent {
         [requestID, visible]
       );
 
-      const success = await new Promise((resolve, reject) => {
+      const res = await new Promise((resolve, reject) => {
         this.requestMap[requestID] = { resolve, reject };
       });
 
       // when finish hiding modal, unmount children
       if(!visible) await Helpers.setStateAsync(this, {visible});
-      return success;
+      return res.success;
 
     } catch(error){
-      console.log("ModalView, setVisibilty: error");
-      console.log(error);
+      console.log(
+          "ModalView, setVisibilty error"
+        + ` - Error Code: ${error.errorCode   }`
+        + ` - Error Mesg: ${error.errorMessage}`
+      );
 
       return false;
     };
@@ -112,17 +115,21 @@ export class ModalView extends React.PureComponent {
 
   _handleOnRequestResult = ({nativeEvent}) => {
     const { onRequestResult } = this.props;
-    const { requestID, success, error } = nativeEvent;
+    const { requestID, success, errorCode, errorMessage } = nativeEvent;
+    console.log(nativeEvent);
+    
 
     const promise = this.requestMap[requestID];
     if(!promise) return;
 
+    const params = { requestID, success, errorCode, errorMessage};
+
     try {
-      (success? promise.resolve : promise.reject)(success);
-      onRequestResult && onRequestResult(requestID, success);
+      (success? promise.resolve : promise.reject)(params);
+      onRequestResult && onRequestResult(params);
   
     } catch(error){
-      promise.reject(false);
+      promise.reject(params);
     };
   };
 

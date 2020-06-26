@@ -38,6 +38,7 @@
 		88C542C724A507B100DCDF15 /* ExampleUIPageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C542AE24A507B100DCDF15 /* ExampleUIPageViewManager.m */; };
 		88C542C924A517DF00DCDF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542C824A517DF00DCDF15 /* AppDelegate.swift */; };
 		88C542CB24A51BDB00DCDF15 /* KeyWindow+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542CA24A51BDB00DCDF15 /* KeyWindow+Helpers.swift */; };
+		88C542CF24A5B3C600DCDF15 /* RCTModalViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542CE24A5B3C600DCDF15 /* RCTModalViewError.swift */; };
 		95684F864F829B019DD99FC1 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2817C5DD7A577FAF7CA100F8 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */; };
 		EA553CC30EED0FE433FAF482 /* libPods-nativeUIModulesTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1634D85055DA79113034010 /* libPods-nativeUIModulesTest.a */; };
 /* End PBXBuildFile section */
@@ -95,6 +96,7 @@
 		88C542AE24A507B100DCDF15 /* ExampleUIPageViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleUIPageViewManager.m; sourceTree = "<group>"; };
 		88C542C824A517DF00DCDF15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C542CA24A51BDB00DCDF15 /* KeyWindow+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyWindow+Helpers.swift"; sourceTree = "<group>"; };
+		88C542CE24A5B3C600DCDF15 /* RCTModalViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalViewError.swift; sourceTree = "<group>"; };
 		8BB6F442D38AE6FD175E8853 /* libPods-nativeUIModulesTest-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C9CB678791A0E9F5041211 /* Pods-nativeUIModulesTest-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOS.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOS/Pods-nativeUIModulesTest-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		970DECD47A603573F0C1E226 /* Pods-nativeUIModulesTest-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOS/Pods-nativeUIModulesTest-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 				88C5429624A507B000DCDF15 /* RCTModalViewManager.swift */,
 				88C5429724A507B000DCDF15 /* RCTModalViewController.swift */,
 				88C5429824A507B000DCDF15 /* RCTModalViewManager.m */,
+				88C542CE24A5B3C600DCDF15 /* RCTModalViewError.swift */,
 			);
 			path = RCTModalView;
 			sourceTree = "<group>";
@@ -538,6 +541,7 @@
 				88C542BB24A507B100DCDF15 /* RedBoxTestViewManager.m in Sources */,
 				88C542BF24A507B100DCDF15 /* BlueBoxTestiewManager.m in Sources */,
 				88C542B924A507B100DCDF15 /* UIPageViewManager.swift in Sources */,
+				88C542CF24A5B3C600DCDF15 /* RCTModalViewError.swift in Sources */,
 				88C542BC24A507B100DCDF15 /* RedBoxTestView.swift in Sources */,
 				88C542B524A507B100DCDF15 /* RCTModalViewController.swift in Sources */,
 				88C542C024A507B100DCDF15 /* BlueBoxTestiewManager.swift in Sources */,

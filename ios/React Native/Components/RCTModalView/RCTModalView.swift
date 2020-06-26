@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias completionResult = ((Bool) -> ())?;
+typealias completionResult = ((_ isSuccess: Bool, _ error: RCTModalViewError?) -> ())?;
 
 class RCTModalView: UIView {
   
@@ -50,6 +50,11 @@ class RCTModalView: UIView {
   // * true : the modal is presented/dismissed when the view is mounted/unmounted
   // * false: the modal is presented/dismissed by calling the functions from js
   @objc var presentViaMount: Bool = false;
+  
+  // allow modal to be programatically closed even when not current focused
+  // * true : the modal can be dismissed even when it's not the topmost presented modal
+  // * false: the modal can only be dismissed if it's in focus, otherwise error
+  @objc var allowModalForceDismiss: Bool = true;
   
   @objc var isModalInPresentation: Bool = false {
     willSet {
@@ -180,21 +185,19 @@ class RCTModalView: UIView {
       "visibility": visibility,
     ];
     
-    if visibility {
-      self.presentModal(){ success in
-        params["success"] = success;
-        completion?(success);
-        
-        self.onRequestResult?(params);
+    let modalAction = visibility
+      ? self.presentModal
+      : self.dismissModal
+    
+    modalAction(){ (success, error) in
+      params["success"] = success;
+      if let errorCode = error {
+        params["errorCode"   ] = errorCode.rawValue;
+        params["errorMessage"] = RCTModalViewError.getErrorMessage(for: errorCode)
       };
       
-    } else {
-      self.dismissModal(){ success in
-        params["success"] = success;
-        completion?(success);
-        
-        self.onRequestResult?(params);
-      };
+      completion?(success, error);
+      self.onRequestResult?(params);
     };
   };
   
@@ -218,20 +221,11 @@ class RCTModalView: UIView {
     bridge.uiManager.setSize(newBounds.size, for: reactSubview);
   };
   
-  private func presentModal(completion: completionResult = nil) {
-    let hasWindow: Bool = (self.window != nil);
-    
-    guard (hasWindow && !self.isPresented),
-      let rootVC = UIWindow.key?.rootViewController
-    else {
-      print("RCTModalView, presentModal: guard check failed");
-      completion?(false);
-      return;
+  private func getTopMostPresentedVC() -> UIViewController? {
+    guard let rootVC = UIWindow.key?.rootViewController else {
+      print("RCTModalView, getTopMostVC Error: could not get root VC. ");
+      return nil;
     };
-    
-    #if DEBUG
-    print("RCTModalView, presentModal: Start - for reactTag: \(self.reactTag ?? -1)");
-    #endif
     
     // climb the vc hierarchy to find the topmost presented vc
     var topmostVC = rootVC;
@@ -241,10 +235,49 @@ class RCTModalView: UIView {
       };
     };
     
+    return topmostVC;
+  };
+  
+  private func getPresentedVCList() -> [UIViewController] {
+    guard let rootVC = UIWindow.key?.rootViewController else {
+      print("RCTModalView, getTopMostVC Error: could not get root VC. ");
+      return [];
+    };
+    
+    var vcList: [UIViewController] = [];
+    vcList.append(rootVC);
+    
+    // climb the vc hierarchy to find the topmost presented vc
+    while let presentedVC = vcList.last?.presentedViewController {
+      vcList.append(presentedVC);
+    };
+    
+    return vcList;
+  };
+  
+  private func isModalInFocus() -> Bool {
+    return self.getTopMostPresentedVC() === self.modalVC;
+  };
+  
+  private func presentModal(completion: completionResult = nil) {
+    let hasWindow: Bool = (self.window != nil);
+    
+    guard (hasWindow && !self.isPresented),
+      let topMostPresentedVC = self.getTopMostPresentedVC()
+    else {
+      print("RCTModalView, presentModal: guard check failed");
+      completion?(false, .modalAlreadyPresented);
+      return;
+    };
+    
+    #if DEBUG
+    print("RCTModalView, presentModal: Start - for reactTag: \(self.reactTag ?? -1)");
+    #endif
+ 
     self.isPresented = true;
-    topmostVC.present(self.modalVC, animated: true) {
+    topMostPresentedVC.present(self.modalVC, animated: true) {
       self.onModalShow?([:]);
-      completion?(true);
+      completion?(true, nil);
       
       #if DEBUG
       print("RCTModalView, presentModal: Finished");
@@ -257,18 +290,30 @@ class RCTModalView: UIView {
     
     guard hasWindow && self.isPresented else {
       print("RCTModalView, dismissModal failed: hasWindow: \(hasWindow) - isPresented \(self.isPresented)");
-      completion?(false);
+      completion?(false, .modalAlreadyDismissed);
       return;
     };
+    
+    let isModalInFocus = self.isModalInFocus();
+    
+    guard !isModalInFocus && self.allowModalForceDismiss else {
+      print("RCTModalView, dismissModal failed: Modal not in focus");
+      completion?(false, .modalDismissFailedNotInFocus);
+      return;
+    };
+    
+    let presentedVC: UIViewController = isModalInFocus
+      ? self.modalVC
+      : self.modalVC.presentingViewController!
     
     #if DEBUG
     print("RCTModalView, dismissModal: Start - for reactTag: \(self.reactTag ?? -1)");
     #endif
     
     self.isPresented = false;
-    self.modalVC.dismiss(animated: true){
+    presentedVC.dismiss(animated: true){
       self.onModalDismiss?([:]);
-      completion?(true);
+      completion?(true, nil);
       
       #if DEBUG
       print("RCTModalView, dismissModal: Finished");
@@ -305,6 +350,14 @@ extension RCTModalView: UIAdaptivePresentationControllerDelegate {
   func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
     self.onModalDismiss?([:]);
     self.onModalDidDismiss?([:]);
+    
+    if let reactSubview = self.modalVC.reactView {
+      #if DEBUG
+      print("RCTModalView, presentationControllerDidDismiss: Removing React Subview");
+      #endif
+      
+      self.removeReactSubview(reactSubview);
+    };
     
     #if DEBUG
     print(

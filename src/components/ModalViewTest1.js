@@ -6,11 +6,15 @@ import * as Helpers from 'app/src/functions/helpers';
 
 export class ModalViewTest1 extends React.PureComponent {
   async componentDidMount(){
-    await Helpers.timeout(1000);
+    await Helpers.timeout(3000);
 
     await this.modal1.setVisibilty(true);
+    await this.modal2.setVisibilty(true);
+    await this.modal3.setVisibilty(true);
+    await this.modal1.setVisibilty(false);
     return;
 
+    await this.modal1.setVisibilty(true);
     await this.modal2.setVisibilty(true);
     await this.modal3.setVisibilty(true);
     await this.modal4.setVisibilty(true);
@@ -19,6 +23,7 @@ export class ModalViewTest1 extends React.PureComponent {
     await this.modal7.setVisibilty(true);
     await this.modal8.setVisibilty(true);
     await this.modal9.setVisibilty(true);
+    return;
 
     await this.modal9.setVisibilty(false);
     await this.modal8.setVisibilty(false);
