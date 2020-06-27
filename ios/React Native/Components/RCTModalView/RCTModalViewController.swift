@@ -37,11 +37,13 @@ class RCTModalViewController: UIViewController {
   var blurEffectView : UIView? = nil;
   var blurEffectStyle: UIBlurEffect.Style? = .systemMaterialLight {
     didSet {
-      guard
-        let blurEffectStyle = self.blurEffectStyle,
-        (oldValue != blurEffectStyle)
+      let didChange   = oldValue != blurEffectStyle;
+      let isPresented = self.presentingViewController != nil;
+    
+      guard didChange && isPresented,
+        let blurEffectStyle = self.blurEffectStyle
       else {
-        print("RCTModalViewController, didSet blurEffectStyle: fail");
+        print("RCTModalViewController, didSet blurEffectStyle: deffered");
         return;
       };
       
@@ -116,6 +118,13 @@ class RCTModalViewController: UIViewController {
       ? .none
       : .systemBackground;
     
+    // if isBGTransparent is no longer transparent and
+    // the bg is still blurred, remove the blur effect
+    if !self.isBGTransparent && self.isBGBlurred {
+      self.blurEffectView?.removeFromSuperview();
+      self.blurEffectView = nil;
+    };
+    
     #if DEBUG
     print(
         "RCTModalViewController, setBGTransparent"
@@ -125,8 +134,7 @@ class RCTModalViewController: UIViewController {
   };
   
   private func setBGBlur(){
-    guard
-      self.isBGBlurred && self.isViewLoaded,
+    guard self.isBGBlurred, self.isViewLoaded,
       let blurEffectStyle = self.blurEffectStyle else { return };
     
     if let blurEffectView = self.blurEffectView as? UIVisualEffectView {

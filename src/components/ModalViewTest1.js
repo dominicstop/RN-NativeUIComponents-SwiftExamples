@@ -103,6 +103,7 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'😄'}
           title={'Hello There #2'}
+          isModalInPresentation={true}
         />
         <TestModal
           ref={r => this.modal3 = r}
@@ -110,6 +111,8 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'💖'}
           title={'ModalView Test #3'}
+          isModalBGTransparent={false}
+          isModalInPresentation={true}
         />
         <TestModal
           ref={r => this.modal4 = r}
@@ -117,6 +120,7 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'🥺'}
           title={'PageSheet Modal #4'}
+          isModalInPresentation={true}
         />
         <TestModal
           ref={r => this.modal5 = r}
@@ -124,6 +128,7 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'🥰'}
           title={'Hello World Modal #5'}
+          isModalInPresentation={true}
         />
         <TestModal
           ref={r => this.modal6 = r}
@@ -131,6 +136,7 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'😙'}
           title={'Hello World #6'}
+          isModalInPresentation={true}
         />
         <TestModal
           ref={r => this.modal7 = r}
@@ -138,6 +144,7 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'🤩'}
           title={'Heyyy There #7'}
+          isModalInPresentation={true}
         />
         <TestModal
           ref={r => this.modal8 = r}
@@ -145,6 +152,7 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'😃'}
           title={'Another Modal #8'}
+          isModalInPresentation={true}
         />
         <TestModal
           ref={r => this.modal9 = r}
@@ -152,6 +160,7 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'🏳️‍🌈'}
           title={'And Another Modal #9'}
+          isModalInPresentation={true}
         />
       </View>
     );

@@ -21,6 +21,8 @@ const PROP_KEYS = {
 
   // Modal Native Props: Flags/Booleans
   presentViaMount      : 'presentViaMount'      ,
+  isModalBGBlurred     : 'isModalBGBlurred'     ,
+  isModalBGTransparent : 'isModalBGTransparent' ,
   isModalInPresentation: 'isModalInPresentation',
 };
 
@@ -162,6 +164,7 @@ export class ModalView extends React.PureComponent {
   _handleOnModalDidDismiss = () => {
     const { onModalDidDismiss } = this.props;
     onModalDidDismiss && onModalDidDismiss();
+    this.setState({ visible: false });
   };
 
   _handleOnModalWillDismiss = () => {
