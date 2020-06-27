@@ -39,6 +39,9 @@
 		88C542C924A517DF00DCDF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542C824A517DF00DCDF15 /* AppDelegate.swift */; };
 		88C542CB24A51BDB00DCDF15 /* KeyWindow+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542CA24A51BDB00DCDF15 /* KeyWindow+Helpers.swift */; };
 		88C542CF24A5B3C600DCDF15 /* RCTModalViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542CE24A5B3C600DCDF15 /* RCTModalViewError.swift */; };
+		88C542D124A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542D024A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift */; };
+		88C542D624A654BE00DCDF15 /* RCTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542D524A654BE00DCDF15 /* RCTLog.swift */; };
+		88C542D924A6551600DCDF15 /* RCTSwiftLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C542D824A6551600DCDF15 /* RCTSwiftLog.m */; };
 		95684F864F829B019DD99FC1 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2817C5DD7A577FAF7CA100F8 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */; };
 		EA553CC30EED0FE433FAF482 /* libPods-nativeUIModulesTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1634D85055DA79113034010 /* libPods-nativeUIModulesTest.a */; };
 /* End PBXBuildFile section */
@@ -97,6 +100,10 @@
 		88C542C824A517DF00DCDF15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C542CA24A51BDB00DCDF15 /* KeyWindow+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyWindow+Helpers.swift"; sourceTree = "<group>"; };
 		88C542CE24A5B3C600DCDF15 /* RCTModalViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalViewError.swift; sourceTree = "<group>"; };
+		88C542D024A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBlurEffect+Helpers.swift"; sourceTree = "<group>"; };
+		88C542D524A654BE00DCDF15 /* RCTLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RCTLog.swift; path = Extensions/RCTLog.swift; sourceTree = SOURCE_ROOT; };
+		88C542D724A654EE00DCDF15 /* RCTSwiftLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RCTSwiftLog.h; path = Extensions/RCTSwiftLog.h; sourceTree = SOURCE_ROOT; };
+		88C542D824A6551600DCDF15 /* RCTSwiftLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RCTSwiftLog.m; path = Extensions/RCTSwiftLog.m; sourceTree = SOURCE_ROOT; };
 		8BB6F442D38AE6FD175E8853 /* libPods-nativeUIModulesTest-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92C9CB678791A0E9F5041211 /* Pods-nativeUIModulesTest-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOS.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOS/Pods-nativeUIModulesTest-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		970DECD47A603573F0C1E226 /* Pods-nativeUIModulesTest-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOS/Pods-nativeUIModulesTest-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +231,7 @@
 			children = (
 				88C5427C24A5065F00DCDF15 /* UIView+Helpers.swift */,
 				88C542CA24A51BDB00DCDF15 /* KeyWindow+Helpers.swift */,
+				88C542D024A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -231,6 +239,7 @@
 		88C5427F24A5071000DCDF15 /* React Native */ = {
 			isa = PBXGroup;
 			children = (
+				88C542DA24A6E55A00DCDF15 /* Helpers */,
 				88C5428024A5072400DCDF15 /* Components */,
 			);
 			path = "React Native";
@@ -323,6 +332,24 @@
 				88C542AE24A507B100DCDF15 /* ExampleUIPageViewManager.m */,
 			);
 			path = ExampleUIPageView;
+			sourceTree = "<group>";
+		};
+		88C542D224A6545800DCDF15 /* RCTSwiftLog */ = {
+			isa = PBXGroup;
+			children = (
+				88C542D524A654BE00DCDF15 /* RCTLog.swift */,
+				88C542D724A654EE00DCDF15 /* RCTSwiftLog.h */,
+				88C542D824A6551600DCDF15 /* RCTSwiftLog.m */,
+			);
+			path = RCTSwiftLog;
+			sourceTree = "<group>";
+		};
+		88C542DA24A6E55A00DCDF15 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				88C542D224A6545800DCDF15 /* RCTSwiftLog */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,11 +543,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88C542D924A6551600DCDF15 /* RCTSwiftLog.m in Sources */,
 				88C542B324A507B100DCDF15 /* RCTModalViewDelegate.swift in Sources */,
 				88C542C724A507B100DCDF15 /* ExampleUIPageViewManager.m in Sources */,
 				88C542C524A507B100DCDF15 /* ExampleUIPageViewManager.swift in Sources */,
 				88C542C924A517DF00DCDF15 /* AppDelegate.swift in Sources */,
+				88C542D624A654BE00DCDF15 /* RCTLog.swift in Sources */,
 				88C542B824A507B100DCDF15 /* UIPageViewController.swift in Sources */,
+				88C542D124A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift in Sources */,
 				88C542B624A507B100DCDF15 /* RCTModalViewManager.m in Sources */,
 				88C542BA24A507B100DCDF15 /* UIPageView.swift in Sources */,
 				88C542B424A507B100DCDF15 /* RCTModalViewManager.swift in Sources */,

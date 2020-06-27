@@ -1,19 +1,51 @@
 import * as React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, Image } from 'react-native';
 
-import { ModalView } from 'app/src/components_native/ModalView';
+import { ModalView, UIBlurEffectStyles } from 'app/src/components_native/ModalView';
 import * as Helpers from 'app/src/functions/helpers';
 
+const TestModal = React.forwardRef((props, ref) => (
+  <ModalView ref={ref} {...props}>
+    <View style={styles.titleContainer}>
+      <Text style={styles.textEmoji}>
+        {props.emoji ?? "😊"}
+      </Text>
+      <Text style={styles.textModal}>
+        {props.title ?? 'Hello #1'}
+      </Text>
+    </View>
+    <View style={styles.textModalContainer}>
+      <Text style={styles.textModalSubtitle}>
+        {'UIBlurEffectStyle: '}
+        <Text style={{fontWeight: 'bold'}}>
+          {`${props.modalBGBlurEffectStyle}`}
+        </Text>
+      </Text>
+    </View>
+  </ModalView>
+));
+
 export class ModalViewTest1 extends React.PureComponent {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      counter: 0,
+      modalBGBlurEffectStyle: UIBlurEffectStyles.systemMaterialLight,
+    };
+  };
+
   async componentDidMount(){
-    await Helpers.timeout(3000);
+    await Helpers.timeout(2000);
 
     await this.modal1.setVisibilty(true);
+    await this.cycleBlurStyles();
+    await Helpers.setStateAsync(this, {
+      modalBGBlurEffectStyle: UIBlurEffectStyles.systemUltraThinMaterial,
+    });
+
     await this.modal2.setVisibilty(true);
     await this.modal3.setVisibilty(true);
-    await this.modal1.setVisibilty(false);
-    return;
-
     await this.modal1.setVisibilty(true);
     await this.modal2.setVisibilty(true);
     await this.modal3.setVisibilty(true);
@@ -23,7 +55,6 @@ export class ModalViewTest1 extends React.PureComponent {
     await this.modal7.setVisibilty(true);
     await this.modal8.setVisibilty(true);
     await this.modal9.setVisibilty(true);
-    return;
 
     await this.modal9.setVisibilty(false);
     await this.modal8.setVisibilty(false);
@@ -33,130 +64,124 @@ export class ModalViewTest1 extends React.PureComponent {
     await this.modal4.setVisibilty(false);
     await this.modal3.setVisibilty(false);
     await this.modal2.setVisibilty(false);
-    await this.modal1.setVisibilty(false);
 
-    await this.modal1.setVisibilty(true);
+    await this.cycleBlurStyles();
+    await Helpers.setStateAsync(this, {
+      modalBGBlurEffectStyle: UIBlurEffectStyles.systemThinMaterial,
+    });
+  };
+
+  cycleBlurStyles = async () => {
+    for (const effectStyle of Object.keys(UIBlurEffectStyles)) {
+      await Helpers.setStateAsync(this, { 
+        modalBGBlurEffectStyle: effectStyle 
+      });
+      await Helpers.timeout(200);
+    };
   };
 
   render(){
     return(
-      <View>
-        <ModalView 
-          ref={r => this.modal1 = r} 
+      <View 
+        style={styles.rootContainer}
+      >
+        <Image
+          style={styles.image}
+          resizeMode={'cover'}
+          source={require('app/assets/images/macos11_wallpaper.jpg')}
+        />
+        <TestModal
+          ref={r => this.modal1 = r}
           containerStyle={styles.modalContainer}
-          onModalShow          ={() => { console.log("Modal1: onModalShow"          ); }}
-          onModalDismiss       ={() => { console.log("Modal1: onModalDismiss"       ); }}
-          onModalDidDismiss    ={() => { console.log("Modal1: onModalDidDismiss"    ); }}
-          onModalWillDismiss   ={() => { console.log("Modal1: onModalWillDismiss"   ); }}
-          onModalAttemptDismiss={() => { console.log("Modal1: onModalAttemptDismiss"); }}
-        >
-          <Text style={styles.textEmoji}>
-            {'😊'}
-          </Text>
-          <Text style={styles.textModal}>
-            {'Hello #1'}
-          </Text>
-        </ModalView>
-        <ModalView 
-          ref={r => this.modal2 = r} 
+          modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
+          emoji={'😊'}
+          title={'Hello #1'}
+        />
+        <TestModal
+          ref={r => this.modal2 = r}
           containerStyle={styles.modalContainer}
-        >
-          <Text style={styles.textEmoji}>
-            {'😄'}
-          </Text>
-          <Text style={styles.textModal}>
-            {'Hello There #2'}
-          </Text>
-        </ModalView>
-        <ModalView 
-          ref={r => this.modal3 = r} 
+          modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
+          emoji={'😄'}
+          title={'Hello There #2'}
+        />
+        <TestModal
+          ref={r => this.modal3 = r}
           containerStyle={styles.modalContainer}
-        >
-          <Text style={styles.textEmoji}>
-            {'💖'}
-          </Text>
-          <Text style={styles.textModal}>
-            {'ModalView Test #3'}
-          </Text>
-        </ModalView>
-        <ModalView 
-          ref={r => this.modal4 = r} 
+          modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
+          emoji={'💖'}
+          title={'ModalView Test #3'}
+        />
+        <TestModal
+          ref={r => this.modal4 = r}
           containerStyle={styles.modalContainer}
-        >
-          <Text style={styles.textEmoji}>
-            {'🥺'}
-          </Text>
-          <Text style={styles.textModal}>
-            {'PageSheet Modal #4'}
-          </Text>
-        </ModalView>
-        <ModalView 
-          ref={r => this.modal5 = r} 
+          modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
+          emoji={'🥺'}
+          title={'PageSheet Modal #4'}
+        />
+        <TestModal
+          ref={r => this.modal5 = r}
           containerStyle={styles.modalContainer}
-        >
-          <Text style={styles.textEmoji}>
-            {'🥰'}
-          </Text>
-          <Text style={styles.textModal}>
-            {'Hello World Modal #5'}
-          </Text>
-        </ModalView>
-        <ModalView 
-          ref={r => this.modal6 = r} 
+          modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
+          emoji={'🥰'}
+          title={'Hello World Modal #5'}
+        />
+        <TestModal
+          ref={r => this.modal6 = r}
           containerStyle={styles.modalContainer}
-        >
-          <Text style={styles.textEmoji}>
-            {'😙'}
-          </Text>
-          <Text style={styles.textModal}>
-            {'Hello World #6'}
-          </Text>
-        </ModalView>
-        <ModalView 
-          ref={r => this.modal7 = r} 
+          modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
+          emoji={'😙'}
+          title={'Hello World #6'}
+        />
+        <TestModal
+          ref={r => this.modal7 = r}
           containerStyle={styles.modalContainer}
-        >
-          <Text style={styles.textEmoji}>
-            {'🤩'}
-          </Text>
-          <Text style={styles.textModal}>
-            {'Heyyy There #7'}
-          </Text>
-        </ModalView>
-        <ModalView 
-          ref={r => this.modal8 = r} 
+          modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
+          emoji={'🤩'}
+          title={'Heyyy There #7'}
+        />
+        <TestModal
+          ref={r => this.modal8 = r}
           containerStyle={styles.modalContainer}
-        >
-          <Text style={styles.textEmoji}>
-            {'😃'}
-          </Text>
-          <Text style={styles.textModal}>
-            {'Another Modal #8'}
-          </Text>
-        </ModalView>
-        <ModalView 
-          ref={r => this.modal9 = r} 
+          modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
+          emoji={'😃'}
+          title={'Another Modal #8'}
+        />
+        <TestModal
+          ref={r => this.modal9 = r}
           containerStyle={styles.modalContainer}
-        >
-          <Text style={styles.textEmoji}>
-            {'🏳️‍🌈'}
-          </Text>
-          <Text style={styles.textModal}>
-            {'And Another Modal #9'}
-          </Text>
-        </ModalView>
+          modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
+          emoji={'🏳️‍🌈'}
+          title={'And Another Modal #9'}
+        />
       </View>
     );
     //#endregion
   };
 };
 
-
 const styles = StyleSheet.create({
+  rootContainer: {
+    flex: 1,
+    padding: 40,
+  },
+  image: {
+    flex: 1,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    width: 315,
+    borderRadius: 20,
+  },
   modalContainer: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center'
+  },
+  titleContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    padding: 25,
+    borderRadius: 15,
   },
   textEmoji: {
     fontSize: 64,
@@ -166,4 +191,13 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: '800',
   },
+  textModalContainer: {
+    marginTop: 25,
+    backgroundColor: 'white',
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderRadius: 10,
+  },
+  textModalSubtitle: {
+  }
 });

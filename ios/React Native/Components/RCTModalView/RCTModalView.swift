@@ -25,9 +25,9 @@ class RCTModalView: UIView {
   private var touchHandler: RCTTouchHandler!;
   private var reactSubview: UIView?;
   
-  // -----------------------------
-  // MARK: Properties: React Props
-  // -----------------------------
+  // ------------------------------------------------
+  // MARK: Properties: React Props - Events/Callbacks
+  // ------------------------------------------------
   
   // RN event callback for when a RCTModalViewManager "command"
   // has been completed via dispatchViewManagerCommand from js.
@@ -37,14 +37,49 @@ class RCTModalView: UIView {
   
   // RN event callbacks for whenever a modal is presented/dismissed
   // via functions or from swipe to dismiss gestures
-  @objc var onModalShow    : RCTDirectEventBlock?;
-  @objc var onModalDismiss : RCTDirectEventBlock?;
+  @objc var onModalShow   : RCTDirectEventBlock?;
+  @objc var onModalDismiss: RCTDirectEventBlock?;
   
   // RN event callbacks for: UIAdaptivePresentationControllerDelegate
   // Note: that these are only invoked in response to dismiss gestures
   @objc var onModalDidDismiss    : RCTDirectEventBlock?;
   @objc var onModalWillDismiss   : RCTDirectEventBlock?;
   @objc var onModalAttemptDismiss: RCTDirectEventBlock?;
+  
+  // ---------------------------------------------
+  // MARK: Properties: React Props - "Value" Props
+  // ---------------------------------------------
+  
+  @objc var isModalBGBlurred: Bool = true {
+    didSet {
+      guard oldValue != self.isModalBGBlurred else { return };
+      self.modalVC.isBGBlurred = self.isModalBGBlurred;
+    }
+  };
+  
+  @objc var isModalBGTransparent: Bool = true {
+    didSet {
+      guard oldValue != self.isModalBGTransparent else { return };
+      self.modalVC.isBGTransparent = self.isModalBGTransparent;
+    }
+  };
+  
+  @objc var modalBGBlurEffectStyle: NSString = "systemThinMaterial" {
+    didSet {
+      guard oldValue != self.modalBGBlurEffectStyle
+      else { return };
+      
+      guard let blurStyle = UIBlurEffect.Style.fromString(self.modalBGBlurEffectStyle as String)
+      else {
+        RCTLogWarn("RCTModalView, modalBGBlurEffectStyle: Invalid value");
+        return;
+      };
+      
+      self.modalVC.blurEffectStyle = blurStyle;
+    }
+  };
+  
+  @objc var modalID: NSString = "";
   
   // control modal present/dismiss by mounting/unmounting the react subview
   // * true : the modal is presented/dismissed when the view is mounted/unmounted
@@ -78,6 +113,13 @@ class RCTModalView: UIView {
     self.modalVC = {
       let vc = RCTModalViewController();
       vc.presentationController?.delegate = self;
+      vc.isBGBlurred     = self.isModalBGBlurred;
+      vc.isBGTransparent = self.isModalBGTransparent;
+      
+      if let blurStyle = UIBlurEffect.Style.fromString(self.modalBGBlurEffectStyle as String) {
+        vc.blurEffectStyle = blurStyle;
+      };
+      
       vc.boundsDidChangeBlock = { [weak self] (newBounds: CGRect) in
         self?.notifyForBoundsChange(newBounds);
       };
@@ -128,7 +170,7 @@ class RCTModalView: UIView {
     guard (self.reactSubview == nil),
       let bridge = self.bridge
     else {
-      print("RCTModalView, insertReactSubview: Modal view can only have one subview");
+      RCTLogWarn("RCTModalView, insertReactSubview: Modal view can only have one subview");
       return;
     };
     
@@ -153,12 +195,7 @@ class RCTModalView: UIView {
     super.removeReactSubview(subview);
     
     guard self.reactSubview == subview else {
-      print("RCTModalView, removeReactSubview: Cannot remove view other than modal view");
-      return;
-    };
-    
-    guard !self.isPresented else {
-      print("RCTModalView, removeReactSubview: Cannot remove view while it's being presented");
+      RCTLogWarn("RCTModalView, removeReactSubview: Cannot remove view other than modal view");
       return;
     };
     
@@ -296,7 +333,7 @@ class RCTModalView: UIView {
     
     let isModalInFocus = self.isModalInFocus();
     
-    guard !isModalInFocus && self.allowModalForceDismiss else {
+    guard isModalInFocus && self.allowModalForceDismiss else {
       print("RCTModalView, dismissModal failed: Modal not in focus");
       completion?(false, .modalDismissFailedNotInFocus);
       return;

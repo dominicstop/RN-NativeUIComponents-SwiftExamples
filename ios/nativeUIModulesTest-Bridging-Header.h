@@ -4,6 +4,8 @@
 #import <React/RCTDevLoadingView.h>
 #endif
 
+#import "RCTSwiftLog.h"
+
 #import <React/RCTBridgeModule.h>
 #import <React/RCTBridge.h>
 #import <React/RCTEventDispatcher.h>
@@ -20,3 +22,4 @@
 #import <React/RCTTextView.h>
 #import <React/RCTTextShadowView.h>
 #import <React/RCTComponent.h>
+#import <React/RCTLog.h>

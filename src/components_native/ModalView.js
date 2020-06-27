@@ -28,6 +28,32 @@ const COMMAND_KEYS = {
   requestModalPresentation: 'requestModalPresentation'
 };
 
+export const UIBlurEffectStyles = {
+  // Adaptable Styles -------------------------------
+  systemUltraThinMaterial: "systemUltraThinMaterial",
+  systemThinMaterial     : "systemThinMaterial"     ,
+  systemMaterial         : "systemMaterial"         ,
+  systemThickMaterial    : "systemThickMaterial"    ,
+  systemChromeMaterial   : "systemChromeMaterial"   ,
+  // Light Styles ---------------------------------------------
+  systemMaterialLight         : "systemMaterialLight"         ,
+  systemThinMaterialLight     : "systemThinMaterialLight"     ,
+  systemUltraThinMaterialLight: "systemUltraThinMaterialLight",
+  systemThickMaterialLight    : "systemThickMaterialLight"    ,
+  systemChromeMaterialLight   : "systemChromeMaterialLight"   ,
+  // Dark Styles --------------------------------------------
+  systemChromeMaterialDark   : "systemChromeMaterialDark"   ,
+  systemMaterialDark         : "systemMaterialDark"         ,
+  systemThickMaterialDark    : "systemThickMaterialDark"    ,
+  systemThinMaterialDark     : "systemThinMaterialDark"     ,
+  systemUltraThinMaterialDark: "systemUltraThinMaterialDark",
+  // Additional Styles ----
+  regular   : "regular"   ,
+  prominent : "prominent" ,
+  light     : "light"     ,
+  extraLight: "extraLight",
+  dark      : "dark"      ,
+};
 
 export class ModalView extends React.PureComponent {
   static proptypes = {
@@ -151,7 +177,6 @@ export class ModalView extends React.PureComponent {
   //#endregion
 
   render(){
-    const props = this.props;
     const { visible } = this.state;
 
     const nativeProps = {
@@ -163,10 +188,13 @@ export class ModalView extends React.PureComponent {
       [PROP_KEYS.onModalAttemptDismiss]: this._handleOnModalAttemptDismiss,
     };
 
+    const props = { ...this.props, ...nativeProps };
+
     return(
       <NativeModalView
         ref={r => this.nativeModalViewRef = r}
-        {...nativeProps}
+        style={styles.rootContainer}
+        {...props}
       >
         {visible && (
           <View 
@@ -183,6 +211,9 @@ export class ModalView extends React.PureComponent {
 };
 
 const styles = StyleSheet.create({
+  rootContainer: {
+    position: 'absolute',
+  },
   modalContainer: {
     position: 'absolute',
   },

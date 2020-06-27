@@ -4,7 +4,7 @@
 @interface RCT_EXTERN_MODULE(RCTModalViewManager, RCTViewManager)
 
 // ------------------------------
-// MARK: Properties - React Props
+// MARK: Props - Callbacks/Events
 // ------------------------------
                          
 RCT_EXPORT_VIEW_PROPERTY(onModalShow    , RCTDirectEventBlock);
@@ -15,13 +15,23 @@ RCT_EXPORT_VIEW_PROPERTY(onModalDidDismiss    , RCTDirectEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onModalWillDismiss   , RCTDirectEventBlock);
 RCT_EXPORT_VIEW_PROPERTY(onModalAttemptDismiss, RCTDirectEventBlock);
 
+// --------------------------------
+// MARK: Props - RN Component Props
+// --------------------------------
+
+RCT_EXPORT_VIEW_PROPERTY(isModalBGBlurred    , BOOL);
+RCT_EXPORT_VIEW_PROPERTY(isModalBGTransparent, BOOL);
+
+RCT_EXPORT_VIEW_PROPERTY(modalID, NSString);
+RCT_EXPORT_VIEW_PROPERTY(modalBGBlurEffectStyle, NSString);
+
 RCT_EXPORT_VIEW_PROPERTY(presentViaMount       , BOOL);
 RCT_EXPORT_VIEW_PROPERTY(isModalInPresentation , BOOL);
 RCT_EXPORT_VIEW_PROPERTY(allowModalForceDismiss, BOOL);
 
-// --------------------------
-// MARK:
-// --------------------------
+// ---------------------------
+// MARK: View Manager Commands
+// ---------------------------
 
 RCT_EXTERN_METHOD(requestModalPresentation
             : (nonnull NSNumber *)node
