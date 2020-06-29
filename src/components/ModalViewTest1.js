@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, Image } from 'react-native';
 
-import { ModalView, UIBlurEffectStyles } from 'app/src/components_native/ModalView';
+import { ModalView, UIBlurEffectStyles, UIModalPresentationStyles, UIModalTransitionStyles } from 'app/src/components_native/ModalView';
 import * as Helpers from 'app/src/functions/helpers';
 
 const TestModal = React.forwardRef((props, ref) => (
@@ -39,6 +39,8 @@ export class ModalViewTest1 extends React.PureComponent {
     await Helpers.timeout(2000);
 
     await this.modal1.setVisibilty(true);
+    return;
+
     await this.cycleBlurStyles();
     await Helpers.setStateAsync(this, {
       modalBGBlurEffectStyle: UIBlurEffectStyles.systemUltraThinMaterial,
@@ -64,6 +66,8 @@ export class ModalViewTest1 extends React.PureComponent {
     await this.modal4.setVisibilty(false);
     await this.modal3.setVisibilty(false);
     await this.modal2.setVisibilty(false);
+    await this.modal1.setVisibilty(false);
+    return;
 
     await this.cycleBlurStyles();
     await Helpers.setStateAsync(this, {
@@ -96,6 +100,8 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'😊'}
           title={'Hello #1'}
+          modalTransitionStyle  ={UIModalTransitionStyles.coverVertical}
+          modalPresentationStyle={UIModalPresentationStyles.pageSheet}
         />
         <TestModal
           ref={r => this.modal2 = r}
@@ -103,7 +109,10 @@ export class ModalViewTest1 extends React.PureComponent {
           modalBGBlurEffectStyle={this.state.modalBGBlurEffectStyle}
           emoji={'😄'}
           title={'Hello There #2'}
-          isModalInPresentation={true}
+          isModalInPresentation={false}
+          modalTransitionStyle  ={UIModalTransitionStyles.crossDissolve}
+          modalPresentationStyle={UIModalPresentationStyles.overFullScreen}
+
         />
         <TestModal
           ref={r => this.modal3 = r}
@@ -113,6 +122,8 @@ export class ModalViewTest1 extends React.PureComponent {
           title={'ModalView Test #3'}
           isModalBGTransparent={false}
           isModalInPresentation={true}
+          modalTransitionStyle  ={UIModalTransitionStyles.flipHorizontal}
+          modalPresentationStyle={UIModalPresentationStyles.overFullScreen}
         />
         <TestModal
           ref={r => this.modal4 = r}
@@ -121,6 +132,9 @@ export class ModalViewTest1 extends React.PureComponent {
           emoji={'🥺'}
           title={'PageSheet Modal #4'}
           isModalInPresentation={true}
+          modalTransitionStyle  ={UIModalTransitionStyles.flipHorizontal}
+          modalPresentationStyle={UIModalPresentationStyles.pageSheet}
+
         />
         <TestModal
           ref={r => this.modal5 = r}
@@ -129,6 +143,9 @@ export class ModalViewTest1 extends React.PureComponent {
           emoji={'🥰'}
           title={'Hello World Modal #5'}
           isModalInPresentation={true}
+          modalTransitionStyle  ={UIModalTransitionStyles.crossDissolve}
+          modalPresentationStyle={UIModalPresentationStyles.overFullScreen}
+
         />
         <TestModal
           ref={r => this.modal6 = r}
@@ -137,6 +154,9 @@ export class ModalViewTest1 extends React.PureComponent {
           emoji={'😙'}
           title={'Hello World #6'}
           isModalInPresentation={true}
+          modalTransitionStyle  ={UIModalTransitionStyles.coverVertical}
+          modalPresentationStyle={UIModalPresentationStyles.pageSheet}
+
         />
         <TestModal
           ref={r => this.modal7 = r}
@@ -161,6 +181,8 @@ export class ModalViewTest1 extends React.PureComponent {
           emoji={'🏳️‍🌈'}
           title={'And Another Modal #9'}
           isModalInPresentation={true}
+          modalTransitionStyle  ={UIModalTransitionStyles.crossDissolve}
+          modalPresentationStyle={UIModalPresentationStyles.overFullScreen}
         />
       </View>
     );

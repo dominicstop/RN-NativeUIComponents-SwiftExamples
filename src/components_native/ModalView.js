@@ -24,6 +24,11 @@ const PROP_KEYS = {
   isModalBGBlurred     : 'isModalBGBlurred'     ,
   isModalBGTransparent : 'isModalBGTransparent' ,
   isModalInPresentation: 'isModalInPresentation',
+
+  // Modal Native Props: Strings
+  modalTransitionStyle  : 'modalTransitionStyle'  ,
+  modalPresentationStyle: 'modalPresentationStyle',
+  modalBGBlurEffectStyle: 'modalBGBlurEffectStyle',
 };
 
 const COMMAND_KEYS = {
@@ -55,6 +60,32 @@ export const UIBlurEffectStyles = {
   light     : "light"     ,
   extraLight: "extraLight",
   dark      : "dark"      ,
+};
+
+export const UIModalPresentationStyles = {
+  automatic         : 'automatic'     ,
+  fullScreen        : 'fullScreen'    ,
+  pageSheet         : 'pageSheet'     ,
+  formSheet         : 'formSheet'     ,
+  overFullScreen    : 'overFullScreen',
+  /* NOT SUPPORTED
+  none              : 'none'              ,
+  currentContext    : 'currentContext'    ,
+  custom            : 'custom'            ,
+  overFullScreen    : 'overFullScreen'    ,
+  overCurrentContext: 'overCurrentContext',
+  popover           : 'popover'           ,
+  blurOverFullScreen: 'blurOverFullScreen',
+  */
+};
+
+export const UIModalTransitionStyles = {
+  coverVertical : 'coverVertical' ,
+  crossDissolve : 'crossDissolve' ,
+  flipHorizontal: 'flipHorizontal',
+  /* NOT SUPPORTED
+  partialCurl   : 'partialCurl'   ,
+  */
 };
 
 export class ModalView extends React.PureComponent {

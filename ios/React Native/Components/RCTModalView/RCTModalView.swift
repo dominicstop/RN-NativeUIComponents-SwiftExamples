@@ -22,6 +22,7 @@ class RCTModalView: UIView {
   var isPresented: Bool = false;
   
   private var modalVC     : RCTModalViewController!;
+  private var modalNVC    : UINavigationController!;
   private var touchHandler: RCTTouchHandler!;
   private var reactSubview: UIView?;
   
@@ -79,6 +80,54 @@ class RCTModalView: UIView {
     }
   };
   
+  private var _modalPresentationStyle: UIModalPresentationStyle = .automatic;
+  @objc var modalPresentationStyle: NSString = "automatic" {
+    didSet {
+      guard oldValue != self.modalPresentationStyle
+      else { return };
+      
+      guard let style = UIModalPresentationStyle.fromString(self.modalPresentationStyle as String)
+      else {
+        RCTLogWarn("RCTModalView, modalPresentationStyle: Invalid value");
+        return;
+      };
+      
+      switch style {
+        case .automatic,
+             .pageSheet,
+             .formSheet,
+             .overFullScreen:
+          
+          self._modalPresentationStyle = style;
+          #if DEBUG
+          print("RCTModalView, modalPresentationStyle didSet: \(style.stringDescription())");
+          #endif
+
+        default:
+          RCTLogWarn("RCTModalView, modalPresentationStyle: Unsupported Presentation Style");
+      };
+    }
+  };
+  
+  private var _modalTransitionStyle: UIModalTransitionStyle = .coverVertical;
+  @objc var modalTransitionStyle: NSString = "coverVertical" {
+    didSet {
+      guard oldValue != self.modalTransitionStyle
+      else { return };
+      
+      guard let style = UIModalTransitionStyle.fromString(self.modalTransitionStyle as String)
+      else {
+        RCTLogWarn("RCTModalView, modalTransitionStyle: Invalid value");
+        return;
+      };
+      
+      self._modalTransitionStyle = style;
+      #if DEBUG
+      print("RCTModalView, modalTransitionStyle didSet: \(style.stringDescription())");
+      #endif
+    }
+  };
+  
   @objc var modalID: NSString = "";
   
   // control modal present/dismiss by mounting/unmounting the react subview
@@ -116,7 +165,9 @@ class RCTModalView: UIView {
       vc.isBGBlurred     = self.isModalBGBlurred;
       vc.isBGTransparent = self.isModalBGTransparent;
       
-      if let blurStyle = UIBlurEffect.Style.fromString(self.modalBGBlurEffectStyle as String) {
+      if let blurStyle = UIBlurEffect.Style
+        .fromString(self.modalBGBlurEffectStyle as String) {
+        
         vc.blurEffectStyle = blurStyle;
       };
       
@@ -125,6 +176,13 @@ class RCTModalView: UIView {
       };
       
       return vc;
+    }();
+    
+    self.modalNVC = {
+      let nvc = UINavigationController(rootViewController: self.modalVC);
+      nvc.setNavigationBarHidden(true, animated: false);
+      
+      return nvc;
     }();
   };
   
@@ -293,7 +351,7 @@ class RCTModalView: UIView {
   };
   
   private func isModalInFocus() -> Bool {
-    return self.getTopMostPresentedVC() === self.modalVC;
+    return self.getTopMostPresentedVC() === self.modalNVC;
   };
   
   private func presentModal(completion: completionResult = nil) {
@@ -307,12 +365,15 @@ class RCTModalView: UIView {
       return;
     };
     
+    self.modalNVC.modalTransitionStyle   = self._modalTransitionStyle;
+    self.modalNVC.modalPresentationStyle = self._modalPresentationStyle;
+    
     #if DEBUG
     print("RCTModalView, presentModal: Start - for reactTag: \(self.reactTag ?? -1)");
     #endif
- 
+    
     self.isPresented = true;
-    topMostPresentedVC.present(self.modalVC, animated: true) {
+    topMostPresentedVC.present(modalNVC, animated: true) {
       self.onModalShow?([:]);
       completion?(true, nil);
       
@@ -377,8 +438,7 @@ extension RCTModalView: UIAdaptivePresentationControllerDelegate {
     self.onModalWillDismiss?([:]);
     
     #if DEBUG
-    print(
-        "RCTModalView, presentationControllerWillDismiss"
+    print("RCTModalView, presentationControllerWillDismiss"
       + " - for reactTag: \(self.reactTag ?? -1)"
     );
     #endif
@@ -397,8 +457,7 @@ extension RCTModalView: UIAdaptivePresentationControllerDelegate {
     };
     
     #if DEBUG
-    print(
-        "RCTModalView, presentationControllerDidDismiss"
+    print("RCTModalView, presentationControllerDidDismiss"
       + " - for reactTag: \(self.reactTag ?? -1)"
     );
     #endif
@@ -408,8 +467,7 @@ extension RCTModalView: UIAdaptivePresentationControllerDelegate {
     self.onModalAttemptDismiss?([:]);
     
     #if DEBUG
-    print(
-        "RCTModalView, presentationControllerDidAttemptToDismiss"
+    print("RCTModalView, presentationControllerDidAttemptToDismiss"
       + " - for reactTag: \(self.reactTag ?? -1)"
     );
     #endif
