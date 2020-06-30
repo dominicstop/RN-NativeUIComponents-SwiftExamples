@@ -676,6 +676,7 @@
 					"-lc++",
 				);
 				OTHER_SWIFT_FLAGS = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D DEBUG";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "$(inherited) -D COCOAPODS -Xcc -fmodule-map-file=\"${PODS_ROOT}/Headers/Public/yoga/Yoga.modulemap\" -D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = com.dominicgo.nativeUIModulesTest;
 				PRODUCT_NAME = nativeUIModulesTest;
 				SWIFT_OBJC_BRIDGING_HEADER = "nativeUIModulesTest-Bridging-Header.h";
