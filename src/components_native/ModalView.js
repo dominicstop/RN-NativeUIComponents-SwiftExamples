@@ -2,7 +2,9 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import { requireNativeComponent, UIManager, findNodeHandle, StyleSheet, View, Text } from 'react-native';
 
+import _ from 'lodash';
 import * as Helpers from 'app/src/functions/helpers';
+
 
 
 const componentName   = "RCTModalView";
@@ -90,10 +92,28 @@ export const UIModalTransitionStyles = {
 
 export class ModalView extends React.PureComponent {
   static proptypes = {
+    // Props: Events ---------------------
+    onRequestResult      : Proptypes.func,
     onModalShow          : Proptypes.func,
     onModalDismiss       : Proptypes.func,
-    presentViaMount      : Proptypes.bool,
-    isModalInPresentation: Proptypes.bool,
+    onModalDidDismiss    : Proptypes.func,
+    onModalWillDismiss   : Proptypes.func,
+    onModalAttemptDismiss: Proptypes.func,
+    // Props: Bool/Flags --------------------------
+    presentViaMount                : Proptypes.bool,
+    isModalBGBlurred               : Proptypes.bool,
+    isModalBGTransparent           : Proptypes.bool,
+    isModalInPresentation          : Proptypes.bool,
+    setModalInPresentationFromProps: Proptypes.bool,
+    // Props: String ------------------------
+    modalTransitionStyle  : Proptypes.string,
+    modalPresentationStyle: Proptypes.string,
+    modalBGBlurEffectStyle: Proptypes.string,
+  };
+
+  static defaultProps = {
+    isModalInPresentation: false,
+    setModalInPresentationFromProps: false,
   };
 
   constructor(props){
@@ -102,21 +122,33 @@ export class ModalView extends React.PureComponent {
     this.requestID  = 0;
     this.requestMap = new Map();
 
+    this._childRef = null;
+
     this.state = {
-      visible: false
+      visible: false,
+      childProps: null,
+      isModalInPresentation: props.isModalInPresentation,
     };
   };
 
-  setVisibilty = async (visible) => {
+  setVisibilty = async (nextVisible, childProps = null) => {
     const { visible: prevVisible } = this.state;
 
-    const didChange = (prevVisible != visible);
+    const didChange = (prevVisible != nextVisible);
     if (!didChange) return false;
 
     try {
-      if(visible) {
+      if(nextVisible) {
         // when showing modal, mount children first,
-        await Helpers.setStateAsync(this, {visible});
+        await Helpers.setStateAsync(this, {
+          visible: nextVisible, 
+          // pass down received props to childProps via state
+          childProps: (_.isObject(childProps)
+            ? childProps
+            : null
+          ),
+        });
+
         // wait for view to mount
         await new Promise((resolve) => {
           this.didOnLayout = resolve;
@@ -133,7 +165,7 @@ export class ModalView extends React.PureComponent {
       UIManager.dispatchViewManagerCommand(
         findNodeHandle(this.nativeModalViewRef),
         NativeCommands[COMMAND_KEYS.requestModalPresentation],
-        [requestID, visible]
+        [requestID, nextVisible]
       );
 
       const res = await new Promise((resolve, reject) => {
@@ -141,7 +173,11 @@ export class ModalView extends React.PureComponent {
       });
 
       // when finish hiding modal, unmount children
-      if(!visible) await Helpers.setStateAsync(this, {visible});
+      if(!nextVisible) await Helpers.setStateAsync(this, {
+        visible   : nextVisible,
+        childProps: null
+      });
+
       return res.success;
 
     } catch(error){
@@ -155,28 +191,39 @@ export class ModalView extends React.PureComponent {
     };
   };
 
+  setIsModalInPresentation = (bool) => {
+    this.setState({ isModalInPresentation: bool });
+  };
+
   _handleOnLayout = () => {
     const { didOnLayout } = this;
     didOnLayout && didOnLayout();
   };
+  
+  _handleChildRef = (node) => {
+    // store a copy of the child comp ref
+    this._childRef = node;
+    
+    // pass down ref
+    const { ref } = this.props.children;
+    if (typeof ref === 'function') {
+      ref(node);
+      
+    } else if (ref !== null) {
+      ref.current = node;
+    };
+  };
+
+  // the child comp can call `props.getModalRef` to receive
+  // a ref to this modal comp
+  _handleChildGetRef = () => {
+    return this;
+  };
 
   //#region - Native Event Handlers
 
-  _handleOnModalShow = () => {
-    const { onModalShow } = this.props;
-    onModalShow && onModalShow();
-  };
-
-  _handleOnModalDismiss = () => {
-    const { onModalDismiss } = this.props;
-    onModalDismiss && onModalDismiss();
-  };
-
   _handleOnRequestResult = ({nativeEvent}) => {
-    const { onRequestResult } = this.props;
     const { requestID, success, errorCode, errorMessage } = nativeEvent;
-    console.log(nativeEvent);
-    
 
     const promise = this.requestMap[requestID];
     if(!promise) return;
@@ -185,33 +232,52 @@ export class ModalView extends React.PureComponent {
 
     try {
       (success? promise.resolve : promise.reject)(params);
-      onRequestResult && onRequestResult(params);
+      this.props     .onRequestResult?.();
+      this._childRef?.onRequestResult?.();
   
     } catch(error){
       promise.reject(params);
+      console.log("ModalView, _handleOnRequestResult: failed");
+      console.log(error);
     };
   };
 
+  _handleOnModalShow = () => {
+    this.props     .onModalShow?.();
+    this._childRef?.onModalShow?.();
+  };
+
+  _handleOnModalDismiss = () => {
+    this.props     .onModalDismiss?.();
+    this._childRef?.onModalDismiss?.();
+
+    this.setState({ 
+      visible   : false,
+      childProps: null ,
+      isModalInPresentation:
+        this.props.isModalInPresentation
+    });
+  };
+
   _handleOnModalDidDismiss = () => {
-    const { onModalDidDismiss } = this.props;
-    onModalDidDismiss && onModalDidDismiss();
-    this.setState({ visible: false });
+    this.props     .onModalDidDismiss?.();
+    this._childRef?.onModalDidDismiss?.();
   };
 
   _handleOnModalWillDismiss = () => {
-    const { onModalWillDismiss } = this.props;
-    onModalWillDismiss && onModalWillDismiss();
+    this.props     .onModalWillDismiss?.();
+    this._childRef?.onModalWillDismiss?.();
   };
 
   _handleOnModalAttemptDismiss = () => {
-    const { onModalAttemptDismiss } = this.props;
-    onModalAttemptDismiss && onModalAttemptDismiss();
+    this.props     .onModalAttemptDismiss?.();
+    this._childRef?.onModalAttemptDismiss?.();
   };
 
   //#endregion
 
   render(){
-    const { visible } = this.state;
+    const state = this.state;
 
     const nativeProps = {
       [PROP_KEYS.onModalShow          ]: this._handleOnModalShow          ,
@@ -222,7 +288,13 @@ export class ModalView extends React.PureComponent {
       [PROP_KEYS.onModalAttemptDismiss]: this._handleOnModalAttemptDismiss,
     };
 
-    const props = { ...this.props, ...nativeProps };
+    const props = {
+      ...this.props ,
+      ...nativeProps,
+      ...(this.props.setModalInPresentationFromProps && {
+        [PROP_KEYS.isModalInPresentation]: state.isModalInPresentation
+      }),
+    };
 
     return(
       <NativeModalView
@@ -230,13 +302,18 @@ export class ModalView extends React.PureComponent {
         style={styles.rootContainer}
         {...props}
       >
-        {visible && (
+        {state.visible && (
           <View 
             ref={r => this.modalContainerRef = r}
             style={[styles.modalContainer, props.containerStyle]}
             onLayout={this._handleOnLayout}
           >
-            {this.props.children}
+            {React.cloneElement(this.props.children, {
+              ref        : this._handleChildRef   ,
+              getModalRef: this._handleChildGetRef,
+              // pass down props received from setVisibility
+              ...(_.isObject(state.childProps) && state.childProps)
+            })}
           </View>
         )}
       </NativeModalView>

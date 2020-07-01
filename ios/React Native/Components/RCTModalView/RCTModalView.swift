@@ -446,6 +446,8 @@ extension RCTModalView: UIAdaptivePresentationControllerDelegate {
   };
   
   func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+    self.isPresented = false;
+    
     self.onModalDismiss?([:]);
     self.onModalDidDismiss?([:]);
     
