@@ -5,8 +5,6 @@ import { requireNativeComponent, UIManager, findNodeHandle, StyleSheet, View, Te
 import _ from 'lodash';
 import * as Helpers from 'app/src/functions/helpers';
 
-
-
 const componentName   = "RCTModalView";
 const NativeCommands  = UIManager[componentName]?.Commands;
 const NativeModalView = requireNativeComponent(componentName);
@@ -278,6 +276,8 @@ export class ModalView extends React.PureComponent {
 
   render(){
     const state = this.state;
+    const children   = this.props.children;
+    const childCount = React.Children.count(children);
 
     const nativeProps = {
       [PROP_KEYS.onModalShow          ]: this._handleOnModalShow          ,
@@ -308,11 +308,13 @@ export class ModalView extends React.PureComponent {
             style={[styles.modalContainer, props.containerStyle]}
             onLayout={this._handleOnLayout}
           >
-            {React.cloneElement(this.props.children, {
-              ref        : this._handleChildRef   ,
+            {React.cloneElement(children, {
               getModalRef: this._handleChildGetRef,
               // pass down props received from setVisibility
-              ...(_.isObject(state.childProps) && state.childProps)
+              ...(_.isObject(state.childProps) && state.childProps),
+              ...(childCount == 1 && {
+                ref: this._handleChildRef
+              })
             })}
           </View>
         )}
