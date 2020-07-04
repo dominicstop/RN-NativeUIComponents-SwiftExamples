@@ -10,6 +10,8 @@
 		00E356F31AD99517003FC87E /* nativeUIModulesTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* nativeUIModulesTestTests.m */; };
 		13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB11A68108700A75B9A /* LaunchScreen.xib */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		3DFA4395D39136C7C384F152 /* libPods-nativeUIModulesTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8981B8617A02F9858E54A254 /* libPods-nativeUIModulesTest.a */; };
+		7AB6B838A2CF27AA6FF5C94C /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 020399BB0EC98F26F9F5EE8A /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */; };
 		88C5427D24A5065F00DCDF15 /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5427C24A5065F00DCDF15 /* UIView+Helpers.swift */; };
 		88C542AF24A507B100DCDF15 /* RCTUIButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429024A507B000DCDF15 /* RCTUIButtonManager.m */; };
 		88C542B024A507B100DCDF15 /* RCTUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429124A507B000DCDF15 /* RCTUIButton.swift */; };
@@ -44,8 +46,10 @@
 		88C542D924A6551600DCDF15 /* RCTSwiftLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C542D824A6551600DCDF15 /* RCTSwiftLog.m */; };
 		88C542DC24A8605200DCDF15 /* UIModalPresentationStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542DB24A8605100DCDF15 /* UIModalPresentationStyle+Helpers.swift */; };
 		88C542DE24A911F900DCDF15 /* UIModalTransitionStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542DD24A911F800DCDF15 /* UIModalTransitionStyle+Helpers.swift */; };
-		95684F864F829B019DD99FC1 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2817C5DD7A577FAF7CA100F8 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */; };
-		EA553CC30EED0FE433FAF482 /* libPods-nativeUIModulesTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1634D85055DA79113034010 /* libPods-nativeUIModulesTest.a */; };
+		88ED9A6524AF1A88009B17B6 /* RCTQuizQuestionEditList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6424AF1A88009B17B6 /* RCTQuizQuestionEditList.swift */; };
+		88ED9A6B24B052FC009B17B6 /* RCTQuizQuestionEditListProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6A24B052FB009B17B6 /* RCTQuizQuestionEditListProxy.swift */; };
+		88ED9A6D24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6C24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift */; };
+		88ED9A6F24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6E24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,15 +67,14 @@
 		00E356EE1AD99517003FC87E /* nativeUIModulesTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = nativeUIModulesTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* nativeUIModulesTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = nativeUIModulesTestTests.m; sourceTree = "<group>"; };
+		020399BB0EC98F26F9F5EE8A /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest-nativeUIModulesTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07F961A680F5B00A75B9A /* nativeUIModulesTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nativeUIModulesTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = nativeUIModulesTest/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = nativeUIModulesTest/Info.plist; sourceTree = "<group>"; };
-		2817C5DD7A577FAF7CA100F8 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest-nativeUIModulesTestTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		39D5B01BF4B1C7193B0B49BB /* libPods-nativeUIModulesTest-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		49E34FE62AEABC6914905F3D /* Pods-nativeUIModulesTest-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOSTests.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOSTests/Pods-nativeUIModulesTest-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5E6C7F65B321A58C1874943E /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-nativeUIModulesTestTests/Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig"; sourceTree = "<group>"; };
-		84A21C8E9A61187B98EDBF98 /* Pods-nativeUIModulesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.debug.xcconfig"; sourceTree = "<group>"; };
+		364957F0A98F9D55384FD48B /* Pods-nativeUIModulesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.release.xcconfig"; sourceTree = "<group>"; };
+		4F536F3CC35F5807B0A30A8E /* Pods-nativeUIModulesTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.debug.xcconfig"; sourceTree = "<group>"; };
+		81A55E223EC6DE6699EDAF09 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-nativeUIModulesTestTests/Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig"; sourceTree = "<group>"; };
 		88C5427C24A5065F00DCDF15 /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		88C5427E24A506A800DCDF15 /* nativeUIModulesTest-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "nativeUIModulesTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		88C5429024A507B000DCDF15 /* RCTUIButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTUIButtonManager.m; sourceTree = "<group>"; };
@@ -108,15 +111,14 @@
 		88C542D824A6551600DCDF15 /* RCTSwiftLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RCTSwiftLog.m; path = Extensions/RCTSwiftLog.m; sourceTree = SOURCE_ROOT; };
 		88C542DB24A8605100DCDF15 /* UIModalPresentationStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIModalPresentationStyle+Helpers.swift"; sourceTree = "<group>"; };
 		88C542DD24A911F800DCDF15 /* UIModalTransitionStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIModalTransitionStyle+Helpers.swift"; sourceTree = "<group>"; };
-		8BB6F442D38AE6FD175E8853 /* libPods-nativeUIModulesTest-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		92C9CB678791A0E9F5041211 /* Pods-nativeUIModulesTest-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOS.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOS/Pods-nativeUIModulesTest-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		970DECD47A603573F0C1E226 /* Pods-nativeUIModulesTest-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOS/Pods-nativeUIModulesTest-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		A3A1DED573427AC39BE9F2B3 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-nativeUIModulesTestTests/Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AC8C20785CAA33494EAC0206 /* Pods-nativeUIModulesTest-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-tvOSTests/Pods-nativeUIModulesTest-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		D1634D85055DA79113034010 /* libPods-nativeUIModulesTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		88ED9A6424AF1A88009B17B6 /* RCTQuizQuestionEditList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditList.swift; sourceTree = "<group>"; };
+		88ED9A6A24B052FB009B17B6 /* RCTQuizQuestionEditListProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditListProxy.swift; sourceTree = "<group>"; };
+		88ED9A6C24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditListManager.swift; sourceTree = "<group>"; };
+		88ED9A6E24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTQuizQuestionEditListManager.m; sourceTree = "<group>"; };
+		8981B8617A02F9858E54A254 /* libPods-nativeUIModulesTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-		FB8883C7C2695FAC52F4652C /* Pods-nativeUIModulesTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest.release.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest/Pods-nativeUIModulesTest.release.xcconfig"; sourceTree = "<group>"; };
+		F5844F366FA46E3086A85F93 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig"; path = "Target Support Files/Pods-nativeUIModulesTest-nativeUIModulesTestTests/Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95684F864F829B019DD99FC1 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a in Frameworks */,
+				7AB6B838A2CF27AA6FF5C94C /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA553CC30EED0FE433FAF482 /* libPods-nativeUIModulesTest.a in Frameworks */,
+				3DFA4395D39136C7C384F152 /* libPods-nativeUIModulesTest.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,10 +178,8 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				D1634D85055DA79113034010 /* libPods-nativeUIModulesTest.a */,
-				2817C5DD7A577FAF7CA100F8 /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */,
-				8BB6F442D38AE6FD175E8853 /* libPods-nativeUIModulesTest-tvOS.a */,
-				39D5B01BF4B1C7193B0B49BB /* libPods-nativeUIModulesTest-tvOSTests.a */,
+				8981B8617A02F9858E54A254 /* libPods-nativeUIModulesTest.a */,
+				020399BB0EC98F26F9F5EE8A /* libPods-nativeUIModulesTest-nativeUIModulesTestTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -187,14 +187,10 @@
 		60787D77CEEDA143FC31CEC1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				84A21C8E9A61187B98EDBF98 /* Pods-nativeUIModulesTest.debug.xcconfig */,
-				FB8883C7C2695FAC52F4652C /* Pods-nativeUIModulesTest.release.xcconfig */,
-				A3A1DED573427AC39BE9F2B3 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig */,
-				5E6C7F65B321A58C1874943E /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig */,
-				970DECD47A603573F0C1E226 /* Pods-nativeUIModulesTest-tvOS.debug.xcconfig */,
-				92C9CB678791A0E9F5041211 /* Pods-nativeUIModulesTest-tvOS.release.xcconfig */,
-				49E34FE62AEABC6914905F3D /* Pods-nativeUIModulesTest-tvOSTests.debug.xcconfig */,
-				AC8C20785CAA33494EAC0206 /* Pods-nativeUIModulesTest-tvOSTests.release.xcconfig */,
+				4F536F3CC35F5807B0A30A8E /* Pods-nativeUIModulesTest.debug.xcconfig */,
+				364957F0A98F9D55384FD48B /* Pods-nativeUIModulesTest.release.xcconfig */,
+				F5844F366FA46E3086A85F93 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig */,
+				81A55E223EC6DE6699EDAF09 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -254,6 +250,7 @@
 		88C5428024A5072400DCDF15 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				88ED9A6324AF1A51009B17B6 /* RCTQuizQuestionEditList */,
 				88C542A224A507B000DCDF15 /* BlueBoxTestView */,
 				88C542A624A507B100DCDF15 /* ChildTestView */,
 				88C542AA24A507B100DCDF15 /* ExampleUIPageView */,
@@ -358,6 +355,17 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		88ED9A6324AF1A51009B17B6 /* RCTQuizQuestionEditList */ = {
+			isa = PBXGroup;
+			children = (
+				88ED9A6424AF1A88009B17B6 /* RCTQuizQuestionEditList.swift */,
+				88ED9A6A24B052FB009B17B6 /* RCTQuizQuestionEditListProxy.swift */,
+				88ED9A6C24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift */,
+				88ED9A6E24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m */,
+			);
+			path = RCTQuizQuestionEditList;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -365,7 +373,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "nativeUIModulesTestTests" */;
 			buildPhases = (
-				BDD16A200E3ECADABBFF060E /* [CP] Check Pods Manifest.lock */,
+				05B9129F83B508C4C8F7C8AC /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
@@ -384,7 +392,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "nativeUIModulesTest" */;
 			buildPhases = (
-				B57DD7E0C8E614CB92510063 /* [CP] Check Pods Manifest.lock */,
+				39C3AE97800698AD922DA678 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
@@ -471,29 +479,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh";
 		};
-		B57DD7E0C8E614CB92510063 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-nativeUIModulesTest-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BDD16A200E3ECADABBFF060E /* [CP] Check Pods Manifest.lock */ = {
+		05B9129F83B508C4C8F7C8AC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -509,6 +495,28 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-nativeUIModulesTest-nativeUIModulesTestTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		39C3AE97800698AD922DA678 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-nativeUIModulesTest-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -557,6 +565,7 @@
 				88C542C924A517DF00DCDF15 /* AppDelegate.swift in Sources */,
 				88C542D624A654BE00DCDF15 /* RCTLog.swift in Sources */,
 				88C542B824A507B100DCDF15 /* UIPageViewController.swift in Sources */,
+				88ED9A6F24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m in Sources */,
 				88C542D124A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift in Sources */,
 				88C542B624A507B100DCDF15 /* RCTModalViewManager.m in Sources */,
 				88C542BA24A507B100DCDF15 /* UIPageView.swift in Sources */,
@@ -569,13 +578,16 @@
 				88C542BD24A507B100DCDF15 /* RedBoxTestViewManager.swift in Sources */,
 				88C542C224A507B100DCDF15 /* ChildTestViewManager.swift in Sources */,
 				88C542C624A507B100DCDF15 /* ExampleUIPageViewController.swift in Sources */,
+				88ED9A6524AF1A88009B17B6 /* RCTQuizQuestionEditList.swift in Sources */,
 				88C542AF24A507B100DCDF15 /* RCTUIButtonManager.m in Sources */,
 				88C542CB24A51BDB00DCDF15 /* KeyWindow+Helpers.swift in Sources */,
+				88ED9A6B24B052FC009B17B6 /* RCTQuizQuestionEditListProxy.swift in Sources */,
 				88C542C324A507B100DCDF15 /* ChildTestView.swift in Sources */,
 				88C542B724A507B100DCDF15 /* UIPageViewManager.m in Sources */,
 				88C5427D24A5065F00DCDF15 /* UIView+Helpers.swift in Sources */,
 				88C542B224A507B100DCDF15 /* RCTModalView.swift in Sources */,
 				88C542BB24A507B100DCDF15 /* RedBoxTestViewManager.m in Sources */,
+				88ED9A6D24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift in Sources */,
 				88C542BF24A507B100DCDF15 /* BlueBoxTestiewManager.m in Sources */,
 				88C542B924A507B100DCDF15 /* UIPageViewManager.swift in Sources */,
 				88C542CF24A5B3C600DCDF15 /* RCTModalViewError.swift in Sources */,
@@ -611,7 +623,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3A1DED573427AC39BE9F2B3 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig */;
+			baseConfigurationReference = F5844F366FA46E3086A85F93 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -635,7 +647,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E6C7F65B321A58C1874943E /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig */;
+			baseConfigurationReference = 81A55E223EC6DE6699EDAF09 /* Pods-nativeUIModulesTest-nativeUIModulesTestTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -656,7 +668,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84A21C8E9A61187B98EDBF98 /* Pods-nativeUIModulesTest.debug.xcconfig */;
+			baseConfigurationReference = 4F536F3CC35F5807B0A30A8E /* Pods-nativeUIModulesTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -688,7 +700,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FB8883C7C2695FAC52F4652C /* Pods-nativeUIModulesTest.release.xcconfig */;
+			baseConfigurationReference = 364957F0A98F9D55384FD48B /* Pods-nativeUIModulesTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -762,7 +774,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -815,7 +826,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "/usr/lib/swift $(inherited)";
 				LIBRARY_SEARCH_PATHS = (
 					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
-					"\"$(TOOLCHAIN_DIR)/usr/lib/swift-5.0/$(PLATFORM_NAME)\"",
 					"\"$(inherited)\"",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;

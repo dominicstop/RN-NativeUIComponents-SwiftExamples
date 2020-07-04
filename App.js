@@ -13,6 +13,7 @@ import { ModalViewTest1  } from 'app/src/components/ModalViewTest1';
 import { UIPageViewTest1 } from 'app/src/components/UIPageViewTest1';
 
 import * as Helpers from 'app/src/functions/helpers';
+import { RCTQuizQuestionEditListManager } from './src/components_native/QuizQuestionEditList';
 
 
 export default class App extends React.Component {
@@ -20,7 +21,7 @@ export default class App extends React.Component {
   render(){
     return(
       <View style={{flex: 1}}>
-        <ModalViewTest1/>
+        <RCTQuizQuestionEditListManager/>
       </View>
     );
 

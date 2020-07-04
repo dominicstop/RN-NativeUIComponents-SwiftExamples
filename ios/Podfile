@@ -45,11 +45,4 @@ target 'nativeUIModulesTest' do
   use_native_modules!
 end
 
-target 'nativeUIModulesTest-tvOS' do
-  # Pods for nativeUIModulesTest-tvOS
 
-  target 'nativeUIModulesTest-tvOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-end
