@@ -308,14 +308,16 @@ export class ModalView extends React.PureComponent {
             style={[styles.modalContainer, props.containerStyle]}
             onLayout={this._handleOnLayout}
           >
-            {React.cloneElement(children, {
-              getModalRef: this._handleChildGetRef,
+            {(childCount == 1)? (
+              // passing down modal ref/events directly to child 
+              // currently only works if there's 1 child
+              React.cloneElement(children, {
+                ref        : this._handleChildRef   ,
+                getModalRef: this._handleChildGetRef,
               // pass down props received from setVisibility
               ...(_.isObject(state.childProps) && state.childProps),
-              ...(childCount == 1 && {
-                ref: this._handleChildRef
-              })
-            })}
+            })
+            ):(children)}
           </View>
         )}
       </NativeModalView>
