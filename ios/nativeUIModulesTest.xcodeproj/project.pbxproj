@@ -46,6 +46,7 @@
 		88C542D924A6551600DCDF15 /* RCTSwiftLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C542D824A6551600DCDF15 /* RCTSwiftLog.m */; };
 		88C542DC24A8605200DCDF15 /* UIModalPresentationStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542DB24A8605100DCDF15 /* UIModalPresentationStyle+Helpers.swift */; };
 		88C542DE24A911F900DCDF15 /* UIModalTransitionStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542DD24A911F800DCDF15 /* UIModalTransitionStyle+Helpers.swift */; };
+		88D3B2C924B253B6000323D1 /* Encodable+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2C824B253B6000323D1 /* Encodable+Helpers.swift */; };
 		88ED9A6524AF1A88009B17B6 /* RCTQuizQuestionEditList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6424AF1A88009B17B6 /* RCTQuizQuestionEditList.swift */; };
 		88ED9A6B24B052FC009B17B6 /* RCTQuizQuestionEditListProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6A24B052FB009B17B6 /* RCTQuizQuestionEditListProxy.swift */; };
 		88ED9A6D24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6C24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift */; };
@@ -118,6 +119,7 @@
 		88C542D824A6551600DCDF15 /* RCTSwiftLog.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = RCTSwiftLog.m; path = Extensions/RCTSwiftLog.m; sourceTree = SOURCE_ROOT; };
 		88C542DB24A8605100DCDF15 /* UIModalPresentationStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIModalPresentationStyle+Helpers.swift"; sourceTree = "<group>"; };
 		88C542DD24A911F800DCDF15 /* UIModalTransitionStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIModalTransitionStyle+Helpers.swift"; sourceTree = "<group>"; };
+		88D3B2C824B253B6000323D1 /* Encodable+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Helpers.swift"; sourceTree = "<group>"; };
 		88ED9A6424AF1A88009B17B6 /* RCTQuizQuestionEditList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditList.swift; sourceTree = "<group>"; };
 		88ED9A6A24B052FB009B17B6 /* RCTQuizQuestionEditListProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditListProxy.swift; sourceTree = "<group>"; };
 		88ED9A6C24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditListManager.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 				88C542D024A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift */,
 				88C542DB24A8605100DCDF15 /* UIModalPresentationStyle+Helpers.swift */,
 				88C542DD24A911F800DCDF15 /* UIModalTransitionStyle+Helpers.swift */,
+				88D3B2C824B253B6000323D1 /* Encodable+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				88C542C424A507B100DCDF15 /* ExampleUIPageView.swift in Sources */,
 				88C542C124A507B100DCDF15 /* ChildTestViewManager.m in Sources */,
 				88C542BD24A507B100DCDF15 /* RedBoxTestViewManager.swift in Sources */,
+				88D3B2C924B253B6000323D1 /* Encodable+Helpers.swift in Sources */,
 				88ED9A7424B08A21009B17B6 /* SwiftUIListOrder.swift in Sources */,
 				88C542C224A507B100DCDF15 /* ChildTestViewManager.swift in Sources */,
 				88C542C624A507B100DCDF15 /* ExampleUIPageViewController.swift in Sources */,

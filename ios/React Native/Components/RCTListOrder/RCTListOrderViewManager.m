@@ -9,8 +9,27 @@
 
 @interface RCT_EXTERN_MODULE(RCTListOrderViewManager, RCTViewManager)
 
+// --------------------------------
+// MARK: Props - RN Component Props
+// --------------------------------
+
 RCT_EXPORT_VIEW_PROPERTY(listData  , NSArray);
 RCT_EXPORT_VIEW_PROPERTY(descLabel , NSString);
 RCT_EXPORT_VIEW_PROPERTY(isEditable, BOOL);
+
+// ------------------------------
+// MARK: Props - Callbacks/Events
+// ------------------------------
+
+RCT_EXPORT_VIEW_PROPERTY(onRequestResult, RCTDirectEventBlock);
+
+// ---------------------------
+// MARK: View Manager Commands
+// ---------------------------
+
+RCT_EXTERN_METHOD(requestListData
+            : (nonnull NSNumber *)node
+  requestID : (nonnull NSNumber *)requestID
+);
 
 @end

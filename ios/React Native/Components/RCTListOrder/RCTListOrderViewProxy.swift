@@ -16,9 +16,11 @@ class RCTListOrderViewProxy: UIView {
   private var listOrderVM : ListOrderViewModel!;
   private var listConfigVM: ListOrderConfigViewModel!;
   
-  // --------------------
-  // Properties: RN Props
-  // --------------------
+  // ---------------------------
+  // MARK: Properties - RN Props
+  // ---------------------------
+  
+  @objc var onRequestResult: RCTDirectEventBlock?;
   
   @objc var isEditable: Bool = false {
     didSet {
@@ -43,6 +45,10 @@ class RCTListOrderViewProxy: UIView {
       self.updateListOrderVM(listData);
     }
   };
+  
+  // ---------------------
+  // MARK: Lifecycle Logic
+  // ---------------------
   
   init(bridge: RCTBridge) {
     super.init(frame: CGRect());
@@ -70,6 +76,31 @@ class RCTListOrderViewProxy: UIView {
     
     self.hostVC.view.frame = frame;
   };
+  
+  // --------------------------------------
+  // MARK: Public Functions for ViewManager
+  // --------------------------------------
+  
+  public func requestListData(_ requestID: NSNumber) {
+    let listItems = self.listOrderVM.listItems;
+    let listItemsConverted = listItems.map { $0.dictionary };
+    
+    #if DEBUG
+    print("RCTListOrderViewProxy, requestListData: dumping listItems");
+    dump(listItems);
+    print("RCTListOrderViewProxy, requestListData: dumping listItemsConverted");
+    dump(listItemsConverted);
+    #endif
+
+    self.onRequestResult?([
+      "requestID": requestID,
+      "listItems": listItemsConverted
+    ]);
+  };
+  
+  // -----------------------
+  // MARK: Private Functions
+  // -----------------------
   
   private func updateListOrderVM(_ listData: NSArray){
     var items: [ListOrderItem] = [];

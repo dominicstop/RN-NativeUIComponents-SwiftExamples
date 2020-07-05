@@ -24,9 +24,15 @@ export class ListOrderViewTest01 extends React.PureComponent {
   };
 
   async componentDidMount(){
-    await Helpers.timeout(1000);
+    await Helpers.timeout(3000);
 
-    for (const index of _.range(6, 20)) {
+    const listData = await this.listOrderRef.requestListData();
+    console.log("listData: ");
+    console.log(listData);
+
+    return;
+
+    for (const index of _.range(6, 10)) {
       await Helpers.timeout(1000);
       
       const prevListData = this.state.listData;
@@ -39,12 +45,15 @@ export class ListOrderViewTest01 extends React.PureComponent {
         }]
       });
     };
+
+    
   };
 
   render(){
     return(
       <View style={styles.rootContainer}>
         <ListOrderView
+          ref={r => this.listOrderRef = r}
           style={styles.list}
           listData={this.state.listData}
           descLabel={"Desc: "}

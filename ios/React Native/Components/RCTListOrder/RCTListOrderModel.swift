@@ -11,7 +11,7 @@ import Foundation
 // MARK: ListOrderItem
 // -------------------
 
-struct ListOrderItem: Hashable {
+struct ListOrderItem: Hashable, Encodable {
   var id         : String;
   var title      : String?;
   var description: String?;
