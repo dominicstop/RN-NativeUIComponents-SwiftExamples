@@ -47,6 +47,8 @@ export class ListOrderViewTest01 extends React.PureComponent {
         <ListOrderView
           style={styles.list}
           listData={this.state.listData}
+          descLabel={"Desc: "}
+          isEditable={true}
         />
       </View>
     );

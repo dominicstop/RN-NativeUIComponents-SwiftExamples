@@ -11,9 +11,7 @@ import SwiftUI
 
 struct SwiftUIListOrder: View {
   
-  @State var isEditable = true;
-  @State var descLabel  = "Description: ";
-  
+  @ObservedObject var configVM    = ListOrderConfigViewModel();
   @ObservedObject var listOrderVM = ListOrderViewModel();
   
   var body: some View {
@@ -32,36 +30,40 @@ struct SwiftUIListOrder: View {
           .padding(.bottom, 2.0);
           
           Unwrap(self.listOrderVM.listItems[index].description){ desc in
-            Text(self.descLabel)
-              .fontWeight(.bold)
-            + Text(desc)
-              .fontWeight(.light)
+            Unwrap(self.configVM.config.descLabel){ label in
+              Text(label)
+                .fontWeight(.bold)
+              + Text(desc)
+                .fontWeight(.light)
+            };
           };
         }
         .listRowInsets( EdgeInsets(
           top     : 10,
-          leading : self.isEditable ? -20 : 15,
+          leading : self.configVM.config.isEditable ? -20 : 15,
           bottom  : 10,
           trailing: 15
-        ))
+        ));
       }
-      .onMove(perform: move)
+      .onMove(perform: move);
     }
-    .environment(\.editMode, isEditable ? .constant(.active) : .constant(.inactive))
-  }
+    .environment(
+      \.editMode,
+      self.configVM.config.isEditable ? .constant(.active) : .constant(.inactive)
+    );
+  };
   
   func move(from source: IndexSet, to destination: Int) {
     self.listOrderVM
         .listItems
-        .move(fromOffsets: source, toOffset: destination)
-  }
-}
+        .move(fromOffsets: source, toOffset: destination);
+  };
+};
 
 struct SwiftUIListOrder_Previews: PreviewProvider {
   static var previews: some View {
     SwiftUIListOrder(
-      isEditable: false,
-      descLabel : "Desc: ",
+      configVM   : ListOrderConfigViewModel(),
       listOrderVM: ListOrderViewModel()
     )
   }

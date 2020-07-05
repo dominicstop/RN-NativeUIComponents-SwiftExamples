@@ -12,8 +12,27 @@ import SwiftUI
 class RCTListOrderViewProxy: UIView {
   weak var bridge: RCTBridge?;
   
-  private var hostVC     : UIHostingController<SwiftUIListOrder>!;
-  private var listOrderVM: ListOrderViewModel!;
+  private var hostVC      : UIHostingController<SwiftUIListOrder>!;
+  private var listOrderVM : ListOrderViewModel!;
+  private var listConfigVM: ListOrderConfigViewModel!;
+  
+  // --------------------
+  // Properties: RN Props
+  // --------------------
+  
+  @objc var isEditable: Bool = false {
+    didSet {
+      guard isEditable != oldValue else { return };
+      self.listConfigVM.config.isEditable = isEditable;
+    }
+  };
+  
+  @objc var descLabel: NSString = "Description" {
+    didSet {
+      guard descLabel != oldValue else { return };
+      self.listConfigVM.config.descLabel = descLabel as String;
+    }
+  };
   
   @objc var listData: NSArray? {
     didSet {
@@ -28,13 +47,13 @@ class RCTListOrderViewProxy: UIView {
   init(bridge: RCTBridge) {
     super.init(frame: CGRect());
     
-    self.listOrderVM = ListOrderViewModel();
+    self.listOrderVM  = ListOrderViewModel();
+    self.listConfigVM = ListOrderConfigViewModel();
     
     self.bridge = bridge;
     self.hostVC = UIHostingController(
       rootView: SwiftUIListOrder(
-        isEditable : true,
-        descLabel  : "Answer: ",
+        configVM   : self.listConfigVM,
         listOrderVM: self.listOrderVM
       )
     );

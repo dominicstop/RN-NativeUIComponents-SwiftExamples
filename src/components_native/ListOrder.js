@@ -9,6 +9,12 @@ const componentName  = "RCTListOrderView";
 const NativeCommands = UIManager[componentName]?.Commands;
 const NativeViewComp = requireNativeComponent(componentName);
 
+const PROP_KEYS = {
+  listData  : 'listData'  ,
+  descLabel : 'descLabel' ,
+  isEditable: 'isEditable',
+};
+
 export class ListOrderView extends React.PureComponent {
   render(){
     return(

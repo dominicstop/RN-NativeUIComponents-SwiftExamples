@@ -7,6 +7,10 @@
 
 import Foundation
 
+// -------------------
+// MARK: ListOrderItem
+// -------------------
+
 struct ListOrderItem: Hashable {
   var id         : String;
   var title      : String?;
@@ -52,3 +56,25 @@ class ListOrderViewModel: ObservableObject {
     };
   };
 }
+
+// ---------------------
+// MARK: ListOrderConfig
+// ---------------------
+
+struct ListOrderConfig: Hashable {
+  var descLabel : String? = "Description: ";
+  var isEditable: Bool    = false;
+};
+
+class ListOrderConfigViewModel: ObservableObject {
+  
+  @Published var config: ListOrderConfig!;
+  
+  init(config: ListOrderConfig? = nil){
+    self.config = config == nil
+      ? ListOrderConfig()
+      : config
+  };
+};
+
+
