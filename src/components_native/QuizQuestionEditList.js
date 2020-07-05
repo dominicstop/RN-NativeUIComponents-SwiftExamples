@@ -10,11 +10,22 @@ const NativeCommands = UIManager[componentName]?.Commands;
 const NativeViewComp = requireNativeComponent(componentName);
 
 
+const DUMMY_DATA = _.range(0, 10).map(index => ({
+  quizID         : `quizID-${index}`    ,
+  sectionID      : `sectionID-${index}` ,
+  sectionType    : 'IDENTIFICATION'     ,
+  questionID     : `questionID-${index}`,
+  questionText   : 'Lorum ipsum dolor sit amit aspicing',
+  questionAnswer : `Answer ${index}`,
+}));
+
+
 export class RCTQuizQuestionEditListManager extends React.PureComponent {
   render(){
     return(
       <NativeViewComp
         style={{ flex: 1 }}
+        listData={DUMMY_DATA}
       />
     );
   };

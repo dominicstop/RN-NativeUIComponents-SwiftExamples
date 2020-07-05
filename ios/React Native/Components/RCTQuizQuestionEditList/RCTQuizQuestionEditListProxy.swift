@@ -14,6 +14,17 @@ class RCTQuizQuestionEditListProxy: UIView {
   
   private var hostVC: UIHostingController<RCTQuizQuestionEditList>!;
   
+  @objc var listData: NSArray? {
+    didSet {
+      //dump(self.listData)
+      for item in self.listData! {
+        let dict = item as! NSDictionary;
+        print("listData item: \(item)");
+        print("dict: \(dict)");
+      };
+    }
+  };
+  
   init(bridge: RCTBridge) {
     super.init(frame: CGRect());
     
@@ -33,5 +44,18 @@ class RCTQuizQuestionEditListProxy: UIView {
     super.reactSetFrame(frame);
     
     self.hostVC.view.frame = frame;
+  };
+  
+  private func parseListData(_ listData: NSArray){
+    let items: [QuizQuestionItem] = [];
+    
+    for listItem in listData {
+      guard
+        let dict   = listItem as? NSDictionary,
+        let quizID = dict["quizID"]
+      else {
+        continue;
+      };
+    };
   };
 };

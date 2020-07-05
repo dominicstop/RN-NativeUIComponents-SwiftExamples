@@ -14,7 +14,7 @@ struct QuizQuestionItem: Hashable {
   var questionID    : String;
   var questionText  : String;
   var questionAnswer: String;
-};
+}
 
 struct RCTQuizQuestionEditList: View {
   @State var questionItems = [

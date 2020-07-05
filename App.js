@@ -14,6 +14,8 @@ import { UIPageViewTest1 } from 'app/src/components/UIPageViewTest1';
 
 import * as Helpers from 'app/src/functions/helpers';
 import { RCTQuizQuestionEditListManager } from './src/components_native/QuizQuestionEditList';
+import { ListOrderView } from 'app/src/components_native/ListOrder';
+import { ListOrderViewTest01 } from './src/components/ListOrderViewTest01';
 
 
 export default class App extends React.Component {
@@ -21,7 +23,7 @@ export default class App extends React.Component {
   render(){
     return(
       <View style={{flex: 1}}>
-        <RCTQuizQuestionEditListManager/>
+        <ListOrderViewTest01/>
       </View>
     );
 
