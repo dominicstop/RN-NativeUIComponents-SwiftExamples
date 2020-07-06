@@ -27,7 +27,7 @@ struct SwiftUIListOrder: View {
             };
           }
           .lineLimit(2)
-          .padding(.bottom, 2.0);
+          .padding(.bottom, 5.0);
           
           Unwrap(self.listOrderVM.listItems[index].description){ desc in
             Unwrap(self.configVM.config.descLabel){ label in
@@ -39,13 +39,13 @@ struct SwiftUIListOrder: View {
           };
         }.listRowInsets( EdgeInsets(
           top     : 10,
-          leading : 12,
+          leading : 15,
           bottom  : 10,
           trailing: 12
         ));
       }
       .onMove(perform: move)
-      .onDelete(perform: delete);
+      .onDelete(perform: delete)
     }
     .environment(
       \.editMode,

@@ -31,7 +31,7 @@ export class ListOrderViewTest01 extends React.PureComponent {
     console.log(listData);
     
     await this.listOrderRef.requestSetListData(
-      _.range(6, 10).map(index => ({
+      _.range(6, 15).map(index => ({
         id         : `id-${index}`,
         title      : `Updated List Items #${index}`      ,
         description: `Updated Description from RN Props #${index}`,
