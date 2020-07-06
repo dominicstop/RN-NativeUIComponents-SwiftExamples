@@ -93,6 +93,7 @@ class RCTListOrderViewProxy: UIView {
     #endif
 
     self.onRequestResult?([
+      "success"  : true,
       "requestID": requestID,
       "listItems": listItemsConverted
     ]);

@@ -3,7 +3,9 @@ import Proptypes from 'prop-types';
 import { requireNativeComponent, UIManager, findNodeHandle, StyleSheet, View, Text } from 'react-native';
 
 import _ from 'lodash';
+
 import * as Helpers from 'app/src/functions/helpers';
+import { RequestFactory } from 'app/src/functions/RequestFactory';
 
 const componentName  = "RCTListOrderView";
 const NativeCommands = UIManager[componentName].Commands;
@@ -24,15 +26,13 @@ const COMMAND_KEYS = {
 export class ListOrderView extends React.PureComponent {
   constructor(props){
     super(props);
-
-    this.requestID  = 1;
-    this.requestMap = {};
+    RequestFactory.initialize(this);
   };
 
   requestListData = async () => {
     try {
-      // new requestID
-      const requestID = this.requestID++;
+      const { promise, requestID } = 
+        RequestFactory.newRequest(this);
 
       // request 
       UIManager.dispatchViewManagerCommand(
@@ -41,10 +41,7 @@ export class ListOrderView extends React.PureComponent {
         [requestID]
       );
 
-      const res = await new Promise((resolve, reject) => {
-        this.requestMap[requestID] = { resolve, reject };
-      });
-
+      const res = await promise;
       return res.listItems;
 
     } catch(error){
@@ -54,22 +51,7 @@ export class ListOrderView extends React.PureComponent {
   };
 
   _handleOnRequestResult = ({nativeEvent}) => {
-    const { requestID, ...otherArgs } = nativeEvent;
-
-    const promise = this.requestMap[requestID];
-    if(!promise) return;
-
-    const params = { requestID, ...otherArgs };
-
-    try {
-      (success? promise.resolve : promise.reject)(params);
-      this.props.onRequestResult?.();
-  
-    } catch(error){
-      promise.reject(params);
-      console.log("ListOrderView, _handleOnRequestResult: failed");
-      console.log(error);
-    };
+    RequestFactory.resolveRequestFromObj(this, nativeEvent);
   };
   
   render(){
