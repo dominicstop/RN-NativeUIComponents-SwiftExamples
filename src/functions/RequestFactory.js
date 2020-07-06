@@ -1,4 +1,4 @@
-
+import * as Helpers from 'app/src/functions/helpers';
 
 export class RequestFactory {
   static initialize(that){
@@ -8,6 +8,19 @@ export class RequestFactory {
 
   static getRequest(that, requestID){
     return that.requestMap[requestID];
+  };
+
+  static newRequest(that, { timeout = 0 }){
+    const requestID = that.requestID++;
+
+    const promise = new Promise((resolve, reject) => {
+      that.requestMap[requestID] = { resolve, reject };
+    });
+
+    return { requestID, promise: (timeout
+      ? Helpers.promiseWithTimeout(timeout, promise)
+      : promise
+    )};
   };
 
   static resolveRequest(that, {requestID, success, params}){
@@ -33,13 +46,8 @@ export class RequestFactory {
     };
   };
 
-  static newRequest(that){
-    const requestID = that.requestID++;
-
-    const promise = new Promise((resolve, reject) => {
-      that.requestMap[requestID] = { resolve, reject };
-    });
-
-    return { requestID, promise };
+  static rejectRequest(that, {requestID, message = ""}){
+    const promise = that.requestMap[requestID];
+    promise.reject(message);
   };
 };

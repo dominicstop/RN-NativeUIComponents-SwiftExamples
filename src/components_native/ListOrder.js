@@ -33,10 +33,10 @@ export class ListOrderView extends React.PureComponent {
   };
 
   requestListData = async () => {
-    try {
-      const { promise, requestID } = 
-        RequestFactory.newRequest(this);
+    const { promise, requestID } = 
+      RequestFactory.newRequest(this, { timeout: 1000 });
 
+    try {
       // request 
       UIManager.dispatchViewManagerCommand(
         findNodeHandle(this.nativeCompRef),
@@ -44,12 +44,13 @@ export class ListOrderView extends React.PureComponent {
         [requestID]
       );
 
-      const res = await promise;
-      return res.listItems;
+      const result = await promise;
+      return result.listItems;
 
     } catch(error){
       console.log("ListOrderView, requestListData failed:");
       console.log(error);
+      RequestFactory.rejectRequest(this, { requestID });
     };
   };
 
