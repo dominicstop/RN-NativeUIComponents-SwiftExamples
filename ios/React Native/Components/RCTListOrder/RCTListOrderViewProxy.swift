@@ -20,7 +20,8 @@ class RCTListOrderViewProxy: UIView {
   // MARK: Properties - RN Props
   // ---------------------------
   
-  @objc var onRequestResult: RCTDirectEventBlock?;
+  @objc var onRequestResult  : RCTDirectEventBlock?;
+  @objc var onListItemsChange: RCTDirectEventBlock?;
   
   @objc var isEditable: Bool = false {
     didSet {
@@ -56,6 +57,19 @@ class RCTListOrderViewProxy: UIView {
     self.listOrderVM  = ListOrderViewModel();
     self.listConfigVM = ListOrderConfigViewModel();
     
+    self.listOrderVM.onChangeListItems = { [weak self] listItems in
+      guard let self = self else { return };
+      
+      self.onListItemsChange?([
+        "listItems": listItems.map { $0.dictionary }
+      ]);
+      
+      #if DEBUG
+      print("RCTListOrderViewProxy, onChangeListItems: dumping listItems");
+      dump(listItems);
+      #endif
+    };
+    
     self.bridge = bridge;
     self.hostVC = UIHostingController(
       rootView: SwiftUIListOrder(
@@ -71,11 +85,10 @@ class RCTListOrderViewProxy: UIView {
     fatalError("init(coder:) has not been implemented");
   };
   
-  override func reactSetFrame(_ frame: CGRect) {
-    super.reactSetFrame(frame);
-    
+  override func layoutSubviews() {
+    super.layoutSubviews();
     self.hostVC.view.frame = frame;
-  };
+  }
   
   // --------------------------------------
   // MARK: Public Functions for ViewManager

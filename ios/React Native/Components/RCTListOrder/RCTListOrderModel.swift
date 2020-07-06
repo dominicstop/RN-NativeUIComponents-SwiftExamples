@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 // -------------------
 // MARK: ListOrderItem
@@ -41,6 +42,9 @@ class ListOrderViewModel: ObservableObject {
   
   @Published var listItems: [ListOrderItem];
   
+  var cancellable: AnyCancellable?;
+  var onChangeListItems: (([ListOrderItem]) -> ())?;
+  
   init(listData: [ListOrderItem]? = nil){
     if let items = listData {
       self.listItems = items;
@@ -54,6 +58,10 @@ class ListOrderViewModel: ObservableObject {
         );
       };
     };
+    
+    self.cancellable = self.$listItems.sink(){ [weak self] (listItems) in
+      self?.onChangeListItems?(listItems);
+    }
   };
 }
 

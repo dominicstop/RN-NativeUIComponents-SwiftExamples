@@ -35,17 +35,17 @@ struct SwiftUIListOrder: View {
                 .fontWeight(.bold)
               + Text(desc)
                 .fontWeight(.light)
-            };
+            }.font(.subheadline);
           };
-        }
-        .listRowInsets( EdgeInsets(
+        }.listRowInsets( EdgeInsets(
           top     : 10,
-          leading : self.configVM.config.isEditable ? -20 : 15,
+          leading : 12,
           bottom  : 10,
-          trailing: 15
+          trailing: 12
         ));
       }
-      .onMove(perform: move);
+      .onMove(perform: move)
+      .onDelete(perform: delete);
     }
     .environment(
       \.editMode,
@@ -57,6 +57,12 @@ struct SwiftUIListOrder: View {
     self.listOrderVM
         .listItems
         .move(fromOffsets: source, toOffset: destination);
+  };
+  
+  func delete(at offsets: IndexSet) {
+    self.listOrderVM
+        .listItems
+        .remove(atOffsets: offsets)
   };
 };
 

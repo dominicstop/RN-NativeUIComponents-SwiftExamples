@@ -21,7 +21,8 @@ RCT_EXPORT_VIEW_PROPERTY(isEditable, BOOL);
 // MARK: Props - Callbacks/Events
 // ------------------------------
 
-RCT_EXPORT_VIEW_PROPERTY(onRequestResult, RCTDirectEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onRequestResult  , RCTDirectEventBlock);
+RCT_EXPORT_VIEW_PROPERTY(onListItemsChange, RCTDirectEventBlock);
 
 // ---------------------------
 // MARK: View Manager Commands

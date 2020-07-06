@@ -16,7 +16,8 @@ const PROP_KEYS = {
   descLabel : 'descLabel' ,
   isEditable: 'isEditable',
 
-  onRequestResult: 'onRequestResult',
+  onRequestResult  : 'onRequestResult'  ,
+  onListItemsChange: 'onListItemsChange',
 };
 
 const COMMAND_KEYS = {
@@ -26,6 +27,8 @@ const COMMAND_KEYS = {
 export class ListOrderView extends React.PureComponent {
   constructor(props){
     super(props);
+
+    this._listItems = [];
     RequestFactory.initialize(this);
   };
 
@@ -53,12 +56,23 @@ export class ListOrderView extends React.PureComponent {
   _handleOnRequestResult = ({nativeEvent}) => {
     RequestFactory.resolveRequestFromObj(this, nativeEvent);
   };
+
+  _handleOnListItemsChange = ({nativeEvent}) => {
+    const { listItems } = nativeEvent;
+
+    this._listItems = listItems;
+    this.props.onListItemsChange?.(listItems);
+
+    console.log("_handleOnListItemsChange listItems: ");
+    console.log(listItems);
+  };
   
   render(){
     const props = {
       ...this.props,
       // Native Props
-      [PROP_KEYS.onRequestResult]: this._handleOnRequestResult
+      [PROP_KEYS.onRequestResult  ]: this._handleOnRequestResult,
+      [PROP_KEYS.onListItemsChange]: this._handleOnListItemsChange,
     };
 
     return(
