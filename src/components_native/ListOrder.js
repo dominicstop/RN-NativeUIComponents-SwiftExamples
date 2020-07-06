@@ -21,7 +21,8 @@ const PROP_KEYS = {
 };
 
 const COMMAND_KEYS = {
-  requestListData: 'requestListData'
+  requestListData   : 'requestListData'   ,
+  requestSetListData: 'requestSetListData',
 };
 
 export class ListOrderView extends React.PureComponent {
@@ -49,6 +50,28 @@ export class ListOrderView extends React.PureComponent {
 
     } catch(error){
       console.log("ListOrderView, requestListData failed:");
+      console.log(error);
+      RequestFactory.rejectRequest(this, { requestID });
+    };
+  };
+
+  requestSetListData = async (listItems = []) => {
+    const { promise, requestID } = 
+      RequestFactory.newRequest(this, { timeout: 1000 });
+
+    try {
+      // request 
+      UIManager.dispatchViewManagerCommand(
+        findNodeHandle(this.nativeCompRef),
+        NativeCommands[COMMAND_KEYS.requestSetListData],
+        [requestID, listItems]
+      );
+
+      const result = await promise;
+      return;
+
+    } catch(error){
+      console.log("ListOrderView, requestSetListData failed:");
       console.log(error);
       RequestFactory.rejectRequest(this, { requestID });
     };

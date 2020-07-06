@@ -29,6 +29,14 @@ export class ListOrderViewTest01 extends React.PureComponent {
     const listData = await this.listOrderRef.requestListData();
     console.log("listData: ");
     console.log(listData);
+    
+    await this.listOrderRef.requestSetListData(
+      _.range(6, 10).map(index => ({
+        id         : `id-${index}`,
+        title      : `Updated List Items #${index}`      ,
+        description: `Updated Description from RN Props #${index}`,
+      }))
+    );
 
     return;
 

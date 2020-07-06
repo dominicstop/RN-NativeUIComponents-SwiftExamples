@@ -37,4 +37,24 @@ class RCTListOrderViewManager: RCTViewManager {
       listProxy.requestListData(requestID);
     };
   };
+  
+  @objc func requestSetListData(_ node: NSNumber, requestID: NSNumber, listItems: NSArray){
+    DispatchQueue.main.async {
+      guard
+        let component = self.bridge.uiManager.view(forReactTag: node),
+        let listProxy = component as? RCTListOrderViewProxy
+      else {
+        print("RCTListOrderViewManager, requestSetListData failed");
+        return;
+      };
+      
+      #if DEBUG
+      print("RCTListOrderViewManager, requestSetListData Received - "
+        + "For node: \(node) and requestID: \(requestID)"
+      );
+      #endif
+      
+      listProxy.requestSetListData(requestID, listItems);
+    };
+  };
 };

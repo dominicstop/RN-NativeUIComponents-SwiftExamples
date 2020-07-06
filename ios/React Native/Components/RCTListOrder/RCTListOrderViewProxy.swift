@@ -112,6 +112,14 @@ class RCTListOrderViewProxy: UIView {
     ]);
   };
   
+  public func requestSetListData(_ requestID: NSNumber, _ listItems: NSArray){
+    self.updateListOrderVM(listItems);
+    self.onRequestResult?([
+      "success"  : true,
+      "requestID": requestID
+    ]);
+  };
+  
   // -----------------------
   // MARK: Private Functions
   // -----------------------

@@ -33,4 +33,10 @@ RCT_EXTERN_METHOD(requestListData
   requestID : (nonnull NSNumber *)requestID
 );
 
+RCT_EXTERN_METHOD(requestSetListData
+           : (nonnull NSNumber *)node
+  requestID: (nonnull NSNumber *)requestID
+  listItems: (nonnull NSArray  *)listItems
+);
+
 @end
