@@ -71,7 +71,7 @@ class ListOrderViewModel: ObservableObject {
 
 struct ListOrderConfig: Hashable {
   var descLabel : String? = "Description: ";
-  var isEditable: Bool    = false;
+  var isEditable: Bool    = true;
 };
 
 class ListOrderConfigViewModel: ObservableObject {

@@ -8,7 +8,7 @@ import * as Helpers from 'app/src/functions/helpers';
 import { RequestFactory } from 'app/src/functions/RequestFactory';
 
 const componentName  = "RCTListOrderView";
-const NativeCommands = UIManager[componentName]?.Commands;
+const NativeCommands = UIManager[componentName].Commands;
 const NativeViewComp = requireNativeComponent(componentName);
 
 const PROP_KEYS = {
@@ -42,7 +42,7 @@ function compareArrays(arr1 = [], arr2 = []){
 };
 
 
-export class ListOrderView extends React.PureComponent {
+export class ListOrderView extends React.Component {
   constructor(props){
     super(props);
 

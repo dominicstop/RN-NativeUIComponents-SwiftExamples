@@ -42,16 +42,18 @@ export class ModalViewTest1 extends React.PureComponent {
   async componentDidMount(){
     await Helpers.timeout(2000);
 
-    await this.listOrderModalRef.setVisibility(true);
+    if(false){
+      await this.listOrderModalRef.setVisibility(true);
+      await this.stickyModalRef.setVisibility(true);
+      return;
+
+      await this.cycleBlurStyles();
+      await Helpers.setStateAsync(this, {
+        modalBGBlurEffectStyle: UIBlurEffectStyles.systemUltraThinMaterial,
+      });
+    };
+    
     await this.modal1.setVisibility(true);
-    await this.stickyModalRef.setVisibility(true);
-    return;
-
-    await this.cycleBlurStyles();
-    await Helpers.setStateAsync(this, {
-      modalBGBlurEffectStyle: UIBlurEffectStyles.systemUltraThinMaterial,
-    });
-
     await this.modal2.setVisibility(true);
     await this.modal3.setVisibility(true);
     await this.modal1.setVisibility(true);

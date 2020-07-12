@@ -18,38 +18,39 @@ struct SwiftUIListOrder: View {
     List {
       ForEach(listOrderVM.listItems.indices, id: \.self) { index in
         VStack(alignment: .leading) {
-          Group {
-            Unwrap(self.listOrderVM.listItems[index].title){ title in
-              Text("\(index + 1). ")
-                .fontWeight(.bold)
-                .foregroundColor(.blue)
-              + Text(title)
-            }
+          Unwrap(self.listOrderVM.listItems[index].title){ title in
+            Text("\(index + 1). ")
+              .fontWeight(.bold)
+              .foregroundColor(.blue)
+            + Text(title)
           }
           .lineLimit(2)
           .padding(.bottom, 5.0)
+          .animation(nil)
           
           Unwrap(self.listOrderVM.listItems[index].description){ desc in
             Unwrap(self.configVM.config.descLabel){ label in
               Text(label)
-                .fontWeight(.bold)
+                .fontWeight(.semibold)
               + Text(desc)
                 .fontWeight(.light)
-            }.font(.subheadline)
+            }
           }
+          .font(.subheadline)
+          .animation(nil)
         }
         .background(Color.clear)
         .listRowBackground(Color.clear)
         .listRowInsets( EdgeInsets(
-          top     : 10,
+          top     : 12,
           leading : 15,
-          bottom  : 10,
+          bottom  : 12,
           trailing: 12
         ))
+        .transition(.asymmetric(insertion: .opacity, removal: .scale))
       }
       .onMove(perform: move)
       .onDelete(perform: delete)
-      .background(Color.clear)
     }
     .background(Color.clear)
     .environment(
@@ -65,9 +66,11 @@ struct SwiftUIListOrder: View {
   }
   
   func delete(at offsets: IndexSet) {
-    self.listOrderVM
+    withAnimation {
+      self.listOrderVM
         .listItems
         .remove(atOffsets: offsets)
+    }
   }
 }
 
