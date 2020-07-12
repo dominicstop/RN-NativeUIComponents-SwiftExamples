@@ -128,7 +128,12 @@ class RCTModalView: UIView {
     }
   };
   
-  @objc var modalID: NSString = "";
+  // unique identifier for this modal
+  @objc var modalID: NSString = "" {
+    didSet {
+      self.modalVC.modalID = self.modalID;
+    }
+  };
   
   // control modal present/dismiss by mounting/unmounting the react subview
   // * true : the modal is presented/dismissed when the view is mounted/unmounted
@@ -305,7 +310,9 @@ class RCTModalView: UIView {
       let bridge       = self.bridge,
       let reactSubview = self.reactSubview
     else {
+      #if DEBUG
       print("RCTModalView, notifyForBoundsChange: guard check failed");
+      #endif
       return;
     };
     
@@ -318,7 +325,9 @@ class RCTModalView: UIView {
   
   private func getTopMostPresentedVC() -> UIViewController? {
     guard let rootVC = UIWindow.key?.rootViewController else {
+      #if DEBUG
       print("RCTModalView, getTopMostVC Error: could not get root VC. ");
+      #endif
       return nil;
     };
     
@@ -335,7 +344,9 @@ class RCTModalView: UIView {
   
   private func getPresentedVCList() -> [UIViewController] {
     guard let rootVC = UIWindow.key?.rootViewController else {
+      #if DEBUG
       print("RCTModalView, getTopMostVC Error: could not get root VC. ");
+      #endif
       return [];
     };
     
@@ -360,7 +371,9 @@ class RCTModalView: UIView {
     guard (hasWindow && !self.isPresented),
       let topMostPresentedVC = self.getTopMostPresentedVC()
     else {
+      #if DEBUG
       print("RCTModalView, presentModal: guard check failed");
+      #endif
       completion?(false, .modalAlreadyPresented);
       return;
     };
@@ -388,7 +401,9 @@ class RCTModalView: UIView {
     let hasWindow: Bool = (self.window != nil);
     
     guard hasWindow && self.isPresented else {
+      #if DEBUG
       print("RCTModalView, dismissModal failed: hasWindow: \(hasWindow) - isPresented \(self.isPresented)");
+      #endif
       completion?(false, .modalAlreadyDismissed);
       return;
     };
@@ -396,7 +411,9 @@ class RCTModalView: UIView {
     let isModalInFocus = self.isModalInFocus();
     
     guard isModalInFocus && self.allowModalForceDismiss else {
+      #if DEBUG
       print("RCTModalView, dismissModal failed: Modal not in focus");
+      #endif
       completion?(false, .modalDismissFailedNotInFocus);
       return;
     };

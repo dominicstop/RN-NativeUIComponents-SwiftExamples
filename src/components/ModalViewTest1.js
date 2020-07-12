@@ -1,27 +1,31 @@
 import * as React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Text, Image, ScrollView } from 'react-native';
 
 import { ModalView, UIBlurEffectStyles, UIModalPresentationStyles, UIModalTransitionStyles } from 'app/src/components_native/ModalView';
 import * as Helpers from 'app/src/functions/helpers';
+import { ListOrderView } from '../components_native/ListOrder';
+import { ListOrderViewTest01 } from './ListOrderViewTest01';
 
 const TestModal = React.forwardRef((props, ref) => (
   <ModalView ref={ref} {...props}>
-    <View style={styles.titleContainer}>
-      <Text style={styles.textEmoji}>
-        {props.emoji ?? "😊"}
-      </Text>
-      <Text style={styles.textModal}>
-        {props.title ?? 'Hello #1'}
-      </Text>
-    </View>
-    <View style={styles.textModalContainer}>
-      <Text style={styles.textModalSubtitle}>
-        {'UIBlurEffectStyle: '}
-        <Text style={{fontWeight: 'bold'}}>
-          {`${props.modalBGBlurEffectStyle}`}
+    <React.Fragment>
+      <View style={styles.titleContainer}>
+        <Text style={styles.textEmoji}>
+          {props.emoji ?? "😊"}
         </Text>
-      </Text>
-    </View>
+        <Text style={styles.textModal}>
+          {props.title ?? 'Hello #1'}
+        </Text>
+      </View>
+      <View style={styles.textModalContainer}>
+        <Text style={styles.textModalSubtitle}>
+          {'UIBlurEffectStyle: '}
+          <Text style={{fontWeight: 'bold'}}>
+            {`${props.modalBGBlurEffectStyle}`}
+          </Text>
+        </Text>
+      </View>
+    </React.Fragment>
   </ModalView>
 ));
 
@@ -38,7 +42,9 @@ export class ModalViewTest1 extends React.PureComponent {
   async componentDidMount(){
     await Helpers.timeout(2000);
 
-    await this.modal1.setVisibilty(true);
+    await this.listOrderModalRef.setVisibility(true);
+    await this.modal1.setVisibility(true);
+    await this.stickyModalRef.setVisibility(true);
     return;
 
     await this.cycleBlurStyles();
@@ -46,27 +52,27 @@ export class ModalViewTest1 extends React.PureComponent {
       modalBGBlurEffectStyle: UIBlurEffectStyles.systemUltraThinMaterial,
     });
 
-    await this.modal2.setVisibilty(true);
-    await this.modal3.setVisibilty(true);
-    await this.modal1.setVisibilty(true);
-    await this.modal2.setVisibilty(true);
-    await this.modal3.setVisibilty(true);
-    await this.modal4.setVisibilty(true);
-    await this.modal5.setVisibilty(true);
-    await this.modal6.setVisibilty(true);
-    await this.modal7.setVisibilty(true);
-    await this.modal8.setVisibilty(true);
-    await this.modal9.setVisibilty(true);
+    await this.modal2.setVisibility(true);
+    await this.modal3.setVisibility(true);
+    await this.modal1.setVisibility(true);
+    await this.modal2.setVisibility(true);
+    await this.modal3.setVisibility(true);
+    await this.modal4.setVisibility(true);
+    await this.modal5.setVisibility(true);
+    await this.modal6.setVisibility(true);
+    await this.modal7.setVisibility(true);
+    await this.modal8.setVisibility(true);
+    await this.modal9.setVisibility(true);
 
-    await this.modal9.setVisibilty(false);
-    await this.modal8.setVisibilty(false);
-    await this.modal7.setVisibilty(false);
-    await this.modal6.setVisibilty(false);
-    await this.modal5.setVisibilty(false);
-    await this.modal4.setVisibilty(false);
-    await this.modal3.setVisibilty(false);
-    await this.modal2.setVisibilty(false);
-    await this.modal1.setVisibilty(false);
+    await this.modal9.setVisibility(false);
+    await this.modal8.setVisibility(false);
+    await this.modal7.setVisibility(false);
+    await this.modal6.setVisibility(false);
+    await this.modal5.setVisibility(false);
+    await this.modal4.setVisibility(false);
+    await this.modal3.setVisibility(false);
+    await this.modal2.setVisibility(false);
+    await this.modal1.setVisibility(false);
     return;
 
     await this.cycleBlurStyles();
@@ -86,14 +92,46 @@ export class ModalViewTest1 extends React.PureComponent {
 
   render(){
     return(
-      <View 
-        style={styles.rootContainer}
-      >
-        <Image
-          style={styles.image}
-          resizeMode={'cover'}
-          source={require('app/assets/images/macos11_wallpaper.jpg')}
-        />
+      <View style={styles.rootContainer}>
+        <ScrollView
+          style={{flex: 1}}
+          stickyHeaderIndices={[0, 2, 4]}
+        >
+          <Text style={styles.stickyHeaderText}>1</Text>
+          <Text style={styles.stickyHeaderText}>2</Text>
+          <Text style={styles.stickyHeaderText}>3</Text>
+          <Text style={styles.stickyHeaderText}>4</Text>
+          <Text style={styles.stickyHeaderText}>5</Text>
+          <Text style={styles.stickyHeaderText}>6</Text>
+          <Text style={styles.stickyHeaderText}>7</Text>
+          <Text style={styles.stickyHeaderText}>8</Text>
+          <Text style={styles.stickyHeaderText}>9</Text>
+        </ScrollView>
+        <ModalView 
+          ref={r => this.stickyModalRef = r}
+          style={{flex: 1}}
+        >
+          <ScrollView
+            style={{flex: 1}}
+            stickyHeaderIndices={[0, 2, 4]}
+          >
+            <Text style={styles.stickyHeaderText}>1</Text>
+            <Text style={styles.stickyHeaderText}>2</Text>
+            <Text style={styles.stickyHeaderText}>3</Text>
+            <Text style={styles.stickyHeaderText}>4</Text>
+            <Text style={styles.stickyHeaderText}>5</Text>
+            <Text style={styles.stickyHeaderText}>6</Text>
+            <Text style={styles.stickyHeaderText}>7</Text>
+            <Text style={styles.stickyHeaderText}>8</Text>
+            <Text style={styles.stickyHeaderText}>9</Text>
+          </ScrollView>
+        </ModalView>
+        <ModalView 
+          ref={r => this.listOrderModalRef = r}
+          style={{flex: 1}}
+        >
+          <ListOrderViewTest01/>
+        </ModalView>
         <TestModal
           ref={r => this.modal1 = r}
           containerStyle={styles.modalContainer}
@@ -230,5 +268,9 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   textModalSubtitle: {
-  }
+  },
+  stickyHeaderText: {
+    fontSize: 75,
+    backgroundColor: 'white'
+  },
 });

@@ -11,8 +11,8 @@ import SwiftUI
 
 struct SwiftUIListOrder: View {
   
-  @ObservedObject var configVM    = ListOrderConfigViewModel();
-  @ObservedObject var listOrderVM = ListOrderViewModel();
+  @ObservedObject var configVM    = ListOrderConfigViewModel()
+  @ObservedObject var listOrderVM = ListOrderViewModel()
   
   var body: some View {
     List {
@@ -23,11 +23,11 @@ struct SwiftUIListOrder: View {
               Text("\(index + 1). ")
                 .fontWeight(.bold)
                 .foregroundColor(.blue)
-              + Text(title);
-            };
+              + Text(title)
+            }
           }
           .lineLimit(2)
-          .padding(.bottom, 5.0);
+          .padding(.bottom, 5.0)
           
           Unwrap(self.listOrderVM.listItems[index].description){ desc in
             Unwrap(self.configVM.config.descLabel){ label in
@@ -35,36 +35,41 @@ struct SwiftUIListOrder: View {
                 .fontWeight(.bold)
               + Text(desc)
                 .fontWeight(.light)
-            }.font(.subheadline);
-          };
-        }.listRowInsets( EdgeInsets(
+            }.font(.subheadline)
+          }
+        }
+        .background(Color.clear)
+        .listRowBackground(Color.clear)
+        .listRowInsets( EdgeInsets(
           top     : 10,
           leading : 15,
           bottom  : 10,
           trailing: 12
-        ));
+        ))
       }
       .onMove(perform: move)
       .onDelete(perform: delete)
+      .background(Color.clear)
     }
+    .background(Color.clear)
     .environment(
       \.editMode,
       self.configVM.config.isEditable ? .constant(.active) : .constant(.inactive)
-    );
-  };
+    )
+  }
   
   func move(from source: IndexSet, to destination: Int) {
     self.listOrderVM
         .listItems
-        .move(fromOffsets: source, toOffset: destination);
-  };
+        .move(fromOffsets: source, toOffset: destination)
+  }
   
   func delete(at offsets: IndexSet) {
     self.listOrderVM
         .listItems
         .remove(atOffsets: offsets)
-  };
-};
+  }
+}
 
 struct SwiftUIListOrder_Previews: PreviewProvider {
   static var previews: some View {

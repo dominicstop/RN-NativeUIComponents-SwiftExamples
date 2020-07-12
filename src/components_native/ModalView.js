@@ -1,9 +1,11 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import { requireNativeComponent, UIManager, findNodeHandle, StyleSheet, View, Text } from 'react-native';
+import { requireNativeComponent, UIManager, findNodeHandle, StyleSheet, View, ScrollView } from 'react-native';
 
 import _ from 'lodash';
 import * as Helpers from 'app/src/functions/helpers';
+import { RequestFactory } from 'app/src/functions/RequestFactory';
+
 
 const componentName   = "RCTModalView";
 const NativeCommands  = UIManager[componentName]?.Commands;
@@ -26,6 +28,7 @@ const PROP_KEYS = {
   isModalInPresentation: 'isModalInPresentation',
 
   // Modal Native Props: Strings
+  modalID               : 'modalID'               ,
   modalTransitionStyle  : 'modalTransitionStyle'  ,
   modalPresentationStyle: 'modalPresentationStyle',
   modalBGBlurEffectStyle: 'modalBGBlurEffectStyle',
@@ -88,6 +91,8 @@ export const UIModalTransitionStyles = {
   */
 };
 
+const VirtualizedListContext = React.createContext(null);
+
 export class ModalView extends React.PureComponent {
   static proptypes = {
     // Props: Events ---------------------
@@ -117,9 +122,7 @@ export class ModalView extends React.PureComponent {
   constructor(props){
     super(props);
 
-    this.requestID  = 0;
-    this.requestMap = new Map();
-
+    RequestFactory.initialize(this);
     this._childRef = null;
 
     this.state = {
@@ -129,11 +132,14 @@ export class ModalView extends React.PureComponent {
     };
   };
 
-  setVisibilty = async (nextVisible, childProps = null) => {
+  setVisibility = async (nextVisible, childProps = null) => {
     const { visible: prevVisible } = this.state;
 
     const didChange = (prevVisible != nextVisible);
     if (!didChange) return false;
+
+    const { promise, requestID } = 
+      RequestFactory.newRequest(this, { timeout: 2000 });
 
     try {
       if(nextVisible) {
@@ -156,9 +162,6 @@ export class ModalView extends React.PureComponent {
         this.didOnLayout = null;
       };
 
-      // new requestID
-      const requestID = this.requestID++;
-      
       // request modal to open/close
       UIManager.dispatchViewManagerCommand(
         findNodeHandle(this.nativeModalViewRef),
@@ -166,9 +169,7 @@ export class ModalView extends React.PureComponent {
         [requestID, nextVisible]
       );
 
-      const res = await new Promise((resolve, reject) => {
-        this.requestMap[requestID] = { resolve, reject };
-      });
+      const result = await promise;
 
       // when finish hiding modal, unmount children
       if(!nextVisible) await Helpers.setStateAsync(this, {
@@ -176,21 +177,27 @@ export class ModalView extends React.PureComponent {
         childProps: null
       });
 
-      return res.success;
+      return result.success;
 
     } catch(error){
-      console.log(
-          "ModalView, setVisibilty error"
-        + ` - Error Code: ${error.errorCode   }`
-        + ` - Error Mesg: ${error.errorMessage}`
-      );
+      RequestFactory.rejectRequest(this, {requestID});
+      console.log("ModalView, setVisibility failed:");
+      console.log(error);
 
       return false;
     };
   };
 
-  setIsModalInPresentation = (bool) => {
-    this.setState({ isModalInPresentation: bool });
+  setIsModalInPresentation = (isModalInPresentation) => {
+    const { isModalInPresentation: prevVal } = this.state;
+    if(prevVal != isModalInPresentation){
+      this.setState({ isModalInPresentation });
+    };
+  };
+
+  // We don't want any responder events bubbling out of the modal.
+  _shouldSetResponder() {
+    return true;
   };
 
   _handleOnLayout = () => {
@@ -221,23 +228,9 @@ export class ModalView extends React.PureComponent {
   //#region - Native Event Handlers
 
   _handleOnRequestResult = ({nativeEvent}) => {
-    const { requestID, success, errorCode, errorMessage } = nativeEvent;
-
-    const promise = this.requestMap[requestID];
-    if(!promise) return;
-
-    const params = { requestID, success, errorCode, errorMessage};
-
-    try {
-      (success? promise.resolve : promise.reject)(params);
-      this.props     .onRequestResult?.();
-      this._childRef?.onRequestResult?.();
-  
-    } catch(error){
-      promise.reject(params);
-      console.log("ModalView, _handleOnRequestResult: failed");
-      console.log(error);
-    };
+    RequestFactory.resolveRequestFromObj(this, nativeEvent);
+    this.props     .onRequestResult?.(nativeEvent);
+    this._childRef?.onRequestResult?.(nativeEvent);
   };
 
   _handleOnModalShow = () => {
@@ -275,9 +268,8 @@ export class ModalView extends React.PureComponent {
   //#endregion
 
   render(){
+    const props = this.props;
     const state = this.state;
-    const children   = this.props.children;
-    const childCount = React.Children.count(children);
 
     const nativeProps = {
       [PROP_KEYS.onModalShow          ]: this._handleOnModalShow          ,
@@ -286,11 +278,8 @@ export class ModalView extends React.PureComponent {
       [PROP_KEYS.onModalDidDismiss    ]: this._handleOnModalDidDismiss    ,
       [PROP_KEYS.onModalWillDismiss   ]: this._handleOnModalWillDismiss   ,
       [PROP_KEYS.onModalAttemptDismiss]: this._handleOnModalAttemptDismiss,
-    };
-
-    const props = {
-      ...this.props ,
-      ...nativeProps,
+      // pass down props
+      ...props, ...nativeProps,
       ...(this.props.setModalInPresentationFromProps && {
         [PROP_KEYS.isModalInPresentation]: state.isModalInPresentation
       }),
@@ -300,26 +289,30 @@ export class ModalView extends React.PureComponent {
       <NativeModalView
         ref={r => this.nativeModalViewRef = r}
         style={styles.rootContainer}
-        {...props}
+        onStartShouldSetResponder={this._shouldSetResponder}
+        {...nativeProps}
       >
-        {state.visible && (
-          <View 
-            ref={r => this.modalContainerRef = r}
-            style={[styles.modalContainer, props.containerStyle]}
-            onLayout={this._handleOnLayout}
-          >
-            {(childCount == 1)? (
-              // passing down modal ref/events directly to child 
-              // currently only works if there's 1 child
-              React.cloneElement(children, {
-                ref        : this._handleChildRef   ,
-                getModalRef: this._handleChildGetRef,
-              // pass down props received from setVisibility
-              ...(_.isObject(state.childProps) && state.childProps),
-            })
-            ):(children)}
-          </View>
-        )}
+        <VirtualizedListContext.Provider value={null}>
+          <ScrollView.Context.Provider value={null}>
+            {state.visible && (
+              <View 
+                ref={r => this.modalContainerRef = r}
+                style={[styles.modalContainer, props.containerStyle]}
+                collapsable={false}
+                onLayout={this._handleOnLayout}
+              >
+                {React.cloneElement(this.props.children, {
+                  ref        : this._handleChildRef   ,
+                  getModalRef: this._handleChildGetRef,
+                  // pass down props received from setVisibility
+                  ...(_.isObject(state.childProps) && state.childProps),
+                  // pass down modalID
+                  modalID: props[PROP_KEYS.modalID]
+                })}
+              </View>
+            )}
+          </ScrollView.Context.Provider>
+        </VirtualizedListContext.Provider>
       </NativeModalView>
     );
   };
@@ -331,5 +324,8 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
   },
 });

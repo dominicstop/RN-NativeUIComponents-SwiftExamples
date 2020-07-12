@@ -23,7 +23,7 @@ export default class App extends React.Component {
   render(){
     return(
       <View style={{flex: 1}}>
-        <ListOrderViewTest01/>
+        <ModalViewTest1/>
       </View>
     );
 

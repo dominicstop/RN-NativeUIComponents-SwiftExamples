@@ -8,7 +8,7 @@ import * as Helpers from 'app/src/functions/helpers';
 import { RequestFactory } from 'app/src/functions/RequestFactory';
 
 const componentName  = "RCTListOrderView";
-const NativeCommands = UIManager[componentName].Commands;
+const NativeCommands = UIManager[componentName]?.Commands;
 const NativeViewComp = requireNativeComponent(componentName);
 
 const PROP_KEYS = {
@@ -25,12 +25,50 @@ const COMMAND_KEYS = {
   requestSetListData: 'requestSetListData',
 };
 
+export const ListOrderItemKeys = {
+  id         : 'id'         ,
+  title      : 'title'      ,
+  description: 'description',
+};
+
+function compareArrays(arr1 = [], arr2 = []){
+  if(arr1?.length != arr2?.length) return false;
+
+  for (let i = 0; i < i.length; i++) {
+    if(!(_.isEqual(arr1[i], arr2[i]))) return false;
+  };
+
+  return true;
+};
+
+
 export class ListOrderView extends React.PureComponent {
   constructor(props){
     super(props);
 
-    this._listItems = [];
+    this._listItems = props.listData ?? [];
     RequestFactory.initialize(this);
+  };
+
+  shouldComponentUpdate(nextProps){
+    const prevProps = this.props;
+
+    const prevListData = prevProps.listData;
+    const nextListData = nextProps.listData;
+
+    const didListDataPropChange = 
+      !compareArrays(prevListData, nextListData);
+
+    const didListDataChange = (this._listItemsDidChange
+      ? didListDataPropChange && !compareArrays(this._listItems, nextListData)
+      : didListDataPropChange
+    );
+
+    this._listItemsDidChange = false;
+    return (
+      prevProps.descLabel  != nextProps.descLabel  ||
+      prevProps.isEditable != nextProps.isEditable || didListDataChange
+    );
   };
 
   requestListData = async () => {
@@ -78,6 +116,7 @@ export class ListOrderView extends React.PureComponent {
   };
 
   _handleOnRequestResult = ({nativeEvent}) => {
+    this.props.onRequestResult?.(nativeEvent);
     RequestFactory.resolveRequestFromObj(this, nativeEvent);
   };
 
@@ -85,10 +124,8 @@ export class ListOrderView extends React.PureComponent {
     const { listItems } = nativeEvent;
 
     this._listItems = listItems;
+    this._listItemsDidChange = true;
     this.props.onListItemsChange?.(listItems);
-
-    console.log("_handleOnListItemsChange listItems: ");
-    console.log(listItems);
   };
   
   render(){

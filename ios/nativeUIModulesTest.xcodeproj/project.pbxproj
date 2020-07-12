@@ -16,11 +16,6 @@
 		88C542AF24A507B100DCDF15 /* RCTUIButtonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429024A507B000DCDF15 /* RCTUIButtonManager.m */; };
 		88C542B024A507B100DCDF15 /* RCTUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429124A507B000DCDF15 /* RCTUIButton.swift */; };
 		88C542B124A507B100DCDF15 /* RCTUIButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429224A507B000DCDF15 /* RCTUIButtonManager.swift */; };
-		88C542B224A507B100DCDF15 /* RCTModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429424A507B000DCDF15 /* RCTModalView.swift */; };
-		88C542B324A507B100DCDF15 /* RCTModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429524A507B000DCDF15 /* RCTModalViewDelegate.swift */; };
-		88C542B424A507B100DCDF15 /* RCTModalViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429624A507B000DCDF15 /* RCTModalViewManager.swift */; };
-		88C542B524A507B100DCDF15 /* RCTModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429724A507B000DCDF15 /* RCTModalViewController.swift */; };
-		88C542B624A507B100DCDF15 /* RCTModalViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429824A507B000DCDF15 /* RCTModalViewManager.m */; };
 		88C542B724A507B100DCDF15 /* UIPageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429A24A507B000DCDF15 /* UIPageViewManager.m */; };
 		88C542B824A507B100DCDF15 /* UIPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429B24A507B000DCDF15 /* UIPageViewController.swift */; };
 		88C542B924A507B100DCDF15 /* UIPageViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C5429C24A507B000DCDF15 /* UIPageViewManager.swift */; };
@@ -40,24 +35,31 @@
 		88C542C724A507B100DCDF15 /* ExampleUIPageViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C542AE24A507B100DCDF15 /* ExampleUIPageViewManager.m */; };
 		88C542C924A517DF00DCDF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542C824A517DF00DCDF15 /* AppDelegate.swift */; };
 		88C542CB24A51BDB00DCDF15 /* KeyWindow+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542CA24A51BDB00DCDF15 /* KeyWindow+Helpers.swift */; };
-		88C542CF24A5B3C600DCDF15 /* RCTModalViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542CE24A5B3C600DCDF15 /* RCTModalViewError.swift */; };
 		88C542D124A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542D024A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift */; };
 		88C542D624A654BE00DCDF15 /* RCTLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542D524A654BE00DCDF15 /* RCTLog.swift */; };
 		88C542D924A6551600DCDF15 /* RCTSwiftLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 88C542D824A6551600DCDF15 /* RCTSwiftLog.m */; };
 		88C542DC24A8605200DCDF15 /* UIModalPresentationStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542DB24A8605100DCDF15 /* UIModalPresentationStyle+Helpers.swift */; };
 		88C542DE24A911F900DCDF15 /* UIModalTransitionStyle+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88C542DD24A911F800DCDF15 /* UIModalTransitionStyle+Helpers.swift */; };
 		88D3B2C924B253B6000323D1 /* Encodable+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2C824B253B6000323D1 /* Encodable+Helpers.swift */; };
+		88D3B2E524BAC271000323D1 /* SwiftUIListOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2E024BAC270000323D1 /* SwiftUIListOrder.swift */; };
+		88D3B2E624BAC271000323D1 /* RCTListOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2E124BAC270000323D1 /* RCTListOrderModel.swift */; };
+		88D3B2E724BAC271000323D1 /* RCTListOrderViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2E224BAC270000323D1 /* RCTListOrderViewManager.m */; };
+		88D3B2E824BAC271000323D1 /* RCTListOrderViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2E324BAC270000323D1 /* RCTListOrderViewManager.swift */; };
+		88D3B2E924BAC271000323D1 /* RCTListOrderViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2E424BAC270000323D1 /* RCTListOrderViewProxy.swift */; };
+		88D3B2F324BAC28A000323D1 /* RCTModalViewModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2EB24BAC28A000323D1 /* RCTModalViewModule.swift */; };
+		88D3B2F424BAC28A000323D1 /* RCTModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2EC24BAC28A000323D1 /* RCTModalView.swift */; };
+		88D3B2F524BAC28A000323D1 /* RCTModalViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2ED24BAC28A000323D1 /* RCTModalViewDelegate.swift */; };
+		88D3B2F624BAC28A000323D1 /* RCTModalViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2EE24BAC28A000323D1 /* RCTModalViewManager.swift */; };
+		88D3B2F724BAC28A000323D1 /* RCTModalViewModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2EF24BAC28A000323D1 /* RCTModalViewModule.m */; };
+		88D3B2F824BAC28A000323D1 /* RCTModalViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2F024BAC28A000323D1 /* RCTModalViewError.swift */; };
+		88D3B2F924BAC28A000323D1 /* RCTModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2F124BAC28A000323D1 /* RCTModalViewController.swift */; };
+		88D3B2FA24BAC28A000323D1 /* RCTModalViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2F224BAC28A000323D1 /* RCTModalViewManager.m */; };
 		88ED9A6524AF1A88009B17B6 /* RCTQuizQuestionEditList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6424AF1A88009B17B6 /* RCTQuizQuestionEditList.swift */; };
 		88ED9A6B24B052FC009B17B6 /* RCTQuizQuestionEditListProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6A24B052FB009B17B6 /* RCTQuizQuestionEditListProxy.swift */; };
 		88ED9A6D24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6C24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift */; };
 		88ED9A6F24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6E24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m */; };
 		88ED9A7124B084A9009B17B6 /* RuntimeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A7024B084A8009B17B6 /* RuntimeError.swift */; };
-		88ED9A7424B08A21009B17B6 /* SwiftUIListOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A7324B08A21009B17B6 /* SwiftUIListOrder.swift */; };
-		88ED9A7624B08A47009B17B6 /* RCTListOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A7524B08A47009B17B6 /* RCTListOrderModel.swift */; };
 		88ED9A7924B0BBE3009B17B6 /* Unwrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A7824B0BBE3009B17B6 /* Unwrap.swift */; };
-		88ED9A7B24B0C1EC009B17B6 /* RCTListOrderViewProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A7A24B0C1EC009B17B6 /* RCTListOrderViewProxy.swift */; };
-		88ED9A7D24B0C4AB009B17B6 /* RCTListOrderViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A7C24B0C4AB009B17B6 /* RCTListOrderViewManager.swift */; };
-		88ED9A7F24B0C60C009B17B6 /* RCTListOrderViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A7E24B0C60C009B17B6 /* RCTListOrderViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,11 +90,6 @@
 		88C5429024A507B000DCDF15 /* RCTUIButtonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTUIButtonManager.m; sourceTree = "<group>"; };
 		88C5429124A507B000DCDF15 /* RCTUIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTUIButton.swift; sourceTree = "<group>"; };
 		88C5429224A507B000DCDF15 /* RCTUIButtonManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTUIButtonManager.swift; sourceTree = "<group>"; };
-		88C5429424A507B000DCDF15 /* RCTModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalView.swift; sourceTree = "<group>"; };
-		88C5429524A507B000DCDF15 /* RCTModalViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewDelegate.swift; sourceTree = "<group>"; };
-		88C5429624A507B000DCDF15 /* RCTModalViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewManager.swift; sourceTree = "<group>"; };
-		88C5429724A507B000DCDF15 /* RCTModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewController.swift; sourceTree = "<group>"; };
-		88C5429824A507B000DCDF15 /* RCTModalViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTModalViewManager.m; sourceTree = "<group>"; };
 		88C5429A24A507B000DCDF15 /* UIPageViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIPageViewManager.m; sourceTree = "<group>"; };
 		88C5429B24A507B000DCDF15 /* UIPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewController.swift; sourceTree = "<group>"; };
 		88C5429C24A507B000DCDF15 /* UIPageViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewManager.swift; sourceTree = "<group>"; };
@@ -112,7 +109,6 @@
 		88C542AE24A507B100DCDF15 /* ExampleUIPageViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExampleUIPageViewManager.m; sourceTree = "<group>"; };
 		88C542C824A517DF00DCDF15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88C542CA24A51BDB00DCDF15 /* KeyWindow+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "KeyWindow+Helpers.swift"; sourceTree = "<group>"; };
-		88C542CE24A5B3C600DCDF15 /* RCTModalViewError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTModalViewError.swift; sourceTree = "<group>"; };
 		88C542D024A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBlurEffect+Helpers.swift"; sourceTree = "<group>"; };
 		88C542D524A654BE00DCDF15 /* RCTLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RCTLog.swift; path = Extensions/RCTLog.swift; sourceTree = SOURCE_ROOT; };
 		88C542D724A654EE00DCDF15 /* RCTSwiftLog.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = RCTSwiftLog.h; path = Extensions/RCTSwiftLog.h; sourceTree = SOURCE_ROOT; };
@@ -120,17 +116,25 @@
 		88C542DB24A8605100DCDF15 /* UIModalPresentationStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIModalPresentationStyle+Helpers.swift"; sourceTree = "<group>"; };
 		88C542DD24A911F800DCDF15 /* UIModalTransitionStyle+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIModalTransitionStyle+Helpers.swift"; sourceTree = "<group>"; };
 		88D3B2C824B253B6000323D1 /* Encodable+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Helpers.swift"; sourceTree = "<group>"; };
+		88D3B2E024BAC270000323D1 /* SwiftUIListOrder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftUIListOrder.swift; sourceTree = "<group>"; };
+		88D3B2E124BAC270000323D1 /* RCTListOrderModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTListOrderModel.swift; sourceTree = "<group>"; };
+		88D3B2E224BAC270000323D1 /* RCTListOrderViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTListOrderViewManager.m; sourceTree = "<group>"; };
+		88D3B2E324BAC270000323D1 /* RCTListOrderViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTListOrderViewManager.swift; sourceTree = "<group>"; };
+		88D3B2E424BAC270000323D1 /* RCTListOrderViewProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTListOrderViewProxy.swift; sourceTree = "<group>"; };
+		88D3B2EB24BAC28A000323D1 /* RCTModalViewModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewModule.swift; sourceTree = "<group>"; };
+		88D3B2EC24BAC28A000323D1 /* RCTModalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalView.swift; sourceTree = "<group>"; };
+		88D3B2ED24BAC28A000323D1 /* RCTModalViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewDelegate.swift; sourceTree = "<group>"; };
+		88D3B2EE24BAC28A000323D1 /* RCTModalViewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewManager.swift; sourceTree = "<group>"; };
+		88D3B2EF24BAC28A000323D1 /* RCTModalViewModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTModalViewModule.m; sourceTree = "<group>"; };
+		88D3B2F024BAC28A000323D1 /* RCTModalViewError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewError.swift; sourceTree = "<group>"; };
+		88D3B2F124BAC28A000323D1 /* RCTModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewController.swift; sourceTree = "<group>"; };
+		88D3B2F224BAC28A000323D1 /* RCTModalViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTModalViewManager.m; sourceTree = "<group>"; };
 		88ED9A6424AF1A88009B17B6 /* RCTQuizQuestionEditList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditList.swift; sourceTree = "<group>"; };
 		88ED9A6A24B052FB009B17B6 /* RCTQuizQuestionEditListProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditListProxy.swift; sourceTree = "<group>"; };
 		88ED9A6C24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditListManager.swift; sourceTree = "<group>"; };
 		88ED9A6E24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTQuizQuestionEditListManager.m; sourceTree = "<group>"; };
 		88ED9A7024B084A8009B17B6 /* RuntimeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeError.swift; sourceTree = "<group>"; };
-		88ED9A7324B08A21009B17B6 /* SwiftUIListOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIListOrder.swift; sourceTree = "<group>"; };
-		88ED9A7524B08A47009B17B6 /* RCTListOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTListOrderModel.swift; sourceTree = "<group>"; };
 		88ED9A7824B0BBE3009B17B6 /* Unwrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unwrap.swift; sourceTree = "<group>"; };
-		88ED9A7A24B0C1EC009B17B6 /* RCTListOrderViewProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTListOrderViewProxy.swift; sourceTree = "<group>"; };
-		88ED9A7C24B0C4AB009B17B6 /* RCTListOrderViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTListOrderViewManager.swift; sourceTree = "<group>"; };
-		88ED9A7E24B0C60C009B17B6 /* RCTListOrderViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTListOrderViewManager.m; sourceTree = "<group>"; };
 		8981B8617A02F9858E54A254 /* libPods-nativeUIModulesTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-nativeUIModulesTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
@@ -268,12 +272,12 @@
 		88C5428024A5072400DCDF15 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				88ED9A7224B0890D009B17B6 /* RCTListOrder */,
+				88D3B2EA24BAC289000323D1 /* RCTModalView */,
+				88D3B2DF24BAC270000323D1 /* RCTListOrder */,
 				88ED9A6324AF1A51009B17B6 /* RCTQuizQuestionEditList */,
 				88C542A224A507B000DCDF15 /* BlueBoxTestView */,
 				88C542A624A507B100DCDF15 /* ChildTestView */,
 				88C542AA24A507B100DCDF15 /* ExampleUIPageView */,
-				88C5429324A507B000DCDF15 /* RCTModalView */,
 				88C5428F24A507B000DCDF15 /* RCTUIButton */,
 				88C5429E24A507B000DCDF15 /* RedBoxTestView */,
 				88C5429924A507B000DCDF15 /* UIPageView */,
@@ -289,19 +293,6 @@
 				88C5429224A507B000DCDF15 /* RCTUIButtonManager.swift */,
 			);
 			path = RCTUIButton;
-			sourceTree = "<group>";
-		};
-		88C5429324A507B000DCDF15 /* RCTModalView */ = {
-			isa = PBXGroup;
-			children = (
-				88C5429424A507B000DCDF15 /* RCTModalView.swift */,
-				88C5429524A507B000DCDF15 /* RCTModalViewDelegate.swift */,
-				88C5429624A507B000DCDF15 /* RCTModalViewManager.swift */,
-				88C5429724A507B000DCDF15 /* RCTModalViewController.swift */,
-				88C5429824A507B000DCDF15 /* RCTModalViewManager.m */,
-				88C542CE24A5B3C600DCDF15 /* RCTModalViewError.swift */,
-			);
-			path = RCTModalView;
 			sourceTree = "<group>";
 		};
 		88C5429924A507B000DCDF15 /* UIPageView */ = {
@@ -375,6 +366,33 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		88D3B2DF24BAC270000323D1 /* RCTListOrder */ = {
+			isa = PBXGroup;
+			children = (
+				88D3B2E024BAC270000323D1 /* SwiftUIListOrder.swift */,
+				88D3B2E124BAC270000323D1 /* RCTListOrderModel.swift */,
+				88D3B2E224BAC270000323D1 /* RCTListOrderViewManager.m */,
+				88D3B2E324BAC270000323D1 /* RCTListOrderViewManager.swift */,
+				88D3B2E424BAC270000323D1 /* RCTListOrderViewProxy.swift */,
+			);
+			path = RCTListOrder;
+			sourceTree = "<group>";
+		};
+		88D3B2EA24BAC289000323D1 /* RCTModalView */ = {
+			isa = PBXGroup;
+			children = (
+				88D3B2EB24BAC28A000323D1 /* RCTModalViewModule.swift */,
+				88D3B2EC24BAC28A000323D1 /* RCTModalView.swift */,
+				88D3B2ED24BAC28A000323D1 /* RCTModalViewDelegate.swift */,
+				88D3B2EE24BAC28A000323D1 /* RCTModalViewManager.swift */,
+				88D3B2EF24BAC28A000323D1 /* RCTModalViewModule.m */,
+				88D3B2F024BAC28A000323D1 /* RCTModalViewError.swift */,
+				88D3B2F124BAC28A000323D1 /* RCTModalViewController.swift */,
+				88D3B2F224BAC28A000323D1 /* RCTModalViewManager.m */,
+			);
+			path = RCTModalView;
+			sourceTree = "<group>";
+		};
 		88ED9A6324AF1A51009B17B6 /* RCTQuizQuestionEditList */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,18 +402,6 @@
 				88ED9A6E24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m */,
 			);
 			path = RCTQuizQuestionEditList;
-			sourceTree = "<group>";
-		};
-		88ED9A7224B0890D009B17B6 /* RCTListOrder */ = {
-			isa = PBXGroup;
-			children = (
-				88ED9A7324B08A21009B17B6 /* SwiftUIListOrder.swift */,
-				88ED9A7524B08A47009B17B6 /* RCTListOrderModel.swift */,
-				88ED9A7A24B0C1EC009B17B6 /* RCTListOrderViewProxy.swift */,
-				88ED9A7C24B0C4AB009B17B6 /* RCTListOrderViewManager.swift */,
-				88ED9A7E24B0C60C009B17B6 /* RCTListOrderViewManager.m */,
-			);
-			path = RCTListOrder;
 			sourceTree = "<group>";
 		};
 		88ED9A7724B0BBA0009B17B6 /* SwiftUI */ = {
@@ -599,50 +605,52 @@
 			files = (
 				88ED9A7924B0BBE3009B17B6 /* Unwrap.swift in Sources */,
 				88C542D924A6551600DCDF15 /* RCTSwiftLog.m in Sources */,
-				88C542B324A507B100DCDF15 /* RCTModalViewDelegate.swift in Sources */,
 				88C542DE24A911F900DCDF15 /* UIModalTransitionStyle+Helpers.swift in Sources */,
 				88ED9A7124B084A9009B17B6 /* RuntimeError.swift in Sources */,
-				88ED9A7B24B0C1EC009B17B6 /* RCTListOrderViewProxy.swift in Sources */,
+				88D3B2E924BAC271000323D1 /* RCTListOrderViewProxy.swift in Sources */,
+				88D3B2E524BAC271000323D1 /* SwiftUIListOrder.swift in Sources */,
+				88D3B2E624BAC271000323D1 /* RCTListOrderModel.swift in Sources */,
 				88C542C724A507B100DCDF15 /* ExampleUIPageViewManager.m in Sources */,
 				88C542C524A507B100DCDF15 /* ExampleUIPageViewManager.swift in Sources */,
-				88ED9A7F24B0C60C009B17B6 /* RCTListOrderViewManager.m in Sources */,
 				88C542C924A517DF00DCDF15 /* AppDelegate.swift in Sources */,
+				88D3B2F524BAC28A000323D1 /* RCTModalViewDelegate.swift in Sources */,
 				88C542D624A654BE00DCDF15 /* RCTLog.swift in Sources */,
 				88C542B824A507B100DCDF15 /* UIPageViewController.swift in Sources */,
 				88ED9A6F24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m in Sources */,
 				88C542D124A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift in Sources */,
-				88C542B624A507B100DCDF15 /* RCTModalViewManager.m in Sources */,
 				88C542BA24A507B100DCDF15 /* UIPageView.swift in Sources */,
-				88C542B424A507B100DCDF15 /* RCTModalViewManager.swift in Sources */,
 				88C542BE24A507B100DCDF15 /* BlueBoxTestView.swift in Sources */,
+				88D3B2F724BAC28A000323D1 /* RCTModalViewModule.m in Sources */,
 				88C542B124A507B100DCDF15 /* RCTUIButtonManager.swift in Sources */,
 				88C542B024A507B100DCDF15 /* RCTUIButton.swift in Sources */,
 				88C542C424A507B100DCDF15 /* ExampleUIPageView.swift in Sources */,
 				88C542C124A507B100DCDF15 /* ChildTestViewManager.m in Sources */,
 				88C542BD24A507B100DCDF15 /* RedBoxTestViewManager.swift in Sources */,
 				88D3B2C924B253B6000323D1 /* Encodable+Helpers.swift in Sources */,
-				88ED9A7424B08A21009B17B6 /* SwiftUIListOrder.swift in Sources */,
 				88C542C224A507B100DCDF15 /* ChildTestViewManager.swift in Sources */,
 				88C542C624A507B100DCDF15 /* ExampleUIPageViewController.swift in Sources */,
 				88ED9A6524AF1A88009B17B6 /* RCTQuizQuestionEditList.swift in Sources */,
-				88ED9A7624B08A47009B17B6 /* RCTListOrderModel.swift in Sources */,
+				88D3B2F924BAC28A000323D1 /* RCTModalViewController.swift in Sources */,
+				88D3B2FA24BAC28A000323D1 /* RCTModalViewManager.m in Sources */,
 				88C542AF24A507B100DCDF15 /* RCTUIButtonManager.m in Sources */,
+				88D3B2E724BAC271000323D1 /* RCTListOrderViewManager.m in Sources */,
+				88D3B2F624BAC28A000323D1 /* RCTModalViewManager.swift in Sources */,
 				88C542CB24A51BDB00DCDF15 /* KeyWindow+Helpers.swift in Sources */,
+				88D3B2E824BAC271000323D1 /* RCTListOrderViewManager.swift in Sources */,
 				88ED9A6B24B052FC009B17B6 /* RCTQuizQuestionEditListProxy.swift in Sources */,
 				88C542C324A507B100DCDF15 /* ChildTestView.swift in Sources */,
 				88C542B724A507B100DCDF15 /* UIPageViewManager.m in Sources */,
 				88C5427D24A5065F00DCDF15 /* UIView+Helpers.swift in Sources */,
-				88C542B224A507B100DCDF15 /* RCTModalView.swift in Sources */,
+				88D3B2F324BAC28A000323D1 /* RCTModalViewModule.swift in Sources */,
 				88C542BB24A507B100DCDF15 /* RedBoxTestViewManager.m in Sources */,
 				88ED9A6D24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift in Sources */,
+				88D3B2F824BAC28A000323D1 /* RCTModalViewError.swift in Sources */,
 				88C542BF24A507B100DCDF15 /* BlueBoxTestiewManager.m in Sources */,
 				88C542B924A507B100DCDF15 /* UIPageViewManager.swift in Sources */,
-				88C542CF24A5B3C600DCDF15 /* RCTModalViewError.swift in Sources */,
 				88C542BC24A507B100DCDF15 /* RedBoxTestView.swift in Sources */,
-				88C542B524A507B100DCDF15 /* RCTModalViewController.swift in Sources */,
 				88C542DC24A8605200DCDF15 /* UIModalPresentationStyle+Helpers.swift in Sources */,
+				88D3B2F424BAC28A000323D1 /* RCTModalView.swift in Sources */,
 				88C542C024A507B100DCDF15 /* BlueBoxTestiewManager.swift in Sources */,
-				88ED9A7D24B0C4AB009B17B6 /* RCTListOrderViewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
