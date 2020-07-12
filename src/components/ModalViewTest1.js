@@ -52,7 +52,7 @@ export class ModalViewTest1 extends React.PureComponent {
         modalBGBlurEffectStyle: UIBlurEffectStyles.systemUltraThinMaterial,
       });
     };
-    
+
     await this.modal1.setVisibility(true);
     await this.modal2.setVisibility(true);
     await this.modal3.setVisibility(true);
@@ -65,6 +65,7 @@ export class ModalViewTest1 extends React.PureComponent {
     await this.modal7.setVisibility(true);
     await this.modal8.setVisibility(true);
     await this.modal9.setVisibility(true);
+    return;
 
     await this.modal9.setVisibility(false);
     await this.modal8.setVisibility(false);
@@ -95,45 +96,11 @@ export class ModalViewTest1 extends React.PureComponent {
   render(){
     return(
       <View style={styles.rootContainer}>
-        <ScrollView
-          style={{flex: 1}}
-          stickyHeaderIndices={[0, 2, 4]}
-        >
-          <Text style={styles.stickyHeaderText}>1</Text>
-          <Text style={styles.stickyHeaderText}>2</Text>
-          <Text style={styles.stickyHeaderText}>3</Text>
-          <Text style={styles.stickyHeaderText}>4</Text>
-          <Text style={styles.stickyHeaderText}>5</Text>
-          <Text style={styles.stickyHeaderText}>6</Text>
-          <Text style={styles.stickyHeaderText}>7</Text>
-          <Text style={styles.stickyHeaderText}>8</Text>
-          <Text style={styles.stickyHeaderText}>9</Text>
-        </ScrollView>
-        <ModalView 
-          ref={r => this.stickyModalRef = r}
-          style={{flex: 1}}
-        >
-          <ScrollView
-            style={{flex: 1}}
-            stickyHeaderIndices={[0, 2, 4]}
-          >
-            <Text style={styles.stickyHeaderText}>1</Text>
-            <Text style={styles.stickyHeaderText}>2</Text>
-            <Text style={styles.stickyHeaderText}>3</Text>
-            <Text style={styles.stickyHeaderText}>4</Text>
-            <Text style={styles.stickyHeaderText}>5</Text>
-            <Text style={styles.stickyHeaderText}>6</Text>
-            <Text style={styles.stickyHeaderText}>7</Text>
-            <Text style={styles.stickyHeaderText}>8</Text>
-            <Text style={styles.stickyHeaderText}>9</Text>
-          </ScrollView>
-        </ModalView>
-        <ModalView 
-          ref={r => this.listOrderModalRef = r}
-          style={{flex: 1}}
-        >
-          <ListOrderViewTest01/>
-        </ModalView>
+        <Image
+          source={require('app/assets/images/macos11_wallpaper.jpg')}
+          style={styles.image}
+          resizeMode={'cover'}
+        />
         <TestModal
           ref={r => this.modal1 = r}
           containerStyle={styles.modalContainer}
@@ -234,11 +201,11 @@ const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
     padding: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
     flex: 1,
-    alignSelf: 'center',
-    justifyContent: 'center',
     width: 315,
     borderRadius: 20,
   },
