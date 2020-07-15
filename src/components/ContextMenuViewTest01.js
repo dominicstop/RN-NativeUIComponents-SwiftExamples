@@ -14,28 +14,55 @@ const menuItemsDummy1 = [{
     [MenuItemKeys.menuState     ]: MenuElementState.off,
     [MenuItemKeys.menuAttributes]: [MenuElementAtrributes.disabled],
   },{
-    [MenuItemKeys.key           ]: 'key-02',
-    [MenuItemKeys.title         ]: 'Normal Action #2',
-    [MenuItemKeys.imageType     ]: ImageTypes.SYSTEM,
-    [MenuItemKeys.imageValue    ]: 'archivebox.fill',
-    [MenuItemKeys.menuState     ]: MenuElementState.off,
-    [MenuItemKeys.menuAttributes]: [],
+    [MenuItemKeys.key       ]: 'key-02',
+    [MenuItemKeys.title     ]: 'Normal Action #2',
+    [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+    [MenuItemKeys.imageValue]: 'archivebox.fill',
   },{
-    [MenuItemKeys.key           ]: 'key-03',
-    [MenuItemKeys.title         ]: 'MenuState: On',
-    [MenuItemKeys.imageType     ]: ImageTypes.SYSTEM,
-    [MenuItemKeys.imageValue    ]: 'folder.fill',
-    [MenuItemKeys.menuState     ]: MenuElementState.on,
-    [MenuItemKeys.menuAttributes]: [],
+    [MenuItemKeys.key       ]: 'key-03',
+    [MenuItemKeys.title     ]: 'MenuState: On',
+    [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+    [MenuItemKeys.imageValue]: 'folder.fill',
+    [MenuItemKeys.menuState ]: MenuElementState.on,
   },{
-    [MenuItemKeys.key           ]: 'key-04',
-    [MenuItemKeys.title         ]: 'Normal Action #4',
-    [MenuItemKeys.imageType     ]: ImageTypes.SYSTEM,
-    [MenuItemKeys.imageValue    ]: 'dial',
-    [MenuItemKeys.menuState     ]: MenuElementState.off,
-    [MenuItemKeys.menuAttributes]: [],
+    [MenuItemKeys.key         ]: 'key-05',
+    [MenuItemKeys.title       ]: 'Action w/ Submmenu...',
+    [MenuItemKeys.imageType   ]: ImageTypes.SYSTEM,
+    [MenuItemKeys.imageValue  ]: 'dial',
+    [MenuItemKeys.submenuItems]: [{
+      [MenuItemKeys.key       ]: 'key-07',
+      [MenuItemKeys.title     ]: 'Submenu Action #1',
+      [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+      [MenuItemKeys.imageValue]: 'star',
+    },{
+      [MenuItemKeys.key       ]: 'key-08',
+      [MenuItemKeys.title     ]: 'Submenu Action #2',
+      [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+      [MenuItemKeys.imageValue]: 'star.lefthalf.fill',
+    },{
+      [MenuItemKeys.key         ]: 'key-09',
+      [MenuItemKeys.title       ]: 'Submenu Action #3',
+      [MenuItemKeys.imageType   ]: ImageTypes.SYSTEM,
+      [MenuItemKeys.imageValue  ]: 'star.fill',
+      [MenuItemKeys.submenuItems]: [{
+        [MenuItemKeys.key       ]: 'key-10',
+        [MenuItemKeys.title     ]: 'Submenu Action #4',
+        [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+        [MenuItemKeys.imageValue]: 'moon.stars.fill',
+      },{
+        [MenuItemKeys.key       ]: 'key-11',
+        [MenuItemKeys.title     ]: 'Submenu Action #5',
+        [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+        [MenuItemKeys.imageValue]: 'ant.fill',
+      },{
+        [MenuItemKeys.key       ]: 'key-12',
+        [MenuItemKeys.title     ]: 'Submenu Action #6',
+        [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+        [MenuItemKeys.imageValue]: 'hare.fill',
+      }]
+    }]
   },{
-    [MenuItemKeys.key           ]: 'key-05',
+    [MenuItemKeys.key           ]: 'key-06',
     [MenuItemKeys.title         ]: 'Destructive Action',
     [MenuItemKeys.imageType     ]: ImageTypes.SYSTEM,
     [MenuItemKeys.imageValue    ]: 'trash.fill',
@@ -71,6 +98,11 @@ export class ContextMenuViewTest01 extends React.PureComponent {
           menuTitle={'Menu Test - displayInline'}
           menuOptions={[MenuOptions.displayInline]}
         >
+          <Image
+            style={styles.imageBG}
+            resizeMode={'cover'}
+            source={require('app/assets/images/macos11_wallpaper.jpg')}
+          />
           <Text style={styles.text}>
             {'React Native View'}
           </Text>
@@ -116,8 +148,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 10,
-    backgroundColor: 'grey',
+    backgroundColor: 'black',
     margin: 15,
+    overflow: 'hidden'
   },
   contextMenuViewImage: {
     margin: 15,
@@ -127,8 +160,14 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 10,
   },
+  imageBG: {
+    ...StyleSheet.absoluteFillObject,
+    width: 300,
+    height: 200,
+  },
   text: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: 'white'
   },
 });

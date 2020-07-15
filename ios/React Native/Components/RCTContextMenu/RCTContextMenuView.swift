@@ -72,9 +72,9 @@ class RCTContextMenuView: UIView {
     return UIMenu(
       title   : self.menuTitle as String,
       options : self._menuOptions,
-      children: self._menuItems.compactMap { menuItem in
-        menuItem.makeUIAction(){ action in
-          self.onPressMenuItem?(["key": menuItem.key]);
+      children: self._menuItems.compactMap {
+        $0.makeUIMenuElement(){ (key, action) in
+          self.onPressMenuItem?(["key": key]);
         };
       }
     );

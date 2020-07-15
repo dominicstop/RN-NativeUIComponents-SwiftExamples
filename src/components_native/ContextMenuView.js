@@ -42,6 +42,7 @@ export const MenuItemKeys = {
   imageValue    : 'imageValue'    , // string value
   menuState     : 'menuState'     , // MenuElementState item
   menuAttributes: 'menuAttributes', // MenuElementAtrributes item
+  submenuItems  : 'submenuItems'  , // Submenu: MenuItemKeys item
 };
 
 const PROP_KEYS = {
