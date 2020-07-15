@@ -114,6 +114,7 @@ export class ContextMenuViewTest01 extends React.PureComponent {
           menuItems={menuItemsDummy1}
           menuTitle={'Menu Test - displayInline'}
           menuOptions={[MenuOptions.displayInline]}
+          onPressMenuItem={({key}) => alert(key)}
         >
           <Image
             style={styles.imageBG}

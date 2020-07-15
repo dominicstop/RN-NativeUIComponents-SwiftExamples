@@ -1,11 +1,8 @@
 import React from 'react';
-import { requireNativeComponent, UIManager, findNodeHandle, StyleSheet, View, ScrollView } from 'react-native';
+import { requireNativeComponent, UIManager } from 'react-native';
 import Proptypes from 'prop-types';
 
 import _ from 'lodash';
-import * as Helpers from 'app/src/functions/helpers';
-import { RequestFactory } from 'app/src/functions/RequestFactory';
-
 
 const componentName   = "RCTContextMenu";
 const NativeCommands  = UIManager[componentName]?.Commands;
@@ -36,34 +33,39 @@ export const MenuElementState = {
 };
 
 export const MenuItemKeys = {
-  key           : 'key'           , // unique identifier
-  title         : 'title'         , // string value
-  imageType     : 'imageType'     , // ImageTypes item
-  imageValue    : 'imageValue'    , // string value
-  menuState     : 'menuState'     , // MenuElementState item
-  menuAttributes: 'menuAttributes', // MenuElementAtrributes item
-  submenuItems  : 'submenuItems'  , // Submenu: MenuItemKeys item
+  key           : 'key'           , // required - unique identifier
+  title         : 'title'         , // required - string value
+  imageType     : 'imageType'     , // optional - ImageTypes item
+  imageValue    : 'imageValue'    , // optional - string value
+  menuState     : 'menuState'     , // optional - MenuElementState item
+  menuAttributes: 'menuAttributes', // optional - MenuElementAtrributes item
+  submenuItems  : 'submenuItems'  , // optional - array of MenuItemKeys
 };
 
 const PROP_KEYS = {
+  // values -------------
   menuTitle: 'menuTitle',
-
-  menuItems  : 'menuItems'  ,
-  menuOptions: 'menuOptions',
-
+  // arrays -----------------
+  menuItems  : 'menuItems'  , // required: array of MenuItemKeys
+  menuOptions: 'menuOptions', // optional: array of MenuOptions
+  // events -----------------------
   onPressMenuItem: 'onPressMenuItem',
 };
 
 
 export class ContextMenuView extends React.PureComponent {
+  static proptypes = {
+    menuTitle: Proptypes.string,
+    menuItems: Proptypes.array.isRequired,
+    menuOptions: Proptypes.array,
+    onPressMenuItem: Proptypes.func,
+  };
 
   _handleOnPressMenuItem = ({nativeEvent}) => {
-    console.log(nativeEvent);
-    alert(nativeEvent.key);
+    this.props.onPressMenuItem?.({key: nativeEvent.key});
   };
 
   render(){
-
     const nativeProps = {
       ...this.props,
       [PROP_KEYS.onPressMenuItem]: this._handleOnPressMenuItem,
