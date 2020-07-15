@@ -54,6 +54,12 @@
 		88D3B2F824BAC28A000323D1 /* RCTModalViewError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2F024BAC28A000323D1 /* RCTModalViewError.swift */; };
 		88D3B2F924BAC28A000323D1 /* RCTModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2F124BAC28A000323D1 /* RCTModalViewController.swift */; };
 		88D3B2FA24BAC28A000323D1 /* RCTModalViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2F224BAC28A000323D1 /* RCTModalViewManager.m */; };
+		88D3B30024BD37D2000323D1 /* RCTContextMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B2FF24BD37D2000323D1 /* RCTContextMenuView.swift */; };
+		88D3B30224BD38A0000323D1 /* RCTContextMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B30124BD38A0000323D1 /* RCTContextMenuManager.swift */; };
+		88D3B30424BD38B2000323D1 /* RCTContextMenuManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B30324BD38B2000323D1 /* RCTContextMenuManager.m */; };
+		88D3B30624BD779D000323D1 /* RCTMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B30524BD779D000323D1 /* RCTMenuItem.swift */; };
+		88D3B30824BDF4D2000323D1 /* UIMenuOptions+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B30724BDF4D2000323D1 /* UIMenuOptions+Helpers.swift */; };
+		88D3B30C24BE14BC000323D1 /* UIMenuElement+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D3B30B24BE14BC000323D1 /* UIMenuElement+Helpers.swift */; };
 		88ED9A6524AF1A88009B17B6 /* RCTQuizQuestionEditList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6424AF1A88009B17B6 /* RCTQuizQuestionEditList.swift */; };
 		88ED9A6B24B052FC009B17B6 /* RCTQuizQuestionEditListProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6A24B052FB009B17B6 /* RCTQuizQuestionEditListProxy.swift */; };
 		88ED9A6D24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88ED9A6C24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift */; };
@@ -129,6 +135,12 @@
 		88D3B2F024BAC28A000323D1 /* RCTModalViewError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewError.swift; sourceTree = "<group>"; };
 		88D3B2F124BAC28A000323D1 /* RCTModalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RCTModalViewController.swift; sourceTree = "<group>"; };
 		88D3B2F224BAC28A000323D1 /* RCTModalViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RCTModalViewManager.m; sourceTree = "<group>"; };
+		88D3B2FF24BD37D2000323D1 /* RCTContextMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTContextMenuView.swift; sourceTree = "<group>"; };
+		88D3B30124BD38A0000323D1 /* RCTContextMenuManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTContextMenuManager.swift; sourceTree = "<group>"; };
+		88D3B30324BD38B2000323D1 /* RCTContextMenuManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTContextMenuManager.m; sourceTree = "<group>"; };
+		88D3B30524BD779D000323D1 /* RCTMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTMenuItem.swift; sourceTree = "<group>"; };
+		88D3B30724BDF4D2000323D1 /* UIMenuOptions+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMenuOptions+Helpers.swift"; sourceTree = "<group>"; };
+		88D3B30B24BE14BC000323D1 /* UIMenuElement+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIMenuElement+Helpers.swift"; sourceTree = "<group>"; };
 		88ED9A6424AF1A88009B17B6 /* RCTQuizQuestionEditList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditList.swift; sourceTree = "<group>"; };
 		88ED9A6A24B052FB009B17B6 /* RCTQuizQuestionEditListProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditListProxy.swift; sourceTree = "<group>"; };
 		88ED9A6C24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTQuizQuestionEditListManager.swift; sourceTree = "<group>"; };
@@ -256,6 +268,8 @@
 				88C542DB24A8605100DCDF15 /* UIModalPresentationStyle+Helpers.swift */,
 				88C542DD24A911F800DCDF15 /* UIModalTransitionStyle+Helpers.swift */,
 				88D3B2C824B253B6000323D1 /* Encodable+Helpers.swift */,
+				88D3B30724BDF4D2000323D1 /* UIMenuOptions+Helpers.swift */,
+				88D3B30B24BE14BC000323D1 /* UIMenuElement+Helpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +286,7 @@
 		88C5428024A5072400DCDF15 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				88D3B2FC24BD3705000323D1 /* RCTContextMenu */,
 				88D3B2EA24BAC289000323D1 /* RCTModalView */,
 				88D3B2DF24BAC270000323D1 /* RCTListOrder */,
 				88ED9A6324AF1A51009B17B6 /* RCTQuizQuestionEditList */,
@@ -391,6 +406,17 @@
 				88D3B2F224BAC28A000323D1 /* RCTModalViewManager.m */,
 			);
 			path = RCTModalView;
+			sourceTree = "<group>";
+		};
+		88D3B2FC24BD3705000323D1 /* RCTContextMenu */ = {
+			isa = PBXGroup;
+			children = (
+				88D3B2FF24BD37D2000323D1 /* RCTContextMenuView.swift */,
+				88D3B30124BD38A0000323D1 /* RCTContextMenuManager.swift */,
+				88D3B30324BD38B2000323D1 /* RCTContextMenuManager.m */,
+				88D3B30524BD779D000323D1 /* RCTMenuItem.swift */,
+			);
+			path = RCTContextMenu;
 			sourceTree = "<group>";
 		};
 		88ED9A6324AF1A51009B17B6 /* RCTQuizQuestionEditList */ = {
@@ -608,6 +634,7 @@
 				88C542DE24A911F900DCDF15 /* UIModalTransitionStyle+Helpers.swift in Sources */,
 				88ED9A7124B084A9009B17B6 /* RuntimeError.swift in Sources */,
 				88D3B2E924BAC271000323D1 /* RCTListOrderViewProxy.swift in Sources */,
+				88D3B30624BD779D000323D1 /* RCTMenuItem.swift in Sources */,
 				88D3B2E524BAC271000323D1 /* SwiftUIListOrder.swift in Sources */,
 				88D3B2E624BAC271000323D1 /* RCTListOrderModel.swift in Sources */,
 				88C542C724A507B100DCDF15 /* ExampleUIPageViewManager.m in Sources */,
@@ -618,6 +645,7 @@
 				88C542B824A507B100DCDF15 /* UIPageViewController.swift in Sources */,
 				88ED9A6F24B053F1009B17B6 /* RCTQuizQuestionEditListManager.m in Sources */,
 				88C542D124A5EE9600DCDF15 /* UIBlurEffect+Helpers.swift in Sources */,
+				88D3B30824BDF4D2000323D1 /* UIMenuOptions+Helpers.swift in Sources */,
 				88C542BA24A507B100DCDF15 /* UIPageView.swift in Sources */,
 				88C542BE24A507B100DCDF15 /* BlueBoxTestView.swift in Sources */,
 				88D3B2F724BAC28A000323D1 /* RCTModalViewModule.m in Sources */,
@@ -627,11 +655,13 @@
 				88C542C124A507B100DCDF15 /* ChildTestViewManager.m in Sources */,
 				88C542BD24A507B100DCDF15 /* RedBoxTestViewManager.swift in Sources */,
 				88D3B2C924B253B6000323D1 /* Encodable+Helpers.swift in Sources */,
+				88D3B30024BD37D2000323D1 /* RCTContextMenuView.swift in Sources */,
 				88C542C224A507B100DCDF15 /* ChildTestViewManager.swift in Sources */,
 				88C542C624A507B100DCDF15 /* ExampleUIPageViewController.swift in Sources */,
 				88ED9A6524AF1A88009B17B6 /* RCTQuizQuestionEditList.swift in Sources */,
 				88D3B2F924BAC28A000323D1 /* RCTModalViewController.swift in Sources */,
 				88D3B2FA24BAC28A000323D1 /* RCTModalViewManager.m in Sources */,
+				88D3B30C24BE14BC000323D1 /* UIMenuElement+Helpers.swift in Sources */,
 				88C542AF24A507B100DCDF15 /* RCTUIButtonManager.m in Sources */,
 				88D3B2E724BAC271000323D1 /* RCTListOrderViewManager.m in Sources */,
 				88D3B2F624BAC28A000323D1 /* RCTModalViewManager.swift in Sources */,
@@ -642,6 +672,7 @@
 				88C542B724A507B100DCDF15 /* UIPageViewManager.m in Sources */,
 				88C5427D24A5065F00DCDF15 /* UIView+Helpers.swift in Sources */,
 				88D3B2F324BAC28A000323D1 /* RCTModalViewModule.swift in Sources */,
+				88D3B30424BD38B2000323D1 /* RCTContextMenuManager.m in Sources */,
 				88C542BB24A507B100DCDF15 /* RedBoxTestViewManager.m in Sources */,
 				88ED9A6D24B053D0009B17B6 /* RCTQuizQuestionEditListManager.swift in Sources */,
 				88D3B2F824BAC28A000323D1 /* RCTModalViewError.swift in Sources */,
@@ -650,6 +681,7 @@
 				88C542BC24A507B100DCDF15 /* RedBoxTestView.swift in Sources */,
 				88C542DC24A8605200DCDF15 /* UIModalPresentationStyle+Helpers.swift in Sources */,
 				88D3B2F424BAC28A000323D1 /* RCTModalView.swift in Sources */,
+				88D3B30224BD38A0000323D1 /* RCTContextMenuManager.swift in Sources */,
 				88C542C024A507B100DCDF15 /* BlueBoxTestiewManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

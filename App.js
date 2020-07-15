@@ -16,6 +16,8 @@ import * as Helpers from 'app/src/functions/helpers';
 import { RCTQuizQuestionEditListManager } from './src/components_native/QuizQuestionEditList';
 import { ListOrderView } from 'app/src/components_native/ListOrder';
 import { ListOrderViewTest01 } from './src/components/ListOrderViewTest01';
+import { ContextMenuView } from './src/components_native/ContextMenuView';
+import { ContextMenuViewTest01 } from './src/components/ContextMenuViewTest01';
 
 
 export default class App extends React.Component {
@@ -23,7 +25,7 @@ export default class App extends React.Component {
   render(){
     return(
       <View style={{flex: 1}}>
-        <ModalViewTest1/>
+        <ContextMenuViewTest01/>
       </View>
     );
 
