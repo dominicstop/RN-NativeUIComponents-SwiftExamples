@@ -41,7 +41,7 @@ const menuItemsDummy1 = [{
       [MenuItemKeys.imageValue]: 'star.lefthalf.fill',
     },{
       [MenuItemKeys.key         ]: 'key-09',
-      [MenuItemKeys.title       ]: 'Submenu Action #3',
+      [MenuItemKeys.title       ]: 'Submenu Action #3...',
       [MenuItemKeys.imageType   ]: ImageTypes.SYSTEM,
       [MenuItemKeys.imageValue  ]: 'star.fill',
       [MenuItemKeys.submenuItems]: [{
@@ -56,9 +56,26 @@ const menuItemsDummy1 = [{
         [MenuItemKeys.imageValue]: 'ant.fill',
       },{
         [MenuItemKeys.key       ]: 'key-12',
-        [MenuItemKeys.title     ]: 'Submenu Action #6',
+        [MenuItemKeys.title     ]: 'Submenu Action #6...',
         [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
         [MenuItemKeys.imageValue]: 'hare.fill',
+        [MenuItemKeys.submenuItems]: [{
+          [MenuItemKeys.key       ]: 'key-13',
+          [MenuItemKeys.title     ]: 'Submenu Action #7',
+          [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+          [MenuItemKeys.imageValue]: 'moon.stars',
+        },{
+          [MenuItemKeys.key       ]: 'key-14',
+          [MenuItemKeys.title     ]: 'Submenu Action #8...',
+          [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+          [MenuItemKeys.imageValue]: 'ant',
+          [MenuItemKeys.submenuItems]: [{
+            [MenuItemKeys.key       ]: 'key-15',
+            [MenuItemKeys.title     ]: 'Submenu Action #9',
+            [MenuItemKeys.imageType ]: ImageTypes.SYSTEM,
+            [MenuItemKeys.imageValue]: 'hare',
+          }]
+        }]
       }]
     }]
   },{

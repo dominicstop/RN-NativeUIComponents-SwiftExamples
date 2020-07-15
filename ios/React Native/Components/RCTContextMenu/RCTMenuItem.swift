@@ -129,30 +129,32 @@ extension RCTMenuItem {
 
 extension RCTMenuItem {
   
-  func makeUIAction(handler: @escaping UIActionHandlerWithKey) -> UIAction {
-    return UIAction(
-      title     : self.title,
-      image     : self.image,
-      identifier: self.identifier,
-      attributes: self.uiMenuElementAttributes,
-      state     : self.uiMenuElementState,
-      handler   : { handler(self.key, $0) }
-    );
-  };
-  
-  func makeSubmenu(handler: @escaping UIActionHandlerWithKey) -> UIMenu {
+  func makeSubmenu(_ handler: @escaping UIActionHandlerWithKey) -> UIMenuElement {
     return UIMenu(
       title: self.title,
       image: self.image,
       children:
-        self.submenuItems?.compactMap { $0.makeUIAction(handler: handler) }
+        self.submenuItems?.compactMap { $0.makeUIAction(handler) }
         ?? []
     );
   };
   
+  func makeUIAction(_ handler: @escaping UIActionHandlerWithKey) -> UIMenuElement {
+    return self.submenuItems != nil
+    ? self.makeSubmenu(handler)
+    : UIAction(
+        title     : self.title,
+        image     : self.image,
+        identifier: self.identifier,
+        attributes: self.uiMenuElementAttributes,
+        state     : self.uiMenuElementState,
+        handler   : { handler(self.key, $0) }
+      );
+  };
+  
   func makeUIMenuElement(handler: @escaping UIActionHandlerWithKey) -> UIMenuElement {
     return self.submenuItems != nil
-      ? self.makeSubmenu (handler: handler)
-      : self.makeUIAction(handler: handler)
+      ? self.makeSubmenu (handler)
+      : self.makeUIAction(handler)
   };
 };
